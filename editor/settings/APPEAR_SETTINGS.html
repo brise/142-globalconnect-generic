@@ -1,0 +1,64 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'CV'"></data>
+<data ng-if="$data.editor.element = ''"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['appear'], 'appear', ['appear'], 'appear']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$wrapper = $frame.layers[$wrapper_key]"></data>
+<data ng-if="$scope = $nav[$data.editor.scope[0]][1][$wrapper_key]"></data>
+<data ng-if="$scope[1] = $tab_setup[3]"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<div ng-if="$group.enabled">
+
+    <!-- DEFAULT THEME -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_default }} {{ :: $dict.label_appear }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_layout }}">
+            <dropdown-select model="$macros[$alias_key + '_layout'].value">
+                <LAYOUT_OPTIONS></LAYOUT_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_default }} {{ :: $dict.label_appear }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_layout }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_layout'].value">
+                <LAYOUT_OPTIONS></LAYOUT_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / DEFAULT THEME -->
+
+</div>

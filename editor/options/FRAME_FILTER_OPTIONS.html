@@ -1,0 +1,21 @@
+<option value="none">{{ :: $dict.label_disabled }}</option>
+<optgroup label="{{ :: $dict.label_split }} {{ :: $dict.label_filters }}">
+    <option value="split_all">{{ :: $dict.label_filter_split_all }}</option>
+    <option value="split_limited">{{ :: $dict.label_filter_split_limited }}</option>
+    <option value="split_micro">{{ :: $dict.label_filter_split_micro }}</option>
+    <option value="split_small">{{ :: $dict.label_filter_split_small_micro }}</option>
+</optgroup>
+<optgroup label="{{ :: $dict.label_exclusion }} {{ :: $dict.label_filters }}">
+    <option value="limited_exc">{{ :: $dict.label_filter_exclude_limited }}</option>
+    <option value="micro_exc">{{ :: $dict.label_filter_exclude_micro }}</option>
+    <option value="small_exc">{{ :: $dict.label_filter_exclude_small_micro }}</option>
+    <option value="large_exc">{{ :: $dict.label_filter_exclude_large_huge }}</option>
+    <option value="snapshot_exc">{{ :: $dict.label_filter_exclude_snapshot }}</option>
+</optgroup>
+<optgroup label="{{ :: $dict.label_inclusion }} {{ :: $dict.label_filters }}">
+    <option value="limited">{{ :: $dict.label_filter_include_limited }}</option>
+    <option value="micro">{{ :: $dict.label_filter_include_micro }}</option>
+    <option value="small">{{ :: $dict.label_filter_include_small_micro }}</option>
+    <option value="large">{{ :: $dict.label_filter_include_large_huge }}</option>
+    <option value="snapshot">{{ :: $dict.label_filter_include_snapshot }}</option>
+</optgroup>

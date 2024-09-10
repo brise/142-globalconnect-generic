@@ -1,0 +1,274 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- VISIBILITY PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_visibility }}">
+        <toggle-button model="$wrapper.enabled" on="{{ :: $dict.label_visible }}" off="{{ :: $dict.label_hidden }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / VISIBILITY PICKER -->
+
+<div ng-if="$wrapper.enabled">
+
+    <!-- FRAME LAYOUT -->
+    <!--<block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_arrangement }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_layout }}">
+            <dropdown-select model="$macros[$alias_key + '_layout'].value">
+                <option value="default">{{ :: $dict.label_default }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_frame  }} {{ :: $dict.label_arrangement }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_layout }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_layout'].value">
+                <option value="default">{{ :: $dict.label_default }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>-->
+    <!-- / FRAME LAYOUT -->
+
+    <!-- DEFAULT THEME -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_preset }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_theme }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'CV_theme'].value">
+                <option value="$[CV_theme]">{{ :: $dict.label_default }}</option>
+                <option disabled>-</option>
+                <THEME_OPTIONS></THEME_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_preset }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_theme }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'CV_theme'].value">
+                <option value="$[CV_theme]">{{ :: $dict.label_default }}</option>
+                <option disabled>-</option>
+                <THEME_OPTIONS></THEME_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / DEFAULT THEME -->
+
+    <!-- LG COLORS -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_logotype }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'LG_lg'].value">
+                <option value="$[LG_lg]">{{ :: $dict.label_default }}</option>
+                <LOGO_COLOR_OPTIONS></LOGO_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_shadow }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'LG_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_logotype }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'LG_lg'].value">
+                <option value="$[LG_lg]">{{ :: $dict.label_default }}</option>
+                <LOGO_COLOR_OPTIONS></LOGO_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_shadow }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'LG_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / LG COLORS -->
+
+    <!-- MS COLORS -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_message }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'MS_st'].value">
+                <option value="$[MS_st]">{{ :: $dict.label_default }}</option>
+                <TEXT_COLOR_OPTIONS></TEXT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_shadow }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'MS_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_message }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'MS_st'].value">
+                <option value="$[MS_st]">{{ :: $dict.label_default }}</option>
+                <TEXT_COLOR_OPTIONS></TEXT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_shadow }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'MS_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / MS COLORS -->
+
+    <!-- BS COLORS -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_button }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'BS_bt'].value">
+                <option value="$[BS_bt]">{{ :: $dict.label_default }}</option>
+                <BUTTON_COLOR_OPTIONS></BUTTON_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_shadow }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'BS_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>-->
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_button }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'BS_bt'].value">
+                <option value="$[BS_bt]">{{ :: $dict.label_default }}</option>
+                <BUTTON_COLOR_OPTIONS></BUTTON_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_shadow }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'BS_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>-->
+
+    </block-group>
+    <!-- / BS COLORS -->
+
+    <!-- FRAME COLORS -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_supporting }} {{ :: $dict.label_colors }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_underlay }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'UL_bg'].value">
+                <option value="$[UL_bg]">{{ :: $dict.label_default }}</option>
+                <BACKGROUND_COLOR_OPTIONS></BACKGROUND_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_interlay }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'IL_bg'].value">
+                <option value="$[IL_bg]">{{ :: $dict.label_default }}</option>
+                <BACKGROUND_COLOR_OPTIONS></BACKGROUND_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_overlay }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'OL_gr'].value">
+                <option value="$[OL_gr]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_shadow }}">
+            <dropdown-select model="$macros[$alias_key + '_' + 'CV_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>-->
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_supporting }} {{ :: $dict.label_colors }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_underlay }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'UL_bg'].value">
+                <option value="$[UL_bg]">{{ :: $dict.label_default }}</option>
+                <BACKGROUND_COLOR_OPTIONS></BACKGROUND_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_interlay }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'IL_bg'].value">
+                <option value="$[IL_bg]">{{ :: $dict.label_default }}</option>
+                <BACKGROUND_COLOR_OPTIONS></BACKGROUND_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_overlay }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'OL_gr'].value">
+                <option value="$[OL_gr]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_shadow }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_' + 'CV_sh'].value">
+                <option value="$[CV_sh]">{{ :: $dict.label_default }}</option>
+                <TINT_COLOR_OPTIONS></TINT_COLOR_OPTIONS>
+            </dropdown-select>
+        </block-field>-->
+
+    </block-group>
+    <!-- / FRAME COLORS -->
+
+</div>

@@ -1,0 +1,41 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<block-group>
+
+    <block-field title="{{ :: $dict.label_legal }}">
+        <dropdown-select model="$data.banner.macros.setup_legal.value">
+            <LEGAL_SETUP_OPTIONS></LEGAL_SETUP_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_badge }}">
+        <dropdown-select model="$data.banner.macros.setup_badge.value">
+            <BADGE_SETUP_OPTIONS></BADGE_SETUP_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_dealer }}">
+        <dropdown-select model="$data.banner.macros.setup_dealer.value">
+            <DEALER_SETUP_OPTIONS></DEALER_SETUP_OPTIONS>
+        </dropdown-select>
+        <block-info>
+            <p>
+                <small><q>{{ $dict.hint_setup_layout }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>

@@ -1,0 +1,77 @@
+<data ng-if="$frame = $data.banner.layers.CV"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'ES'"></data>
+<data ng-if="$data.editor.element = $wrapper_key"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['elements', 'anim', 'layout', 'appear'], 'elements', ['appear'], 'appear']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<WRAPPER_SHORTCUT_VALIDATION_COMPONENT></WRAPPER_SHORTCUT_VALIDATION_COMPONENT>
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<TAB_SELECTOR></TAB_SELECTOR>
+
+<block-group ng-if="($scope[1] == 'elements')">
+
+    <block-toggle title="{{ :: $dict.label_badges }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('ES_EN') != -1)}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('ES_EN') != -1) ? 'ES' : 'ES_EN')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('ES_EN') != -1)">
+
+        <EN></EN>
+
+    </block-group>
+
+    <block-toggle title="{{ :: $dict.label_detail }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('ES_EA') != -1)}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('ES_EA') != -1) ? 'ES' : 'ES_EA')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('ES_EA') != -1)">
+
+        <!-- KEY DEFINITION -->
+        <data ng-if="$object_key = 'OBJ'"></data>
+        <data ng-if="$holder_key = 'TXT'"></data>
+        <data ng-if="$target_key = '1'"></data>
+        <data ng-if="$alias_key = 'EA'"></data>
+        <!-- / KEY DEFINITION -->
+
+        <!-- TAB SETUP -->
+        <data ng-init="$tab_setup = [['source', 'appear'], 'source', ['appear'], 'appear']"></data>
+        <!-- / TAB SETUP -->
+
+        <TARGET_STATE_VALIDATION_COMPONENT></TARGET_STATE_VALIDATION_COMPONENT>
+
+        <TARGET_SHORTCUT_VALIDATION_COMPONENT></TARGET_SHORTCUT_VALIDATION_COMPONENT>
+
+        <TARGET_TAB_VALIDATION_COMPONENT></TARGET_TAB_VALIDATION_COMPONENT>
+
+        <TAB_SELECTOR></TAB_SELECTOR>
+
+        <div ng-if="($scope[1] == 'source')">
+            <TEXT_SOURCE_GROUP></TEXT_SOURCE_GROUP>
+        </div>
+
+        <div ng-if="($scope[1] == 'appear')">
+            <TEXT_APPEAR_GROUP></TEXT_APPEAR_GROUP>
+        </div>
+
+    </block-group>
+
+</block-group>
+
+<div ng-if="($scope[1] == 'anim')">
+    <WRAPPER_ANIM_GROUP></WRAPPER_ANIM_GROUP>
+</div>
+
+<div ng-if="($scope[1] == 'layout')">
+    <WRAPPER_LAYOUT_GROUP></WRAPPER_LAYOUT_GROUP>
+</div>
+
+
+<div ng-if="($scope[1] == 'appear')">
+    <WRAPPER_APPEAR_GROUP></WRAPPER_APPEAR_GROUP>
+</div>

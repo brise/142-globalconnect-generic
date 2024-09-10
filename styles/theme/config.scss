@@ -1,0 +1,346 @@
+@import '../layout/config';
+
+/*
+ * Color configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$transparent: rgba(0,0,0,0);
+
+$tint_size: calc(#{$scale} / 2);
+
+$white: rgb(255,255,255);
+$white_0: rgba(255,255,255,0);
+$white_5: rgba(255,255,255,0.05);
+$white_10: rgba(255,255,255,0.1);
+$white_15: rgba(255,255,255,0.15);
+$white_20: rgba(255,255,255,0.20);
+$white_25: rgba(255,255,255,0.25);
+$white_40: rgba(255,255,255,0.4);
+$white_50: rgba(255,255,255,0.5);
+$white_60: rgba(255,255,255,0.6);
+$white_75: rgba(255,255,255,0.75);
+$white_80: rgba(255,255,255,0.8);
+$white_90: rgba(255,255,255,0.9);
+$white_95: rgba(255,255,255,0.95);
+
+$black: rgb(0,0,0);
+$black_0: rgba(0,0,0,0);
+$black_5: rgba(0,0,0,0.05);
+$black_10: rgba(0,0,0,0.1);
+$black_15: rgba(0,0,0,0.15);
+$black_20: rgba(0,0,0,0.20);
+$black_25: rgba(0,0,0,0.25);
+$black_40: rgba(0,0,0,0.4);
+$black_50: rgba(0,0,0,0.5);
+$black_60: rgba(0,0,0,0.6);
+$black_75: rgba(0,0,0,0.75);
+$black_80: rgba(0,0,0,0.8);
+$black_90: rgba(0,0,0,0.9);
+$black_95: rgba(0,0,0,0.95);
+
+$green: rgb(144,208,0);
+$green_0: rgba(144,208,0,0);
+$green_5: rgba(144,208,0,0.05);
+$green_10: rgba(144,208,0,0.1);
+$green_15: rgba(144,208,0,0.15);
+$green_20: rgba(144,208,0,0.20);
+$green_25: rgba(144,208,0,0.25);
+$green_40: rgba(144,208,0,0.4);
+$green_50: rgba(144,208,0,0.5);
+$green_60: rgba(144,208,0,0.6);
+$green_75: rgba(144,208,0,0.75);
+$green_80: rgba(144,208,0,0.8);
+$green_90: rgba(144,208,0,0.9);
+$green_95: rgba(144,208,0,0.95);
+
+$green_dark: rgb(0,56,61);
+$green_dark_0: rgba(0,56,61,0);
+$green_dark_5: rgba(0,56,61,0.05);
+$green_dark_10: rgba(0,56,61,0.1);
+$green_dark_15: rgba(0,56,61,0.15);
+$green_dark_20: rgba(0,56,61,0.20);
+$green_dark_25: rgba(0,56,61,0.25);
+$green_dark_40: rgba(0,56,61,0.4);
+$green_dark_50: rgba(0,56,61,0.5);
+$green_dark_60: rgba(0,56,61,0.6);
+$green_dark_75: rgba(0,56,61,0.75);
+$green_dark_80: rgba(0,56,61,0.8);
+$green_dark_90: rgba(0,56,61,0.9);
+$green_dark_95: rgba(0,56,61,0.95);
+
+$green_light: rgb(245,250,232);
+$green_light_0: rgba(245,250,232,0);
+$green_light_5: rgba(245,250,232,0.05);
+$green_light_10: rgba(245,250,232,0.1);
+$green_light_15: rgba(245,250,232,0.15);
+$green_light_20: rgba(245,250,232,0.20);
+$green_light_25: rgba(245,250,232,0.25);
+$green_light_40: rgba(245,250,232,0.4);
+$green_light_50: rgba(245,250,232,0.5);
+$green_light_60: rgba(245,250,232,0.6);
+$green_light_75: rgba(245,250,232,0.75);
+$green_light_80: rgba(245,250,232,0.8);
+$green_light_90: rgba(245,250,232,0.9);
+$green_light_95: rgba(245,250,232,0.95);
+
+$grey: rgb(242,240,239);
+$grey_0: rgba(242,240,239,0);
+$grey_5: rgba(242,240,239,0.05);
+$grey_10: rgba(242,240,239,0.1);
+$grey_15: rgba(242,240,239,0.15);
+$grey_20: rgba(242,240,239,0.20);
+$grey_25: rgba(242,240,239,0.25);
+$grey_40: rgba(242,240,239,0.4);
+$grey_50: rgba(242,240,239,0.5);
+$grey_60: rgba(242,240,239,0.6);
+$grey_75: rgba(242,240,239,0.75);
+$grey_80: rgba(242,240,239,0.8);
+$grey_90: rgba(242,240,239,0.9);
+$grey_95: rgba(242,240,239,0.95);
+
+/*
+ * Theme configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$themes: ('dark', 'light');
+
+/*
+ * Scroll colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$scroll: ();
+
+$scroll_track: (
+        'dark': $green_light_10,
+        'light': $green_dark_10
+);
+
+$scroll_thumb: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+/*
+ * Text colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$style: ('dark', 'light');
+
+$style_p: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+$style_em: (
+        'dark': $green,
+        'light': $green
+);
+
+$style_q: (
+        'dark': $green_light_75,
+        'light': $green_dark_75
+);
+
+$style_hr: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+$style_svg: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+$style_p_inverted: (
+        'dark': $green_dark,
+        'light': $green_light
+);
+
+$style_em_inverted: (
+        'dark': $green,
+        'light': $green
+);
+
+$style_q_inverted: (
+        'dark': $green_dark_75,
+        'light': $green_light_75
+);
+
+$style_hr_inverted: (
+        'dark': $green_dark,
+        'light': $green_light
+);
+
+$style_svg_inverted: (
+        'dark': $green_dark,
+        'light': $green_light
+);
+
+/*
+ * Button colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$button: ('dark', 'light');
+
+$button_p: (
+        'dark': $green_dark,
+        'light': $green_dark
+);
+
+$button_stroke: (
+        'dark': $green,
+        'light': $green
+);
+
+$button_fill: (
+        'dark': $green,
+        'light': $green
+);
+
+$button_p_hover: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+$button_stroke_hover: (
+        'dark': $green,
+        'light': $green
+);
+
+$button_fill_hover: (
+        'dark': $green_dark_0,
+        'light': $green_dark_0
+);
+
+/*
+ * Logo colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$logo: ('dark', 'light');
+
+$logo_color_1: (
+        'dark': $white,
+        'light': $green_dark
+);
+
+$logo_color_2: (
+        'dark': $white,
+        'light': $green_dark
+);
+
+$logo_color_inverted_1: (
+        'dark': $green_dark,
+        'light': $white
+);
+
+$logo_color_inverted_2: (
+        'dark': $green_dark,
+        'light': $white
+);
+
+/*
+ * Background colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$bg: ('dark', 'light');
+
+$background_color: (
+        'dark': $green_dark,
+        'light': $green_light
+);
+
+$background_color_inverted: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+/*
+ * Fill colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$fill: ('dark', 'light');
+
+$fill_color: (
+        'dark': $green_light,
+        'light': $green_dark
+);
+
+$fill_color_inverted: (
+        'dark': $green_dark,
+        'light': $green_light
+);
+
+/*
+ * Shadow and gradient colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$tint: ('black', 'white');
+
+$tint_color: (
+        'dark': (
+                'a10': $black_10,
+                'a20': $black_20,
+                'a40': $black_40,
+                'a60': $black_60,
+                'a80': $black_80,
+                'a90': $black_90,
+                'a100': $black
+        ),
+        'light': (
+                'a10': $white_10,
+                'a20': $white_20,
+                'a40': $white_40,
+                'a60': $white_60,
+                'a80': $white_80,
+                'a90': $white_90,
+                'a100': $white
+        ),
+        'black': (
+                'a10': $black_10,
+                'a20': $black_20,
+                'a40': $black_40,
+                'a60': $black_60,
+                'a80': $black_80,
+                'a90': $black_90,
+                'a100': $black
+        ),
+        'white': (
+                'a10': $white_10,
+                'a20': $white_20,
+                'a40': $white_40,
+                'a60': $white_60,
+                'a80': $white_80,
+                'a90': $white_90,
+                'a100': $white
+        )
+);
+
+$tint_color_inverted: (
+        'dark': (
+                'a10': $white_10,
+                'a20': $white_20,
+                'a40': $white_40,
+                'a60': $white_60,
+                'a80': $white_80,
+                'a90': $white_90,
+                'a100': $white
+        ),
+        'light': (
+                'a10': $black_10,
+                'a20': $black_20,
+                'a40': $black_40,
+                'a60': $black_60,
+                'a80': $black_80,
+                'a90': $black_90,
+                'a100': $black
+        )
+);

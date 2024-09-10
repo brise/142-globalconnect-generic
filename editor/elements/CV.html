@@ -1,0 +1,149 @@
+
+<!-- SEQUENCED ELEMENTS -->
+<block-group>
+
+    <block-field title="{{ :: $dict.label_sequenced_elements }}" class="label"></block-field>
+
+    <frames-block ng-model="$data.banner.layers.CV.layers.SQ"
+                  default-settings="$data.banner.layers.CV.layers.SQ.params"
+                  default-frame-data="$data.banner.layers.CV.layers.SQ.frames[0]">
+
+        <!-- FRAME INDEX VALIDATION -->
+        <data ng-init="$frame_selected = false"></data>
+        <data ng-if="$frame_selected === false" ng-init="$frame_selected = true; $frames.go($data.editor.frame);"></data>
+        <data ng-if="$data.editor.frame !== $frames.index" ng-init="$data.editor.frame = $frames.index"></data>
+        <!-- / FRAME INDEX VALIDATION -->
+
+        <frames-block-controls class="no-start-time no-stop-time no-stop-on no-duration"></frames-block-controls>
+
+        <block-toggle title="{{ :: $dict.label_frame }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('SQ') != -1)}"
+                      ng-click="$data.editor.scope[1] = (($data.editor.scope[1] == 'SQ') ? '' : 'SQ')"></block-toggle>
+        <block-group ng-if="($data.editor.scope[1].indexOf('SQ') == -1)">
+
+            <!-- KEY DEFINITION -->
+            <data ng-if="$wrapper_key = 'SQ'"></data>
+            <data ng-if="$alias_key = $wrapper_key"></data>
+            <!-- / KEY DEFINITION -->
+
+            <!-- TAB SETUP -->
+            <data ng-init="$tab_setup = [['setup'], 'setup', ['setup'], 'setup']"></data>
+            <!-- / TAB SETUP -->
+
+            <WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+            <!-- SHORTCUT DEFINITION -->
+            <data ng-if="$wrapper = $frame"></data>
+            <data ng-if="$scope = $nav[$data.editor.scope[0]][1][$wrapper_key]"></data>
+            <!-- / SHORTCUT DEFINITION -->
+
+            <WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+            <data ng-if="$scope[1] = 'setup'"></data>
+
+            <FRAME_SETUP_CONDENSED_GROUP></FRAME_SETUP_CONDENSED_GROUP>
+
+        </block-group>
+        <block-group ng-if="($data.editor.scope[1].indexOf('SQ') != -1)">
+
+            <!-- KEY DEFINITION -->
+            <data ng-if="$wrapper_key = 'SQ'"></data>
+            <data ng-if="$data.editor.element = $wrapper_key"></data>
+            <data ng-if="$alias_key = $wrapper_key"></data>
+            <!-- / KEY DEFINITION -->
+
+            <!-- TAB SETUP -->
+            <data ng-init="$tab_setup = [['setup', 'appear'], 'setup', ['appear'], 'appear']"></data>
+            <!-- / TAB SETUP -->
+
+            <WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+            <!-- SHORTCUT DEFINITION -->
+            <data ng-if="$wrapper = $frame"></data>
+            <data ng-if="$scope = $nav[$data.editor.scope[0]][1][$wrapper_key]"></data>
+            <!-- / SHORTCUT DEFINITION -->
+
+            <WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+            <TAB_SELECTOR></TAB_SELECTOR>
+
+            <div ng-if="($scope[1] == 'setup')">
+                <FRAME_SETUP_GROUP></FRAME_SETUP_GROUP>
+            </div>
+
+            <div ng-if="($scope[1] == 'appear')">
+                <FRAME_APPEAR_GROUP></FRAME_APPEAR_GROUP>
+            </div>
+
+        </block-group>
+
+        <block-toggle title="{{ :: $dict.label_foreground }}" class="toggle"
+                      ng-class="{selected: ($data.editor.scope[1].indexOf('FG') != -1 && ($frame.groups.SQ_setup.macros.SQ_type.value != 'blank' && $frame.groups.SQ_setup.macros.SQ_type.value != 'text' && $frame.groups.SQ_setup.macros.SQ_type.value != 'dealer' && $frame.groups.SQ_setup.macros.SQ_type.value != 'disclaimer')), disabled: ($frame.groups.SQ_setup.macros.SQ_type.value == 'blank' || $frame.groups.SQ_setup.macros.SQ_type.value == 'text' || $frame.groups.SQ_setup.macros.SQ_type.value == 'dealer' || $frame.groups.SQ_setup.macros.SQ_type.value == 'disclaimer')}"
+                      ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('FG') != -1) ? '' : 'FG')"></block-toggle>
+        <block-group ng-if="($data.editor.scope[1].indexOf('FG') != -1) && ($frame.groups.SQ_setup.macros.SQ_type.value != 'blank' && $frame.groups.SQ_setup.macros.SQ_type.value != 'text' && $frame.groups.SQ_setup.macros.SQ_type.value != 'dealer' && $frame.groups.SQ_setup.macros.SQ_type.value != 'disclaimer')">
+
+            <FG></FG>
+
+        </block-group>
+
+        <block-toggle title="{{ :: $dict.label_message }}" class="toggle"
+                      ng-class="{selected: ($data.editor.scope[1].indexOf('MS') != -1 && $frame.groups.SQ_setup.macros.SQ_type.value == 'split'), disabled: ($frame.groups.SQ_setup.macros.SQ_type.value != 'split')}"
+                      ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('MS') != -1) ? '' : 'MS')"></block-toggle>
+        <block-group ng-if="($data.editor.scope[1].indexOf('MS') != -1 && $frame.groups.SQ_setup.macros.SQ_type.value == 'split')">
+
+            <MS></MS>
+
+        </block-group>
+
+    </frames-block>
+
+</block-group>
+<!-- / SEQUENCED ELEMENTS -->
+
+<!-- COMMON ELEMENTS -->
+<block-group>
+
+    <block-field title="{{ :: $dict.label_common_elements }}" class="label"></block-field>
+
+    <block-toggle title="{{ :: $dict.label_background }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('BG') != -1)}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('BG') != -1) ? '' : 'BG')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('BG') != -1)">
+
+        <BG></BG>
+
+    </block-group>
+
+    <block-toggle title="{{ :: $dict.label_caption }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('PS') != -1)}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('PS') != -1) ? '' : 'PS')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('PS') != -1)">
+
+        <PS></PS>
+
+    </block-group>
+
+    <block-toggle title="{{ :: $dict.label_logotype }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('LG') != -1)}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('LG') != -1) ? '' : 'LG')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('LG') != -1)">
+
+        <LG></LG>
+
+    </block-group>
+
+</block-group>
+<!-- / COMMON ELEMENTS -->
+
+<!-- MODAL ELEMENTS -->
+<block-group>
+
+    <block-field title="{{ :: $dict.label_modal_elements }}" class="label"></block-field>
+
+    <block-toggle title="{{ :: $dict.label_popup }}" class="toggle"
+                  ng-class="{selected: ($data.editor.scope[1].indexOf('VS') != -1 && !(($data.banner.macros.setup_legal.value == 'v1' || $data.banner.macros.setup_legal.value == 'v2') && ($data.banner.macros.setup_dealer.value == 'v1' || $data.banner.macros.setup_dealer.value == 'v2'))), disabled: (($data.banner.macros.setup_legal.value == 'v1' || $data.banner.macros.setup_legal.value == 'v2') && ($data.banner.macros.setup_dealer.value == 'v1' || $data.banner.macros.setup_dealer.value == 'v2'))}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('VS') != -1) ? '' : 'VS')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('VS') != -1) && !(($data.banner.macros.setup_legal.value == 'v1' || $data.banner.macros.setup_legal.value == 'v2') && ($data.banner.macros.setup_dealer.value == 'v1' || $data.banner.macros.setup_dealer.value == 'v2'))">
+
+        <VS></VS>
+
+    </block-group>
+
+</block-group>
+<!-- / MODAL ELEMENTS -->

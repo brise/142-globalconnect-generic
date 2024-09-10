@@ -1,0 +1,89 @@
+
+/*
+* Layer visibility settings.
+* ------------------------------------------------------------------------------------------------------------------
+*/
+
+[data-key=CV] {
+
+  [data-key=UL] {
+    z-index: 5;
+  }
+
+  [data-key=UG] {
+    z-index: 10;
+  }
+
+  [data-key=IL] {
+    z-index: 11;
+  }
+
+  [data-key=BG],
+  [data-key=BG_OBJ]  {
+    z-index: 15;
+  }
+
+  [data-key=FG] {
+    z-index: 20;
+  }
+
+  [data-key=OL] {
+    z-index: 30;
+  }
+
+  [data-key=MS],
+  [data-key=PS],
+  [data-key=CS],
+  [data-key=LG] {
+    z-index: 50;
+  }
+
+  [data-key=VS],
+  [data-key=CX] {
+    z-index: 90;
+  }
+
+  [data-key=CL] {
+    z-index: 100;
+  }
+
+  [data-key=FR] {
+    z-index: 200;
+  }
+
+  [data-key=FR],
+  [data-key=FR] *,
+  [data-key=VS] .place * {
+    pointer-events: none;
+  }
+
+  [data-key=CL_PS_TXT_1] {
+    display: none;
+  }
+
+}
+
+[data-key=CV]:not(.VS_disabled).VS_active {
+
+  [data-key=VS] {
+    z-index: 120;
+  }
+
+  [data-key=CX] {
+    z-index: 130;
+  }
+
+}
+
+[data-key=CV]:not(.VS_disabled):not(.VS_active) {
+
+  [data-key=CL_PS_TXT_1] {
+    display: block;
+    z-index: 110;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+
+}

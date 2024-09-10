@@ -1,0 +1,103 @@
+/*
+ * Scale configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * w0
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0 [data-key=LG] {
+  left: 45%;
+  height: calc(2rem + 3rem + 3rem / 2);
+  width: calc(12.2857142857rem + 3rem + 3rem / 2);
+  max-width: 55%;
+}
+[data-key=CV].CV_tens_w0 [data-key=LG] .place {
+  height: calc(100% - 3rem - 3rem / 2);
+  left: calc(3rem / 2);
+  width: calc(100% - 3rem / 2 - 3rem);
+}
+[data-key=CV].CV_tens_w0 [data-key=MS] {
+  top: calc(2rem + 3rem + 3rem / 2);
+  right: 0;
+  height: calc(100% - (4rem + 15%) - (2rem + 3rem + 3rem / 2));
+  width: 55%;
+}
+[data-key=CV].CV_tens_w0 [data-key=MS] .place {
+  height: calc(100% - 3rem / 2);
+  left: calc(3rem / 2);
+  width: calc(100% - 3rem / 2 - 3rem);
+}
+[data-key=CV].CV_tens_w0 [data-key=PS],
+[data-key=CV].CV_tens_w0 [data-key=CS] {
+  bottom: 0;
+  right: 0;
+  height: calc(4rem + 15%);
+  width: 55%;
+}
+[data-key=CV].CV_tens_w0 [data-key=PS] .place,
+[data-key=CV].CV_tens_w0 [data-key=CS] .place {
+  bottom: calc(3rem / 2);
+  height: calc(100% - 3rem / 2);
+  left: calc(3rem / 2);
+  width: calc(100% - 3rem / 2 - 3rem);
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] .linear {
+  display: none;
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] .corner {
+  display: block;
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] {
+  height: calc(2rem + 3rem + 3rem / 2);
+  width: calc(12.2857142857rem + 3rem + 3rem / 2 + 10%);
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_1] svg rect {
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] {
+  width: calc(12.2857142857rem + 3rem + 3rem / 2);
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_1] {
+  right: 0;
+  width: 55%;
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_default
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0.CV_layout_default [data-key=BG].BG_place_fit .place,
+[data-key=CV].CV_tens_w0.CV_layout_default [data-key=FG].FG_place_fit .place {
+  top: 3rem;
+  left: 3rem;
+  height: calc(100% - 3rem * 2);
+  width: calc(45% - 3rem - 3rem / 2);
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0.CV_layout_boxed .isolated {
+  width: 45%;
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed .isolated > .margin {
+  width: calc(100% - 3rem / 2);
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0.CV_layout_isolated .isolated {
+  width: 45%;
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+/*# sourceMappingURL=layout_tens_w0.css.map */

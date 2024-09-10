@@ -1,0 +1,147 @@
+@import "../config";
+
+/*
+ * e0
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$BG_height__CV_e0: 42.5%;
+$LG_height__CV_e0: calc($logo_height_l + $padding_normal_dbl);
+$LG_width__CV_e0:  calc($logo_width_l + $padding_normal + $padding_small);
+$PS_height__CV_e0: calc($button_height + 15% + $padding_small);
+
+[data-key=CV].CV_tens_e0 {
+
+	[data-key=LG] {
+		right: 0;
+		bottom: 0;
+		height: $LG_height__CV_e0;
+		width: $LG_width__CV_e0;
+		text-align: right;
+		vertical-align: bottom;
+	}
+
+	[data-key=LG] .place {
+		left: $padding_small;
+		width: calc(100% - $padding_small - $padding_normal);
+	}
+
+	[data-key=MS] {
+		top: $BG_height__CV_e0;
+		height: calc(100% - $BG_height__CV_e0 - $PS_height__CV_e0);
+	}
+
+	[data-key=MS] .place {
+		top: $padding_small;
+		height: calc(100% - $padding_small);
+		left: $padding_normal;
+		width: calc(100% - $padding_normal_dbl);
+	}
+
+	[data-key=PS],
+	[data-key=CS] {
+		bottom: 0;
+		right: $LG_width__CV_e0;
+		height: $PS_height__CV_e0;
+		width: calc(100% - $LG_width__CV_e0);
+	}
+
+	[data-key=PS] .place,
+	[data-key=CS] .place {
+		bottom: $padding_small;
+		height: calc(100% - $padding_small_dbl);
+		left: $padding_normal;
+		width: calc(100% - $padding_normal);
+	}
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $padding_small;
+		height: calc(100% - $padding_small_dbl);
+	}
+
+	[data-key=OL] {
+
+		[data-key=OL_GR_0] .linear {
+			display: none;
+		}
+
+		[data-key=OL_GR_0] .corner {
+			display: block;
+		}
+
+		[data-key=OL_GR_0] {
+			height: $LG_height__CV_e0;
+			width: calc($LG_width__CV_e0 + 10%);
+		}
+
+		//[data-key=OL_GR_0] svg rect {
+		//	transform-origin: center;
+		//	transform: rotate(270deg);
+		//}
+
+		[data-key=OL_GR_1] svg rect {
+			transform-origin: center;
+			transform: rotate(270deg);
+		}
+
+		[data-key=OL_GR_0] {
+			width: $LG_width__CV_e0;
+		}
+
+		[data-key=OL_GR_1] {
+			right: 0;
+			width: calc(100% - $BG_height__CV_e0);
+		}
+
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_default
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_e0.CV_layout_default {
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $padding_normal;
+		left: $padding_normal;
+		height: calc($BG_height__CV_e0 - $padding_normal);
+		width: calc(100% - $padding_normal_dbl);
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_e0.CV_layout_boxed {
+
+	.isolated {
+		height: calc($BG_height__CV_e0 + $padding_small);
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_e0.CV_layout_isolated {
+
+	.isolated {
+		height: $BG_height__CV_e0;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */

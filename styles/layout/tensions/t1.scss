@@ -1,0 +1,127 @@
+@import "../config";
+
+/*
+ * t1
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$BG_height__CV_t1: 30%;
+$LG_height__CV_t1: calc($logo_height_l + $padding_normal + $padding_small);
+$LG_width__CV_t1:  calc($logo_width_l + $padding_normal_dbl);
+$PS_height__CV_t1: calc($button_height + 7.5% + $padding_small);
+
+[data-key=CV].CV_tens_t1 {
+
+	[data-key=LG] {
+		height: $LG_height__CV_t1;
+		width: $LG_width__CV_t1;
+	}
+
+	[data-key=LG] .place {
+		height: calc(100% - $padding_normal - $padding_small);
+	}
+
+	[data-key=MS] {
+		bottom: $PS_height__CV_t1;
+		height: calc(100% - $LG_height__CV_t1 - $BG_height__CV_t1 - $PS_height__CV_t1);
+	}
+
+	[data-key=MS] .place {
+		top: $padding_small;
+		left: $padding_normal;
+		width: calc(100% - $padding_normal_dbl);
+		height: calc(100% - $padding_small_dbl);
+	}
+
+	[data-key=PS],
+	[data-key=CS] {
+		bottom: 0;
+		height: $PS_height__CV_t1;
+	}
+
+	[data-key=PS] .place,
+	[data-key=CS] .place {
+		bottom: $padding_small;
+		left: $padding_normal;
+		width: calc(100% - $padding_normal_dbl);
+		height: calc(100% - $padding_small);
+	}
+
+	[data-key=OL] {
+
+		[data-key=OL_GR_0] .linear {
+			display: none;
+		}
+
+		[data-key=OL_GR_0] .corner {
+			display: block;
+		}
+
+		[data-key=OL_GR_0] {
+			width: $LG_width__CV_t1;
+			height: $LG_height__CV_t1;
+		}
+
+		[data-key=OL_GR_1] {
+			bottom: 0;
+			height: calc(100% - $BG_height__CV_t1);
+		}
+
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t1.CV_layout_default {
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $LG_height__CV_t1;
+		left: $padding_normal;
+		width: calc(100% - $padding_normal_dbl);
+		height: $BG_height__CV_t1;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t1.CV_layout_boxed {
+
+	.isolated {
+		top: $LG_height__CV_t1;
+		height: calc($BG_height__CV_t1);
+	}
+
+	.isolated > .margin {
+		top: 0;
+		height: 100%;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t1.CV_layout_isolated {
+
+	.isolated {
+		top: $LG_height__CV_t1;
+		height: $BG_height__CV_t1;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */

@@ -1,0 +1,27 @@
+
+/*
+ * Global animation overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+.disabled.anim,
+.disabled .anim {
+  opacity: 0 !important;
+}
+
+*.anim_no,
+*.anim_no * {
+  animation: none !important;
+  transition: none !important;
+}
+
+*.anim_no,
+*.anim_no *,
+*.anim_no_dur,
+*.anim_no_dur * {
+  animation-duration: .0s !important;
+  transition-duration: .0s !important;
+}
+
+
+

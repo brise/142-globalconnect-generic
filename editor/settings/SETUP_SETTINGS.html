@@ -1,0 +1,36 @@
+<block-group>
+
+    <block-field title="{{ :: $dict.label_region }}">
+        <dropdown-select model="$data.banner.macros.region.value">
+            <REGION_OPTIONS></REGION_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_brand }}">
+        <dropdown-select model="$data.banner.macros.brand.value">
+            <BRAND_OPTIONS></BRAND_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <!--<block-field title="{{ :: $dict.label_purpose }}">
+        <dropdown-select model="$data.banner.props.purpose.name">
+            <PURPOSE_OPTIONS></PURPOSE_OPTIONS>
+        </dropdown-select>
+    </block-field>-->
+
+</block-group>
+
+<block-group>
+
+    <block-field title="{{ :: $dict.label_compression }}">
+        <dropdown-select model="$data.banner.macros.compression.value">
+            <COMPRESSION_SETUP_OPTIONS></COMPRESSION_SETUP_OPTIONS>
+        </dropdown-select>
+        <block-info>
+            <p>
+                <small><q>{{ $dict.hint_compression }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>

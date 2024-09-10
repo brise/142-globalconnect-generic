@@ -1,0 +1,53 @@
+<data ng-if="$frame = $data.banner.layers.CV"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'LS'"></data>
+<data ng-if="$data.editor.element = $wrapper_key"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['elements', 'appear'], 'elements', ['appear'], 'appear']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<WRAPPER_SHORTCUT_VALIDATION_COMPONENT></WRAPPER_SHORTCUT_VALIDATION_COMPONENT>
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<TAB_SELECTOR></TAB_SELECTOR>
+
+<block-group ng-if="($scope[1] == 'elements')">
+
+    <block-toggle title="{{ :: $dict.label_warranty }}" class="toggle"
+                  ng-class="{selected: (($data.editor.scope[1].indexOf('LS_LW') != -1) && !($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v3')), disabled: ($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v3')}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('LS_LW') != -1) ? 'LS' : 'LS_LW')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('LS_LW') != -1) && !($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v3')">
+
+        <LW></LW>
+
+    </block-group>
+
+    <block-toggle title="{{ :: $dict.label_legal }}" class="toggle"
+                  ng-class="{selected: (($data.editor.scope[1].indexOf('LS_EM') != -1) && !($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v2')), disabled: ($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v2')}"
+                  ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('LS_EM') != -1) ? 'LS' : 'LS_EM')"></block-toggle>
+    <block-group ng-if="($data.editor.scope[1].indexOf('LS_EM') != -1) && !($data.banner.macros.setup_badge.value == 'v1' || $data.banner.macros.setup_badge.value == 'v2')">
+
+        <EM></EM>
+
+    </block-group>
+
+</block-group>
+
+<div ng-if="($scope[1] == 'anim')">
+    <WRAPPER_ANIM_GROUP></WRAPPER_ANIM_GROUP>
+</div>
+
+<div ng-if="($scope[1] == 'layout')">
+    <WRAPPER_LAYOUT_GROUP></WRAPPER_LAYOUT_GROUP>
+</div>
+
+<div ng-if="($scope[1] == 'appear')">
+    <WRAPPER_APPEAR_GROUP></WRAPPER_APPEAR_GROUP>
+</div>

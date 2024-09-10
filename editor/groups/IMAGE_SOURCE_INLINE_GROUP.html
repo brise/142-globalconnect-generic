@@ -1,0 +1,64 @@
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$wrapper_group_appear = $wrapper.groups[$wrapper_key + '_' + 'appear']"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<HOLDER_MACROS_COMPONENT></HOLDER_MACROS_COMPONENT>
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$target_excepts = $target.excepts"></data>
+<data ng-if="$target_excepts_preset = $target.excepts.preset"></data>
+<data ng-if="$target_preset = $holder.presets[$target_key]"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<HOLDER_VARIATION_VALIDATION_COMPONENT></HOLDER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- IMAGE TYPE PICKER -->
+<block-group>
+
+    <block-field title="{{ :: $dict.label_type }}">
+        <dropdown-select model="$macros[$alias_key + '_type'].value">
+            <option value="link">{{ :: $dict.label_link }}</option>
+            <option value="image">{{ :: $dict.label_image }}</option>
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+<!-- / IMAGE SOURCE PICKER -->
+
+<!-- LINK SOURCE PICKER -->
+<block-group ng-if="$macros[$alias_key + '_type'].value === 'link'">
+
+    <block-field title="{{ :: $dict.label_source }}" class="disabled">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$macros[$alias_key + '_link'].value" pattern="https?\:\/\/.+|\$\[dealer_logo_url\]|\$\{dealer_logo_url\}"></text-field>
+    </block-field>
+
+</block-group>
+<!-- / LINK SOURCE PICKER -->
+
+<!-- IMAGE SOURCE PICKER -->
+<block-group ng-if="$macros[$alias_key + '_type'].value === 'image'">
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <image-picker model="$holder.layers[0]"
+                      settings="{defaults: $target_preset, cropping: { ratios: {} } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <block-info>
+            <p>
+                <small ng-if="$holder.layers[0] != null"><q><a ng-click="$holder.layers[0] = null;">{{ :: $dict.action_remove_source_1 }}</a> {{ :: $dict.action_remove_source_2 }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / IMAGE SOURCE PICKER -->

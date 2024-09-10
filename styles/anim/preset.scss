@@ -1,0 +1,128 @@
+@import "config";
+
+/*
+ * Default color animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=BN].ready {
+
+  [class*=st_] {
+
+    p, em, q {
+      transition: color #{$speed_base} ease .0s;
+    }
+
+    p hr {
+      transition: background #{$speed_base} ease .0s;
+    }
+
+    svg {
+      transition: fill #{$speed_base} ease .0s, filter #{$speed_base} ease .0s;
+    }
+
+  }
+
+  [class*=_sh_] {
+
+    p {
+      transition: color #{$speed_base} ease .0s, text-shadow #{$speed_base_out} ease .0s;
+    }
+
+  }
+
+  [class*=bt_] {
+
+    p button {
+      transition: color #{$speed_base} ease .0s, border #{$speed_base} ease .0s, background #{$speed_base} ease .0s;
+    }
+
+  }
+
+  [class*=fl_] {
+
+    svg {
+      transition: fill #{$speed_base} ease .0s, filter #{$speed_base} ease .0s;
+    }
+
+  }
+
+  [class*=sh_] {
+
+    svg {
+      transition: fill #{$speed_base} ease .0s, filter #{$speed_base} ease .0s;
+    }
+
+    button, img {
+      transition: filter #{$speed_base} ease .0s;
+    }
+
+  }
+
+  [class*=bg_] {
+
+    .bg {
+      transition: background #{$speed_base} ease .0s;
+    }
+
+  }
+
+  [class*=gr_] {
+
+    .gr {
+      transition: gradient-image #{$speed_base} ease .0s;
+    }
+
+  }
+
+}
+
+/*
+ * Default animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+  .anim,
+  .anim_rel {
+    opacity: 0;
+  }
+
+  .anim {
+
+    &.anim_in,
+    &.anim_in .anim_rel {
+      transition: opacity #{$speed_base_in} ease #{$delay_base_in};
+      opacity: 1;
+    }
+
+    &.anim_out,
+    &.anim_out .anim_rel  {
+      transition: opacity #{$speed_base_out} ease #{$delay_base_out};
+      opacity: 0;
+    }
+
+    &.anim_out,
+    &.anim_out * {
+      pointer-events: none;
+    }
+
+    &.anim_skip,
+    &.anim_skip .anim_rel  {
+      transition: all .0s .0s !important;
+    }
+
+  }
+
+  .anim:not(.loaded),
+  .anim:not(.loaded) .anim_rel {
+    transition: opacity .0s .0s !important;
+  }
+
+  .anim_no,
+  .anim_no * {
+    transition: all .0s .0s !important;
+  }
+
+}

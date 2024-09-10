@@ -1,0 +1,31 @@
+
+<TARGET_MACROS_COMPONENT></TARGET_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations[$alias_key + '_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<TARGET_VARIATION_VALIDATION_COMPONENT></TARGET_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- ANIMATION SKIP PICKER -->
+<block-group ng-if="$variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_skip }}">
+        <toggle-button model="$macros[$alias_key + '_anim_skip'].value" on="{{ :: $dict.label_skip_identical_source }}" off="{{ :: $dict.label_anim_always }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_skip }} *">
+        <toggle-button model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_skip'].value" on="{{ :: $dict.label_skip_identical_source }}" off="{{ :: $dict.label_anim_always }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / ANIMATION SKIP PICKER -->

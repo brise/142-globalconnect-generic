@@ -1,0 +1,82 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field title="$[button]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.button.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.button.value = '${button}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[rate]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.rate.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.rate.value = '${rate}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[price]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.price.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.price.value = '${price}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[cur]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.cur.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.cur.value = '${cur}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<div ng-repeat="$key in ['1', '2', '3', '4', '5']">
+
+    <block-field title="$[message_{{ $key }}]">
+        <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros['message_' + $key].value"></text-area>
+        <block-info>
+            <p>
+                <small><q>
+                    <a ng-click="$frame.macros['message_' + $key].value = '${message_' + $key + '}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+                </q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="$[message_{{ $key }}_l]">
+        <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros['message_' + $key + '_l'].value"></text-area>
+        <block-info>
+            <p>
+                <small><q>
+                    <a ng-click="$frame.macros['message_' + $key + '_l'].value = '${message_' + $key + '_l}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+                </q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="$[message_{{ $key }}_p]">
+        <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros['message_' + $key + '_p'].value"></text-area>
+        <block-info>
+            <p>
+                <small><q>
+                    <a ng-click="$frame.macros['message_' + $key + '_p'].value = '${message_' + $key + '_p}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+                </q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</div>

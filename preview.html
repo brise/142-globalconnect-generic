@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>TACTIC™ Preview</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<!-- Include styles that are components for all banner sizes -->
+	<link type="text/css" rel="stylesheet" href="./styles/layout/reset.min.css">
+
+	<style>
+
+		:root {
+			--offset: 2rem;
+			--step: 1em;
+			--ratio-xs: 2;
+			--ratio-s: 4;
+			--ratio-m: 6;
+			--ratio-l: 8;
+		}
+
+		html {
+			font-size: 4px;
+		}
+
+		body, html {
+			overflow: visible;
+			text-align: left;
+			vertical-align: top;
+			font-family: "Trebuchet MS", sans-serif;
+		}
+
+		iframe {
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.1);
+			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+			transform-origin: top left;
+		}
+
+		p {
+			position: absolute;
+			left: 0;
+			bottom: -20px;
+			font-size: 10px;
+			line-height: 1;
+			white-space: nowrap;
+			color: #999;
+		}
+
+		h1 {
+			font-size: 6rem;
+			padding: calc(var(--offset) * 3);
+			padding-bottom: 0;
+			color: #111;
+		}
+
+		h3 {
+			font-size: 3rem;
+			padding: calc(var(--offset) * 3);
+			padding-top: var(--offset);
+			color: #999;
+		}
+
+		h4 {
+			font-size: 3rem;
+			padding: calc(var(--offset) * 3);
+			padding-top: 0;
+			color: #999;
+		}
+
+		h4 select {
+			width: 30rem;
+			margin-right: calc(var(--offset) * 2);
+			/*padding-right: var(--offset);*/
+		}
+
+		i,
+		i b {
+			font-style: italic;
+		}
+
+		b {
+			font-weight: bold;
+		}
+
+		.header {
+			position: relative;
+			height: auto;
+			border-bottom: solid 1px #eee;
+		}
+
+		.content {
+			position: relative;
+			padding: calc(var(--offset) * 3) 0 0 calc(var(--offset) * 3);
+			width: auto;
+			height: auto;
+		}
+
+		.dimension {
+			position: absolute;
+			width: calc(100% - var(--offset) * 3 * 2);
+			height: calc(100% - var(--offset) * 3 * 6);
+		}
+
+		.group {
+			display: inline-block;
+			position: relative;
+			width: auto;
+			height: auto;
+			margin: 0 calc(var(--offset) * 2) calc(var(--offset) * 2) 0;
+			/*border: 1px solid #eee;*/
+		}
+
+		.banner {
+			display: inline-block;
+			position: relative;
+			margin: 0 calc(var(--offset) * 2) calc(var(--offset) * 2) 0;
+			margin-bottom: calc((var(--offset) * 2) + 20px);
+			background-color: #eee;
+		}
+
+		@media print {
+			/*.header, h1, h2, h3,*/
+			h4 {
+				display: none;
+			}
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		// Sample URL:
+		// http://127.0.0.1:8080/preview.html?actual=1&extract=FG&wait=10
+
+		window.onload = function () {
+
+			var
+
+					/**
+					 * @function
+					 * @param object
+					 * @return {Boolean}
+					 * @description Checks if argument is an array.
+					 */
+					isArray = function (object) {
+						return Object.prototype.toString.call(object) === '[object Array]';
+					},
+
+					/**
+					 * @function
+					 * @param {String} key
+					 * @param {String} [query_string]
+					 * @param {Array} [custom]
+					 * @return {String}
+					 * @description Get query string parameter.
+					 */
+					getQsParam = function (key, query_string, custom) {
+						var param   = undefined;
+						var reindex = isArray(custom) ? '|' + custom.join('|') : '';
+						param = decodeURIComponent((query_string || window.location.search).replace(new RegExp("^(?:.*[?|&" + reindex + "]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+						return param;
+					},
+
+					/**
+					 * @function
+					 * @param {String} uri
+					 * @param {String} key
+					 * @param {String} [value]
+					 * @param {Array} [custom]
+					 * @return {String}
+					 * @description Get query string parameter.
+					 */
+					setQsParam = function (uri, key, value, custom) {
+						var reIndex = isArray(custom) ? '|' + custom.join('|') : '';
+						var re      = new RegExp("([?|&" + reIndex + "])" + key + "=.*?(&|#|$)", "i");
+						if (uri.match(re)) {
+							return uri.replace(re, '$1' + key + "=" + value + '$2');
+						}
+						else {
+							var hash = '';
+							if (uri.indexOf('#') !== -1) {
+								hash = uri.replace(/.*#/, '#');
+								uri  = uri.replace(/#.*/, '');
+							}
+							var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+							return uri + separator + key + "=" + value + hash;
+						}
+					};
+
+			var
+
+					/**
+					 * @type {Boolean}
+					 */
+					actual = getQsParam('actual') === 'true',
+
+					/**
+					 * @type {String}
+					 */
+					scale = getQsParam('scale') ? getQsParam('scale') : 'all',
+
+					/**
+					 * @type {String}
+					 */
+					tension = getQsParam('tension') ? getQsParam('tension') : 'all',
+
+					/**
+					 * @type {String}
+					 */
+					filter = getQsParam('filter') ? getQsParam('filter') : 'all',
+
+					/**
+					 * @type {String}
+					 */
+					resize = getQsParam('resize') ? getQsParam('resize') : 'window',
+
+					/**
+					 * @type {String}
+					 */
+					sort = getQsParam('sort') ? getQsParam('sort') : 'name',
+
+					/**
+					 * @type {String}
+					 */
+					extract = getQsParam('extract') ? getQsParam('extract') : 'CV',
+
+					/**
+					 * @type {Object}
+					 */
+					index = {
+
+						/**
+						 * @type {Array}
+						 */
+						sizes: [],
+
+						/**
+						 * @type {Array}
+						 */
+						tensions: [],
+
+						/**
+						 * @type {Array}
+						 */
+						scales: []
+
+					},
+
+					/**
+					 * @type {Object}
+					 */
+					relations_computed = {
+
+						/**
+						 * @type {Object}
+						 */
+						sizes: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						scales: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						tensions: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						ratios: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						}
+
+					},
+
+					/**
+					 * @type {Object}
+					 */
+					relations_extracted = {
+
+						/**
+						 * @type {Object}
+						 */
+						sizes: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						scales: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						tensions: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						},
+
+						/**
+						 * @type {Object}
+						 */
+						ratios: {
+
+							/**
+							 * @type {Array}
+							 */
+							list: []
+
+						}
+
+					},
+
+					/**
+					 * Wait for certain time (ms) before banner iframes are loaded and extraction method executed.
+					 *
+					 * @type {Number}
+					 */
+					wait = getQsParam('wait') ? Number(getQsParam('wait')) * 1000 : 500,
+
+					/**
+					 * @type {Function}
+					 * @param width {Number}
+					 * @param height {Number}
+					 */
+					computePreviewRatio = function (width, height) {
+
+						var
+
+								/**
+								 * @type {Number}
+								 */
+								ratio = 1,
+
+								/**
+								 * @type {Element}
+								 */
+								container = document.getElementById('dimension'),
+
+								/**
+								 * @type {Number}
+								 */
+								size_width = (resize === 'window' ? container.offsetWidth : (!isNaN(Number(resize)) ? Number(resize) : width)),
+
+								/**
+								 * @type {Number}
+								 */
+								size_height = (resize === 'window' ? container.offsetHeight : (!isNaN(Number(resize)) ? Number(resize) : height));
+
+						// Check if resize value is percent
+						if (size_width && size_height <= 1) {
+
+							ratio = size_width;
+
+						}
+
+						// In case if specific width or height
+						else {
+
+							if (width > size_width) {
+
+								ratio = size_width / width;
+
+							}
+
+							if (height > size_height) {
+
+								ratio = size_height / height;
+
+							}
+
+						}
+
+						return ratio;
+					},
+
+					/**
+					 * @type {Function}
+					 * @param size {Object}
+					 */
+					computeScale = function (size) {
+						for (var scale_index in index.scales) {
+
+							var
+
+									/**
+									 * @type {Object}
+									 */
+									scale = index.scales[scale_index];
+
+							if (size.scale <= scale.max && size.scale >= scale.min) {
+								return scale.id;
+							}
+
+						}
+					},
+
+					/**
+					 * @type {Function}
+					 * @param size {Object}
+					 */
+					computeTension = function (size) {
+						for (var tension_index in index.tensions) {
+
+							var
+
+									/**
+									 * @type {Object}
+									 */
+									tension = index.tensions[tension_index];
+
+							if (size.tension < tension.max && size.tension > tension.min) {
+								return tension.id;
+							}
+
+						}
+					},
+
+					/**
+					 * @type {Function}
+					 */
+					computeRelations = function () {
+
+						for (var scale_index in index.scales) {
+
+							var
+
+									/**
+									 * @type {Object}
+									 */
+									scale = index.scales[scale_index],
+
+									/**
+									 * @type {String}
+									 */
+									name = scale.id;
+
+							if (!relations_computed.scales[name]) {
+
+								relations_computed.scales[name] = [];
+
+							}
+
+							relations_computed.scales.list.push(name);
+
+						}
+
+						for (var tension_index in index.tensions) {
+
+							var
+
+									/**
+									 * @type {Object}
+									 */
+									tension = index.tensions[tension_index],
+
+									/**
+									 * @type {String}
+									 */
+									name = tension.id;
+
+							if (!relations_computed.tensions[name]) {
+
+								relations_computed.tensions[name] = [];
+
+							}
+
+							relations_computed.tensions.list.push(name);
+
+						}
+
+						for (var size_index in index.sizes) {
+
+							var
+
+									/**
+									 * @type {Object}
+									 */
+									size = index.sizes[size_index];
+
+							relations_computed.sizes.list.push(size.name);
+
+							relations_computed.scales[size.scaleId].push(size.name);
+							relations_computed.tensions[size.tensionId].push(size.name);
+
+						}
+
+					},
+
+					/**
+					 * @type {Function}
+					 * @param banner {tactic.builder.layers.BannerLayer}
+					 * @param size {Object}
+					 */
+					extractRelations = function(banner, size) {
+
+						var
+
+								/**
+								 * @type {String}
+								 */
+								BN_name = size.name,
+
+								/**
+								 * @type {(tactic.builder.layers.SequenceLayer)}
+								 */
+								CV_layer = banner.getLayer('CV', 5),
+
+								/**
+								 * @type {String}
+								 */
+								CV_tension = CV_layer.props.tension.name + '_' + CV_layer.props.tension.value,
+
+								/**
+								 * @type {String}
+								 */
+								CV_scale = CV_layer.props.scale.name + '_' + CV_layer.props.scale.value,
+
+								/**
+								 * @type {(tactic.builder.layers.SequenceLayer)}
+								 */
+								SQ_layer = banner.getLayer('SQ', 5),
+
+								/**
+								 * @type {(tactic.builder.layers.AbstractLayer)}
+								 */
+								layer = SQ_layer.current.getLayer(extract, 10);
+
+						if (!layer) {
+
+							layer = banner.getLayer(layer, 10);
+
+						}
+
+						if (!layer) {
+
+							layer = CV_layer;
+
+						}
+
+						// Identify size.
+
+						if (!relations_extracted.sizes[BN_name]) {
+
+							relations_extracted.sizes.list.push(BN_name);
+
+						}
+
+						// Identify tension.
+
+						if (!relations_extracted.tensions[CV_tension]) {
+
+							relations_extracted.tensions.list.push(CV_tension);
+
+							relations_extracted.tensions[CV_tension] = [];
+
+						}
+
+						relations_extracted.tensions[CV_tension].push(BN_name);
+
+						// Identify scale.
+
+						if (!relations_extracted.scales[CV_scale]) {
+
+							relations_extracted.scales.list.push(CV_scale);
+
+							relations_extracted.scales[CV_scale] = [];
+
+						}
+
+						relations_extracted.scales[CV_scale].push(BN_name);
+
+						// Identify custom extraction layer.
+						if (layer && !relations_extracted.ratios[BN_name]) {
+
+							relations_extracted.ratios.list.push(BN_name);
+
+							relations_extracted.ratios[BN_name] = {
+								label: BN_name,
+								value: layer.width() + 'x' + layer.height()
+							};
+
+						}
+
+					},
+
+					/**
+					 * @type {Function}
+					 */
+					traceRelations = function (extraction) {
+
+						var
+
+								/**
+								 * @type {String}
+								 */
+								trace = '';
+
+						trace += '\n';
+
+						trace += '<data ng-init="$sizes = ' + JSON.stringify(extraction.sizes.list).split('"').join('\'').split('CV_size_').join('').split('[').join('[{\'name\':').split(']').join('}]').split('\',\'').join('\'},{\'name\':\'') + '"></data>';
+
+						trace += '\n';
+
+						trace += '<data ng-init="$sizes = _.pull(_.pull(_.map($data.$availableSizes ? $data.$availableSizes : $sizes, \'name\'), \'RxR\'), \'0x0\')"></data>';
+
+						trace += '\n\n';
+
+						trace += '<data ng-init="$variations = {';
+
+						trace += '\n';
+
+						trace += '	CV_size:$sizes';
+						trace += ',\n';
+						trace += '	CV_scale:' + JSON.stringify(extraction.scales.list).split('"').join('\'');
+						trace += ',\n';
+						trace += '	CV_tens:' + JSON.stringify(extraction.tensions.list).split('"').join('\'');
+						trace += ',\n';
+
+						var
+
+								/**
+								 * @type {Array}
+								 */
+								layers = ['EL'];
+
+						for (var layer in layers) {
+
+							trace += '	' + layers[layer] + '_orient' + ':' + JSON.stringify([layers[layer] + '_orient_p', layers[layer] + '_orient_s', layers[layer] + '_orient_l']).split('"').join('\'');
+							trace += ',\n';
+							// if (Number(layer) === (layers.length - 1)) {
+							// 	trace += '\n';
+							// } else {
+							// 	trace += ',\n';
+							// }
+
+						}
+
+						trace += '}"></data>';
+
+						trace += '\n\n';
+
+						trace += '<data ng-init="$relations = {';
+
+						trace += '\n';
+
+						for (var tension in extraction.tensions) {
+
+							if (tension !== 'list') {
+								trace += '	' + tension + ':' + JSON.stringify(extraction.tensions[tension]).split('"').join('\'');
+								trace += ',\n';
+							}
+
+						}
+
+						for (var scale in extraction.scales) {
+
+							if (scale !== 'list') {
+								trace += '	' + scale + ':' + JSON.stringify(extraction.scales[scale]).split('"').join('\'');
+								trace += ',\n';
+							}
+
+						}
+
+						trace += '}"></data>';
+
+						trace += '\n\n';
+
+						if (extraction.ratios && extraction.ratios.list.length > 0) {
+
+							for (var ratio in extraction.ratios) {
+
+								if (ratio !== 'list') {
+									trace += '\'' + ratio + '\':{';
+									trace += '';
+									trace += 'label:\'' + extraction.ratios[ratio].label + '\',';
+									trace += '';
+									trace += 'value:\'' + extraction.ratios[ratio].value + '\'';
+									trace += '';
+									trace += '' + '}';
+									trace += ',';
+								}
+
+							}
+
+							trace += '\n\n';
+
+						}
+
+						console.log(trace);
+
+					};
+
+			var
+
+					actual_selector = document.getElementById('actual_selector'),
+					scale_selector = document.getElementById('scale_selector'),
+					tension_selector = document.getElementById('tension_selector'),
+					filter_selector = document.getElementById('filter_selector'),
+					resize_selector = document.getElementById('resize_selector'),
+					sort_selector = document.getElementById('sort_selector'),
+					extract_selector = document.getElementById('extract_selector');
+
+			var
+
+					onInputChange = function () {
+
+						var
+
+								link = window.location.href;
+
+						link = setQsParam(link, 'actual', actual_selector.value);
+						link = setQsParam(link, 'tension', tension_selector.value);
+						link = setQsParam(link, 'scale', scale_selector.value);
+						link = setQsParam(link, 'filter', filter_selector.value);
+						link = setQsParam(link, 'resize', resize_selector.value);
+						link = setQsParam(link, 'sort', sort_selector.value);
+						link = setQsParam(link, 'extract', extract_selector.value);
+
+						if (link !== window.location.href) {
+
+							window.location.href = link;
+
+						}
+
+					}
+
+			/**
+			 * @type {XMLHttpRequest}
+			 */
+			var request = new XMLHttpRequest();
+
+			/**
+			 * @typedef {Function} XMLHttpRequest.open
+			 */
+			request.open('GET', './manifest.json?ts=' + new Date().getTime(), true);
+
+			/**
+			 * @typedef {Function} XMLHttpRequest.onload
+			 */
+			request.onload = function (e) {
+
+				//Check if response status is successful.
+				if (request && request.status >= 200 && request.status < 400) {
+
+					var
+
+							/**
+							 * @type {Date}
+							 */
+							date = new Date(),
+
+							/**
+							 * @type {Object}
+							 */
+							data = JSON.parse(request.responseText);
+
+					var
+
+							/**
+							 * @type {Array}
+							 */
+							abstract_sizes = [
+								{
+									"type": "ABSTRACT",
+									"name": "1:6 L",
+									"width": 175,
+									"height": 1000,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:6 M",
+									"width": 140,
+									"height": 800,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:6 S",
+									"width": 84,
+									"height": 480,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:6 XS",
+									"width": 56,
+									"height": 320,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:4 L",
+									"width": 210,
+									"height": 840,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:4 M",
+									"width": 168,
+									"height": 672,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:4 S",
+									"width": 68,
+									"height": 404,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:4 XS",
+									"width": 67,
+									"height": 269,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:2 L",
+									"width": 298,
+									"height": 595,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:2 M",
+									"width": 238,
+									"height": 476,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:2 S",
+									"width": 142,
+									"height": 285,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:2 XS",
+									"width": 95,
+									"height": 190,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "2:3 L",
+									"width": 363,
+									"height": 485,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "2:3 M",
+									"width": 290,
+									"height": 388,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "2:3 S",
+									"width": 174,
+									"height": 232,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "2:3 XS",
+									"width": 116,
+									"height": 155,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:1 L",
+									"width": 420,
+									"height": 420,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:1 M",
+									"width": 336,
+									"height": 336,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:1 S",
+									"width": 200,
+									"height": 200,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "1:1 XS",
+									"width": 134,
+									"height": 134,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:2 L",
+									"width": 513,
+									"height": 343,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:2 M",
+									"width": 410,
+									"height": 274,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:2 S",
+									"width": 246,
+									"height": 165,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:2 XS",
+									"width": 164,
+									"height": 110,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:1 L",
+									"width": 594,
+									"height": 298,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:1 M",
+									"width": 475,
+									"height": 238,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:1 S",
+									"width": 285,
+									"height": 142,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "3:1 XS",
+									"width": 190,
+									"height": 95,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "4:1 L",
+									"width": 840,
+									"height": 210,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "4:1 M",
+									"width": 672,
+									"height": 168,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "4:1 S",
+									"width": 403,
+									"height": 100,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "4:1 XS",
+									"width": 269,
+									"height": 67,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "8:1 L",
+									"width": 1205,
+									"height": 148,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "8:1 M",
+									"width": 964,
+									"height": 118,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "8:1 S",
+									"width": 580,
+									"height": 70,
+									"index": "banner.min.html"
+								},
+								{
+									"type": "ABSTRACT",
+									"name": "8:1 XS",
+									"width": 386,
+									"height": 47,
+									"index": "banner.min.html"
+								}
+							];
+
+					data.sizes = data.sizes.concat(abstract_sizes);
+
+					document.title = document.title + ' - ' + data.name;
+
+					document.getElementById('title').innerHTML = data.name;
+
+					// document.getElementById('subtitle').innerHTML = '<i>' + '@customer <b>' + data.brand + '</b> @author <b>' + data.author + '</b> @created <b>' + data.created + '</b> @updated <b>' + data.updated + '</b> @date <b>' + date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear() + '</b>' + '</i>';
+					document.getElementById('subtitle').innerHTML = '<i>' + '</b> Date: <b>' + date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear() + '</b>' + '</b> Author: <b>' + data.author + '</i>';
+
+					var
+
+							/**
+							 * @type {Element}
+							 */
+							content = document.getElementById('content'),
+
+							/**
+							 * @type {Number}
+							 */
+							delay = 200,
+
+							/**
+							 * @type {Number}
+							 */
+							count = 0,
+
+							/**
+							 * @type {Function}
+							 */
+							appendBanner = function(size_index) {
+
+								var
+
+										size = index.sizes[size_index],
+
+										/**
+										 * @type {Element}
+										 */
+										container = document.createElement('div'),
+
+										/**
+										 * @type {Element}
+										 */
+										iframe = document.createElement('iframe'),
+
+										/**
+										 * @type {Element}
+										 */
+										text = document.createElement('p');
+
+								index.sizes[size_index].container = container;
+
+								container.className = 'banner';
+								container.style.width = (size.width * size.ratio) + 'px';
+								container.style.height = (size.height * size.ratio) + 'px';
+
+								index.sizes[size_index].iframe = iframe;
+
+								iframe.id = size.id;
+								iframe.src = './' + size.src;
+								iframe.name = size.name;
+								// iframe.src = './' + size.width + 'x' + size.height + '.html';
+								iframe.style.width = size.width + 'px';
+								iframe.style.height = size.height + 'px';
+								iframe.style.transform = 'scale(' + size.ratio + ')';
+
+								text.innerHTML = size.name + ' (' + Math.round(size.ratio * 100) + '%)';
+
+								container.appendChild(iframe);
+								container.appendChild(text);
+
+								function inject(size) {
+
+									setTimeout(function () {
+
+										content.appendChild(size.container);
+
+										size.iframe.contentWindow.location.reload();
+
+										function record(iframe, size) {
+											setTimeout(function () {
+
+												extractRelations(iframe.banner, size);
+
+											}, wait * (count + 1));
+										}
+
+										record(window.frames[count], size);
+
+										count++;
+
+									}, delay);
+
+									delay = delay + 100;
+
+								}
+
+								inject(index.sizes[size_index]);
+
+							}
+
+					content.className += ' group';
+
+					for (var relation_index in data.relations) {
+
+						var
+
+								/**
+								 * @type {Object}
+								 */
+								relation = data.relations[relation_index];
+
+						if (relation.type === 'TENSION') {
+
+							index.tensions.push({
+								id: relation.id,
+								name: relation.name,
+								min: relation.min,
+								max: relation.max === null ? Infinity : relation.max
+							});
+
+							var
+
+									/**
+									 * @type {Element}
+									 */
+									option = document.createElement('option');
+
+							option.value = relation.id;
+							option.innerHTML = relation.name.toUpperCase();
+
+							tension_selector.appendChild(option);
+
+						}
+
+						if (relation.type === 'SCALE') {
+
+							index.scales.push({
+								id: relation.id,
+								name: relation.name,
+								min: relation.min,
+								max: relation.max === null ? Infinity : relation.max
+							});
+
+							var
+									/**
+									 * @type {Element}
+									 */
+									option = document.createElement('option');
+
+							option.value = relation.id;
+							option.innerHTML = relation.name.toUpperCase();
+
+							scale_selector.appendChild(option);
+
+						}
+
+					}
+
+					for (var size_index in data.sizes) {
+
+						var
+
+								/**
+								 * @type {Object}
+								 */
+								size = data.sizes[size_index];
+
+						if ((size.type === 'FIXED' && actual) || (size.type === 'ABSTRACT' && !actual)) {
+
+							var
+
+									/**
+									 * @type {Boolean}
+									 */
+									append = true;
+
+							index.sizes[size_index] = {
+								iframe: null,
+								banner: null,
+								id: size_index,
+								name: size.name,
+								width: size.width,
+								height: size.height,
+								scale: size.width * size.height,
+								tension: size.width / size.height,
+								ratio: computePreviewRatio(size.width, size.height),
+								src: size.index
+							};
+
+							index.sizes[size_index].scaleId = computeScale(index.sizes[size_index]);
+							index.sizes[size_index].tensionId = computeTension(index.sizes[size_index]);
+
+							if (tension !== 'all' && tension !== index.sizes[size_index].tensionId) {
+								append = false;
+							}
+
+							if (scale !== 'all' && scale !== index.sizes[size_index].scaleId) {
+								append = false;
+							}
+
+							// Check if size is within filter range.
+							if (append && (filter === 'all' || size_index === filter)) {
+								appendBanner(size_index);
+							}
+
+							var
+									/**
+									 * @type {Element}
+									 */
+									option = document.createElement('option');
+
+							option.value = size_index;
+							option.innerHTML = size.name;
+							option.disabled = !append;
+
+							filter_selector.appendChild(option);
+
+						}
+
+					}
+
+					actual_selector.value = actual ? 'true' : 'false';
+					tension_selector.value = tension;
+					scale_selector.value = scale;
+					filter_selector.value = filter;
+					resize_selector.value = resize;
+					sort_selector.value = sort;
+					extract_selector.value = extract;
+
+					actual_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					tension_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					scale_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					filter_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					resize_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					sort_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					extract_selector.addEventListener('change', function () {
+						onInputChange();
+					});
+
+					console.log(index);
+
+					console.log('\nComputing relations ...');
+
+					computeRelations();
+
+					traceRelations(relations_computed);
+
+					console.log('Waiting for banners to append (' + Math.round(delay / 1000 * 100) / 100 + 's) ...');
+
+					// Wait before iframes load.
+					setTimeout(function () {
+
+						console.log('Waiting for banners to load (' + Math.round((wait * count) / 1000 * 100) / 100 + 's) ...');
+
+						// Wait before iframes extracted.
+						setTimeout(function () {
+
+							console.log('Extracting relations ...');
+
+							traceRelations(relations_extracted);
+
+						}, (wait * count));
+
+					}, delay);
+
+				}
+
+			};
+
+			/**
+			 * @typedef {Function} XMLHttpRequest.onerror
+			 */
+			request.onerror = function (e) {};
+
+			/**
+			 * @typedef {Function} XMLHttpRequest.send
+			 */
+			request.send();
+
+		}
+
+	</script>
+
+</head>
+
+<body class="ready">
+<div id="header" class="header">
+	<h1 id="title"></h1>
+	<h3 id="subtitle"></h3>
+	<h4>
+		<select id="actual_selector" class="actual_selector">
+			<option value="true">ACTUAL</option>
+			<option value="false">ABSTRACT</option>
+		</select>
+		<select id="scale_selector" class="scale_selector">
+			<option value="all">ALL SCALES</option>
+		</select>
+		<select id="tension_selector" class="tension_selector">
+			<option value="all">ALL TENSIONS</option>
+		</select>
+		<select id="filter_selector" class="filter_selector">
+			<option value="all">ALL SIZES</option>
+		</select>
+		<select id="sort_selector" class="sort_selector">
+			<option value="name">BY NAME</option>
+			<option value="scale">BY SCALE</option>
+			<option value="tension">BY TENSION</option>
+		</select>
+		<select id="resize_selector" class="resize_selector">
+			<option value="none">NO DOWNSCALE</option>
+			<option value="window">FIT WINDOW</option>
+			<option value="1.0">100%</option>
+			<option value="0.75">75%</option>
+			<option value="0.5">50%</option>
+			<option value="0.25">25%</option>
+		</select>
+		<select id="extract_selector" class="extract_selector">
+			<option value="CV">EXTRACT CV</option>
+			<option value="BG">EXTRACT BG</option>
+			<option value="FG">EXTRACT FG</option>
+		</select>
+	</h4>
+</div>
+<div id="dimension" class="dimension"></div>
+<div id="content" class="content"></div>
+</body>
+
+</html>

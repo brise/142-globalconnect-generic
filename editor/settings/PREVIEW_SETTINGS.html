@@ -1,0 +1,65 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field title="Mode">
+    <dropdown-select model="$data.banner.props.mode.name">
+        <option value="live">Live</option>
+        <option value="capture-gif">Snapshot (GIF)</option>
+        <option value="capture">Snapshot (JPEG)</option>
+        <option value="debug">Debug</option>
+    </dropdown-select>
+    <block-info>
+        <p>
+            <small><q>
+                Live preview mode mode represents creative the way end user will see it. This mode will be automatically set for all live adverts.
+            </q></small>
+        </p>
+    </block-info>
+    <block-info>
+        <p>
+            <small><q>
+                Snapshot (GIF) preview mode will display only key frames of the sequence, all animations will be disabled.
+            </q></small>
+        </p>
+    </block-info>
+    <block-info>
+        <p>
+            <small><q>
+                Snapshot (JPEG) preview mode will display exact moment on the timeline when the snapshot is taken, all animations will be disabled.
+            </q></small>
+        </p>
+    </block-info>
+    <block-info>
+        <p>
+            <small><q>
+                Debug preview mode enables features that will help you to edit content with ease. Selected element bounds will be highlighted with color. Selected frame from the sequence will shown immediately in the creative preview.
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="{{ :: $dict.label_frame }}" ng-class="{disabled: ($data.banner.props.mode.name != 'debug')}">
+    <toggle-button model="$data.editor.jump" on="Go to Selected Frame" off="Play from the First Frame"></toggle-button>
+    <block-info ng-class="{disabled: ($exceptions[$scope[3][$scope[1]][1]].data)}">
+        <p>
+            <small><q>If debug mode is enabled, you will land on the selected frame in the preview by skipping frames in the sequence.</q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="Pause" ng-class="{disabled: ($data.banner.props.mode.name != 'debug')}">
+    <toggle-button model="$data.editor.pause" on="Pause at Selected Frame" off="Play Normally"></toggle-button>
+    <block-info ng-class="{disabled: ($exceptions[$scope[3][$scope[1]][1]].data)}">
+        <p>
+            <small><q>If debug mode is enabled, you will be held on the selected frame in the preview and sequence frame change will not happen.</q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="Grid" ng-class="{disabled: ($data.banner.props.mode.name != 'debug')}">
+    <toggle-button model="$data.editor.grid" on="Show Grid" off="Hide Grid"></toggle-button>
+    <block-info ng-class="{disabled: ($exceptions[$scope[3][$scope[1]][1]].data)}">
+        <p>
+            <small><q>If debug mode is enabled, you will be able to see the layout grid.</q></small>
+        </p>
+    </block-info>
+</block-field>

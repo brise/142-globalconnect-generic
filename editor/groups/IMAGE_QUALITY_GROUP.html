@@ -1,0 +1,178 @@
+
+<HOLDER_MACROS_COMPONENT></HOLDER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<HOLDER_VARIATION_VALIDATION_COMPONENT></HOLDER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- SETUP OVERRIDE PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_preset }}">
+        <toggle-button model="$group.enabled" on="{{ :: $dict.label_custom }}" off="{{ :: $dict.label_default }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>{{ $dict.hint_image_setup }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / SETUP OVERRIDE PICKER -->
+
+<div ng-if="$group.enabled">
+
+    <!-- IMAGE FORMAT PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_format }}">
+            <dropdown-select model="$macros[$alias_key + '_format'].value">
+                <IMAGE_FORMAT_OPTIONS></IMAGE_FORMAT_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_format }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_format }}" ng-class="{disabled: ($variation_scope[1] != 'default')}">
+            <dropdown-select model="$macros[$alias_key + '_format'].value">
+                <IMAGE_FORMAT_OPTIONS></IMAGE_FORMAT_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_format }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <!-- / IMAGE FORMAT PICKER -->
+
+    <!-- IMAGE QUALITY PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_image }} {{ :: $dict.label_quality }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_level }}">
+            <number-slider model="$macros[$alias_key + '_quality_level'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_quality_level }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_optimisation }}" ng-class="{'disabled': ($macros[$alias_key + '_quality_level'].value <= 0)}">
+            <number-slider model="$macros[$alias_key + '_quality_velocity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_quality_velocity }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_image }} {{ :: $dict.label_quality }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_level }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_quality_level'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_quality_level }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_optimisation }} *" ng-class="{'disabled': ($macros_excepts[$variation_scope[1]].data[$alias_key + '_quality_level'].value <= 0)}">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_quality_velocity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_quality_velocity }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <!-- / IMAGE QUALITY PICKER -->
+
+    <!-- IMAGE SCALE PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_image }} {{ :: $dict.label_scale }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_level }}">
+            <number-slider model="$macros[$alias_key + '_ratio_level'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_scale_level }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_optimisation }}" ng-class="{'disabled': ($macros[$alias_key + '_ratio_level'].value <= 0)}">
+            <number-slider model="$macros[$alias_key + '_ratio_velocity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_scale_velocity }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element_quality }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_level }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_ratio_level'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_scale_level }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_optimisation }} *" ng-class="{'disabled': ($macros_excepts[$variation_scope[1]].data[$alias_key + '_ratio_level'].value <= 0)}">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_ratio_velocity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_scale_velocity }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <!-- / IMAGE SCALE PICKER -->
+
+</div>

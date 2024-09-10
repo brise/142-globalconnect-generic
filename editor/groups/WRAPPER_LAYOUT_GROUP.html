@@ -1,0 +1,192 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- SETUP OVERRIDE PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_preset }}">
+        <toggle-button model="$group.enabled" on="{{ :: $dict.label_custom }}" off="{{ :: $dict.label_default }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>{{ $dict.hint_layout_setup }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / SETUP OVERRIDE PICKER -->
+
+<div ng-if="$group.enabled">
+
+    <!-- ALIGNMENT PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_alignment }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_justify }}" ng-if="$macros[$alias_key + '_justify']">
+            <dropdown-select model="$macros[$alias_key + '_justify'].value">
+                <JUSTIFICATION_OPTIONS></JUSTIFICATION_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }}">
+            <dropdown-select model="$macros[$alias_key + '_align_x'].value">
+                <ALIGNMENT_X_OPTIONS></ALIGNMENT_X_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }}">
+            <dropdown-select model="$macros[$alias_key + '_align_y'].value">
+                <ALIGNMENT_Y_OPTIONS></ALIGNMENT_Y_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_alignment }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_justify }} *" ng-if="$macros_excepts[$variation_scope[1]].data[$alias_key + '_justify']">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_justify'].value">
+                <JUSTIFICATION_OPTIONS></JUSTIFICATION_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_align_x'].value">
+                <ALIGNMENT_X_OPTIONS></ALIGNMENT_X_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_align_y'].value">
+                <ALIGNMENT_Y_OPTIONS></ALIGNMENT_Y_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / ALIGNMENT PICKER -->
+
+    <!-- OFFSET PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_offset }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }}">
+            <number-slider model="$macros[$alias_key + '_offset_left'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }}" ng-if="$variation_scope[1] == 'default'" >
+            <number-slider model="$macros[$alias_key + '_offset_top'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_offset }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_offset_left'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_offset_top'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / OFFSET PICKER -->
+
+    <!-- SIZE PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_size }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_all_sides }}">
+            <number-slider model="$macros[$alias_key + '_margin'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_top }}">
+            <number-slider model="$macros[$alias_key + '_size_top'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_right }}">
+            <number-slider model="$macros[$alias_key + '_size_right'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_bottom }}">
+            <number-slider model="$macros[$alias_key + '_size_bottom'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_left }}">
+            <number-slider model="$macros[$alias_key + '_size_left'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_size }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_all_sides }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_margin'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_top }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_top'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_right }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_right'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_bottom }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_bottom'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_left }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_left'].value"
+                           min="-20" max="20" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-20|-1[0-9]|-[0-9]|[0-9]|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / SIZE PICKER -->
+
+</div>

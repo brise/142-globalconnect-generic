@@ -1,0 +1,23 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field ng-repeat="$key in ['1', '2', '3', '4', '5']" title="$[var_{{ $key }}]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros['var_' + $key].value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros['var_' + $key].value = '${var_' + $key + '}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field ng-repeat="$key in ['6', '7', '8', '9', '10']" title="$[var_{{ $key }}]">
+    <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros['var_' + $key].value"></text-area>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros['var_' + $key].value = '${var_' + $key + '}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>

@@ -1,0 +1,69 @@
+{
+  "data": {
+    "meta": {
+      "feedID": 1
+    },
+    "index": [
+      "id",
+      "title",
+      "subtitle",
+      "description",
+      "model",
+      "price",
+      "button",
+      "click",
+      "condition",
+      "popup"
+    ],
+    "items": [
+      [
+        "",
+        "Black Coffee",
+        "",
+        "Coffee comes from the owner’s family farm in Brazil, Fazenda Sao José da Boa Vista.",
+        "Roasted",
+        "2.75",
+        "Get Yours",
+        "https://tacticrealtime.com/1/",
+        "Terms and conditions apply.",
+        "<b>Terms and Conditions</b>\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ],
+      [
+        "",
+        "Espresso",
+        "",
+        "A strong coffee made by forcing pressurized water through finely ground coffee beans.",
+        "Roasted",
+        "1.90",
+        "Buy Now",
+        "https://tacticrealtime.com/2/",
+        "Terms and conditions apply.",
+        "<b>Terms and Conditions</b>\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ],
+      [
+        "",
+        "Mocha",
+        "",
+        "Also called a café mocha, this drink is widely varied depending on the coffeehouse making it. ",
+        "Buy Now",
+        "Roasted",
+        "3.90",
+        "https://tacticrealtime.com/3/",
+        "Terms and conditions apply.",
+        "<b>Terms and Conditions</b>\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ],
+      [
+        "",
+        "Cafe Au Lait",
+        "",
+        "This is a traditional French drink made with brewed coffee instead of espresso. ",
+        "Roasted",
+        "4.90",
+        "Buy Now",
+        "https://tacticrealtime.com/4/",
+        "Terms and conditions apply.",
+        "<b>Terms and Conditions</b>\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ]
+    ]
+  }
+}

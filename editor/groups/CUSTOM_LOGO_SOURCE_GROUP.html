@@ -1,0 +1,35 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- SOURCE PICKER -->
+<block-group ng-if="$variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <dropdown-select model="$macros[$alias_key + '_type'].value">
+            <LOGO_SOURCE_OPTIONS></LOGO_SOURCE_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_source }} *">
+        <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_type'].value">
+            <LOGO_SOURCE_OPTIONS></LOGO_SOURCE_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+<!-- / SOURCE PICKER -->

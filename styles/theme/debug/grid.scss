@@ -1,0 +1,174 @@
+
+/*
+ * Grid mode styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$grid_stroke: 1px;
+$grid_color: rgba(0, 255, 255, 0.5);
+
+[data-key=BN]:not(.mode_debug.mode_debug_grid) [class*=grid_] {
+  display: none !important;
+}
+
+.mode_debug.mode_debug_grid *[class*=grid_] {
+  z-index: 100 !important;
+}
+
+.mode_debug.mode_debug_grid *[class*=grid_x_] {
+  width: 100%;
+  height: 0;
+  border-bottom: #{$grid_stroke} dotted #{$grid_color};
+}
+
+.mode_debug.mode_debug_grid *[class*=grid_y_] {
+  height: 100%;
+  width: 0;
+  border-right: #{$grid_stroke} dotted #{$grid_color};
+}
+
+.mode_debug.mode_debug_grid .grid_x_0 {
+  top: 20%;
+}
+
+.mode_debug.mode_debug_grid .grid_x_1 {
+  top: 40%;
+}
+
+.mode_debug.mode_debug_grid .grid_x_2 {
+  top: 60%;
+}
+
+.mode_debug.mode_debug_grid .grid_x_3 {
+  top: 80%;
+}
+
+.mode_debug.mode_debug_grid .grid_y_0 {
+  left: 20%;
+}
+
+.mode_debug.mode_debug_grid .grid_y_1 {
+  left: 40%;
+}
+
+.mode_debug.mode_debug_grid .grid_y_2 {
+  left: 60%;
+}
+
+.mode_debug.mode_debug_grid .grid_y_3 {
+  left: 80%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t2 .grid_y_0 {
+  left: 50%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t2 .grid_y_1,
+.mode_debug.mode_debug_grid .CV_tens_t2 .grid_y_2,
+.mode_debug.mode_debug_grid .CV_tens_t2 .grid_y_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_x_0 {
+  top: 25%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_x_1 {
+  top: 50%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_x_2 {
+  top: 75%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_x_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_y_0 {
+  left: 33.3%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_y_1 {
+  left: 66.6%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_y_2,
+.mode_debug.mode_debug_grid .CV_tens_t1 .grid_y_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_x_0 {
+  top: 25%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_x_1 {
+  top: 50%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_x_2 {
+  top: 75%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_x_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_y_0 {
+  left: 33.3%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_y_1 {
+  left: 66.6%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_y_2,
+.mode_debug.mode_debug_grid .CV_tens_t0 .grid_y_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w0 .grid_x_0 {
+  top: 33.3%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w0 .grid_x_1 {
+  top: 66.6%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w0 .grid_x_2,
+.mode_debug.mode_debug_grid .CV_tens_w0 .grid_x_3 {
+  display: none;
+}
+
+//.mode_debug.mode_debug_grid .CV_tens_w0 .grid_y_0 {
+//  left: 50%;
+//}
+//
+//.mode_debug.mode_debug_grid .CV_tens_w0 .grid_y_1,
+//.mode_debug.mode_debug_grid .CV_tens_w0 .grid_y_2,
+//.mode_debug.mode_debug_grid .CV_tens_w0 .grid_y_3 {
+//  display: none;
+//}
+
+.mode_debug.mode_debug_grid .CV_tens_w1 .grid_x_0 {
+  top: 33.3%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w1 .grid_x_1 {
+  top: 66.6%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w1 .grid_x_2,
+.mode_debug.mode_debug_grid .CV_tens_w1 .grid_x_3 {
+  display: none;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w2 .grid_x_0 {
+  top: 50%;
+}
+
+.mode_debug.mode_debug_grid .CV_tens_w2 .grid_x_1,
+.mode_debug.mode_debug_grid .CV_tens_w2 .grid_x_2,
+.mode_debug.mode_debug_grid .CV_tens_w2 .grid_x_3 {
+  display: none;
+}

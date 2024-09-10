@@ -1,0 +1,39 @@
+{
+  "name": "142-gloabalconnect-generic",
+  "version": "1.0.0",
+  "devDependencies": {
+    "creative-minifier": "github:tacticrealtime/creative-minifier",
+    "creative-packager": "github:tacticrealtime/creative-packager",
+    "creative-validator": "github:tacticrealtime/creative-validator",
+    "fallback-generator": "github:tacticrealtime/fallback-generator",
+    "http-server": "^14.1.0"
+  },
+  "scripts": {
+    "validate": "./node_modules/creative-validator/bin/creative-validator.js . debug",
+    "validate-formats": "./node_modules/creative-validator/bin/formats-validator.js",
+    "validate-security": "./node_modules/creative-validator/bin/security-validator.js",
+    "validate-preview": "./node_modules/creative-validator/bin/preview-validator.js",
+    "fallback": "./node_modules/fallback-generator/generator.js",
+    "css-reset": "sass styles/layout/reset.scss styles/layout/reset.css",
+    "css-layout": "sass styles/layout.scss styles/layout.css && sass styles/layout_tens.scss styles/layout_tens.css && sass styles/layout_tens_t2.scss styles/layout_tens_t2.css && sass styles/layout_tens_t1.scss styles/layout_tens_t1.css && sass styles/layout_tens_t0.scss styles/layout_tens_t0.css && sass styles/layout_tens_e0.scss styles/layout_tens_e0.css && sass styles/layout_tens_w0.scss styles/layout_tens_w0.css && sass styles/layout_tens_w1.scss styles/layout_tens_w1.css && sass styles/layout_tens_w2.scss styles/layout_tens_w2.css",
+    "css-some": "sass styles/layout_some.scss styles/layout_some.css",
+    "css-theme": "sass styles/theme.scss styles/theme.css",
+    "css-anim": "sass styles/anim.scss styles/anim.css",
+    "min": "npm run editor && npm run css-reset && npm run html && npm run css-layout && npm run css-some && npm run css-theme && npm run css-anim && ./node_modules/creative-minifier/index.js --replace-links --globs !node_modules/* --globs !html/* --globs !html/layers/* --globs !editor/* --globs !editor/components/* --globs !editor/elements/* --globs !editor/options/* --globs !editor/settings/* --globs !editor/macros/* --globs !editor/groups/* --globs !sources/* --globs !editor.html --globs !./index.html --globs !./preview.html",
+    "zip": "./node_modules/creative-packager/index.js -n $npm_package_name -d",
+    "minzip": "npm run editor && npm run html && npm run min && npm run zip",
+    "serve": "./node_modules/http-server/bin/http-server ./ -a 127.0.0.1 --cors -o -c-1",
+    "watch": "sass --watch styles/style.scss:styles/style.css",
+    "editor": "node ./editor/editor.js",
+    "html": "node ./html/html.js",
+    "svg": "node ./helpers/svg.js"
+  },
+  "private": true,
+  "author": "TACTIC™ Real-Time Marketing",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ajv": "^5.5.2",
+    "puppeteer-core": "^2.1.1",
+    "sass": "^1.47.0"
+  }
+}

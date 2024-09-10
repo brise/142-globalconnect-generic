@@ -1,0 +1,131 @@
+<data ng-if="$frame = $data.banner.layers.CV"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'DS'"></data>
+<data ng-if="$data.editor.element = $wrapper_key"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['elements', 'appear'], 'elements', ['appear'], 'appear']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<WRAPPER_SHORTCUT_VALIDATION_COMPONENT></WRAPPER_SHORTCUT_VALIDATION_COMPONENT>
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<TAB_SELECTOR></TAB_SELECTOR>
+
+<block-group ng-if="($scope[1] == 'elements')">
+
+  <block-toggle title="{{ :: $dict.label_image }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('DS_DL') != -1)}"
+                ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('DS_DL') != -1) ? 'DS' : 'DS_DL')"></block-toggle>
+  <block-group ng-if="($data.editor.scope[1].indexOf('DS_DL') != -1)">
+
+    <!-- KEY DEFINITION -->
+    <data ng-if="$object_key = 'OBJ'"></data>
+    <data ng-if="$holder_key = 'IMG'"></data>
+    <data ng-if="$target_key = '0'"></data>
+    <data ng-if="$alias_key = 'DL'"></data>
+    <!-- / KEY DEFINITION -->
+
+    <!-- TAB SETUP -->
+    <data ng-init="$tab_setup = [['source', 'quality', 'appear'], 'source', ['appear'], 'appear']"></data>
+    <!-- / TAB SETUP -->
+
+    <HOLDER_STATE_VALIDATION_COMPONENT></HOLDER_STATE_VALIDATION_COMPONENT>
+
+    <HOLDER_SHORTCUT_VALIDATION_COMPONENT></HOLDER_SHORTCUT_VALIDATION_COMPONENT>
+
+    <HOLDER_TAB_VALIDATION_COMPONENT></HOLDER_TAB_VALIDATION_COMPONENT>
+
+    <TAB_SELECTOR></TAB_SELECTOR>
+
+    <div ng-if="($scope[1] == 'source')">
+      <IMAGE_SOURCE_INLINE_GROUP></IMAGE_SOURCE_INLINE_GROUP>
+    </div>
+
+    <div ng-if="($scope[1] == 'quality')">
+      <IMAGE_QUALITY_GROUP></IMAGE_QUALITY_GROUP>
+    </div>
+
+    <div ng-if="($scope[1] == 'appear')">
+      <IMAGE_APPEAR_INLINE_GROUP></IMAGE_APPEAR_INLINE_GROUP>
+    </div>
+
+  </block-group>
+
+  <block-toggle title="{{ :: $dict.label_title }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('DS_DA') != -1)}"
+                ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('DS_DA') != -1) ? 'DS' : 'DS_DA')"></block-toggle>
+  <block-group ng-if="($data.editor.scope[1].indexOf('DS_DA') != -1)">
+
+    <!-- KEY DEFINITION -->
+    <data ng-if="$object_key = 'OBJ'"></data>
+    <data ng-if="$holder_key = 'TXT'"></data>
+    <data ng-if="$target_key = '0'"></data>
+    <data ng-if="$alias_key = 'DA'"></data>
+    <!-- / KEY DEFINITION -->
+
+    <!-- TAB SETUP -->
+    <data ng-init="$tab_setup = [['source', 'appear'], 'source', ['appear'], 'appear']"></data>
+    <!-- / TAB SETUP -->
+
+    <TARGET_STATE_VALIDATION_COMPONENT></TARGET_STATE_VALIDATION_COMPONENT>
+
+    <TARGET_SHORTCUT_VALIDATION_COMPONENT></TARGET_SHORTCUT_VALIDATION_COMPONENT>
+
+    <TARGET_TAB_VALIDATION_COMPONENT></TARGET_TAB_VALIDATION_COMPONENT>
+
+    <TAB_SELECTOR></TAB_SELECTOR>
+
+    <div ng-if="($scope[1] == 'source')">
+      <TEXT_SOURCE_GROUP></TEXT_SOURCE_GROUP>
+    </div>
+
+    <div ng-if="($scope[1] == 'appear')">
+      <TEXT_APPEAR_GROUP></TEXT_APPEAR_GROUP>
+    </div>
+
+  </block-group>
+
+  <block-toggle title="{{ :: $dict.label_detail }}" class="toggle" ng-class="{selected: ($data.editor.scope[1].indexOf('DS_DB') != -1)}"
+                ng-click="$data.editor.scope[1] = (($data.editor.scope[1].indexOf('DS_DB') != -1) ? 'DS' : 'DS_DB')"></block-toggle>
+  <block-group ng-if="($data.editor.scope[1].indexOf('DS_DB') != -1)">
+
+
+    <!-- KEY DEFINITION -->
+    <data ng-if="$object_key = 'OBJ'"></data>
+    <data ng-if="$holder_key = 'TXT'"></data>
+    <data ng-if="$target_key = '1'"></data>
+    <data ng-if="$alias_key = 'DB'"></data>
+    <!-- / KEY DEFINITION -->
+
+    <!-- TAB SETUP -->
+    <data ng-init="$tab_setup = [['source', 'appear'], 'source', ['appear'], 'appear']"></data>
+    <!-- / TAB SETUP -->
+
+    <TARGET_STATE_VALIDATION_COMPONENT></TARGET_STATE_VALIDATION_COMPONENT>
+
+    <TARGET_SHORTCUT_VALIDATION_COMPONENT></TARGET_SHORTCUT_VALIDATION_COMPONENT>
+
+    <TARGET_TAB_VALIDATION_COMPONENT></TARGET_TAB_VALIDATION_COMPONENT>
+
+    <TAB_SELECTOR></TAB_SELECTOR>
+
+    <div ng-if="($scope[1] == 'source')">
+      <TEXT_SOURCE_GROUP></TEXT_SOURCE_GROUP>
+    </div>
+
+    <div ng-if="($scope[1] == 'appear')">
+      <TEXT_APPEAR_GROUP></TEXT_APPEAR_GROUP>
+    </div>
+
+  </block-group>
+
+</block-group>
+
+<div ng-if="($scope[1] == 'appear')">
+  <WRAPPER_APPEAR_GROUP></WRAPPER_APPEAR_GROUP>
+</div>

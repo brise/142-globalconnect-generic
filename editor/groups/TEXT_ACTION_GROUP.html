@@ -1,0 +1,45 @@
+
+<TARGET_MACROS_COMPONENT></TARGET_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<TARGET_VARIATION_VALIDATION_COMPONENT></TARGET_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- SETUP OVERRIDE PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_action }}">
+        <toggle-button model="$group.enabled" on="{{ :: $dict.label_enabled }}" off="{{ :: $dict.label_disabled }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / SETUP OVERRIDE PICKER -->
+
+<div ng-if="$group.enabled">
+
+    <!-- ELEMENT ACTIONS -->
+    <block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_actions }}" class="label"></block-field>
+
+        <block-field title="On Hover">
+            <toggle-button model="$macros['gesture_hover'].value" on="{{ :: $dict.action_show_1 }} {{ :: $dict.label_element }}" off="None"></toggle-button>
+            <block-info class="inner">
+                <p>
+                    <small><q>{{ $dict.hint_action }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <!-- / ELEMENT ACTIONS -->
+
+</div>

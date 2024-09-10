@@ -1,0 +1,20 @@
+{
+  "data":{
+    "tick":1646202049,
+    "meta":{
+      "feedId":8,
+      "updatedAt":1646132097
+    },
+    "items":[
+      {
+        "assets":[
+          {
+            "name":"condition",
+            "value":"Condition here",
+            "type":"text"
+          }
+        ]
+      }
+    ]
+  }
+}

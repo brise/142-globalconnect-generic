@@ -1,0 +1,4 @@
+<!-- UPDATE VARIATION PRESET VALUES -->
+<data ng-if="$macros_excepts_preset && !$macros_excepts_preset.data[$key]" ng-repeat="($key, $item) in $macros" ng-init="$macros_excepts_preset.data[$key] = { value: $macros[$key].value }"></data>
+<data ng-if="$macros_excepts && $item.value != $macros[$key].value" ng-repeat="($key, $item) in $macros_excepts_preset.data" ng-init="$item.value = $macros[$key].value"></data>
+<!-- / UPDATE VARIATION PRESET VALUES -->

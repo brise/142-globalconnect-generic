@@ -1,0 +1,416 @@
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$wrapper_group_appear = $wrapper.groups[$wrapper_key + '_' + 'appear']"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<HOLDER_MACROS_COMPONENT></HOLDER_MACROS_COMPONENT>
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$target_excepts = $target.excepts"></data>
+<data ng-if="$target_excepts_preset = $target.excepts.preset"></data>
+<data ng-if="$target_preset = $holder.presets[$target_key]"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<HOLDER_VARIATION_VALIDATION_COMPONENT></HOLDER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_IMAGE_SELECTOR></VARIATION_IMAGE_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- IMAGE SOURCE PICKER -->
+<block-group ng-if="$variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <image-picker model="$holder.layers[0]"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <block-info>
+            <p>
+                <small ng-if="$holder.layers[0] != null"><q><a ng-click="$holder.layers[0] = null;">{{ :: $dict.action_remove_source_1 }}</a> {{ :: $dict.action_remove_source_2 }}</q></small>
+                <small ng-if="$frames && $data.editor.frame >= 1"><q><a ng-click="$frames.model.frames[$data.editor.frame].layers[$wrapper_key] = _.cloneDeep($frames.model.frames[$data.editor.frame - 1].layers[$wrapper_key])">{{ :: $dict.action_clone_element_1 }}</a> {{ :: $dict.action_clone_element_3 }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$target_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_source }} *">
+
+        <image-picker model="$target_excepts['EL_orient_p'].data" ng-if="$variation_scope[1] == 'EL_orient_p'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['EL_orient_s'].data" ng-if="$variation_scope[1] == 'EL_orient_s'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['EL_orient_l'].data" ng-if="$variation_scope[1] == 'EL_orient_l'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <image-picker model="$target_excepts['CV_scale_xs'].data" ng-if="$variation_scope[1] == 'CV_scale_xs'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_scale_s'].data" ng-if="$variation_scope[1] == 'CV_scale_s'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_scale_m'].data" ng-if="$variation_scope[1] == 'CV_scale_m'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_scale_l'].data" ng-if="$variation_scope[1] == 'CV_scale_l'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_scale_xl'].data" ng-if="$variation_scope[1] == 'CV_scale_xl'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <image-picker model="$target_excepts['CV_tens_t3'].data" ng-if="$variation_scope[1] == 'CV_tens_t3'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_t2'].data" ng-if="$variation_scope[1] == 'CV_tens_t2'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_t1'].data" ng-if="$variation_scope[1] == 'CV_tens_t1'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_e0'].data" ng-if="$variation_scope[1] == 'CV_tens_e0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_t0'].data" ng-if="$variation_scope[1] == 'CV_tens_t0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_w0'].data" ng-if="$variation_scope[1] == 'CV_tens_w0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_w1'].data" ng-if="$variation_scope[1] == 'CV_tens_w1'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_w2'].data" ng-if="$variation_scope[1] == 'CV_tens_w2'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_tens_w3'].data" ng-if="$variation_scope[1] == 'CV_tens_w3'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <image-picker model="$target_excepts['snapshot'].data" ng-if="$variation_scope[1] == 'snapshot'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <image-picker model="$target_excepts['CV_size_120x600'].data" ng-if="$variation_scope[1] == 'CV_size_120x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_140x350'].data" ng-if="$variation_scope[1] == 'CV_size_140x350'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_150x600'].data" ng-if="$variation_scope[1] == 'CV_size_150x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_160x80'].data" ng-if="$variation_scope[1] == 'CV_size_160x80'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_160x600'].data" ng-if="$variation_scope[1] == 'CV_size_160x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_180x500'].data" ng-if="$variation_scope[1] == 'CV_size_180x500'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_200x200'].data" ng-if="$variation_scope[1] == 'CV_size_200x200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_200x350'].data" ng-if="$variation_scope[1] == 'CV_size_200x350'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_200x600'].data" ng-if="$variation_scope[1] == 'CV_size_200x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_200x700'].data" ng-if="$variation_scope[1] == 'CV_size_200x700'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_240x400'].data" ng-if="$variation_scope[1] == 'CV_size_240x400'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_250x250'].data" ng-if="$variation_scope[1] == 'CV_size_250x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_250x360'].data" ng-if="$variation_scope[1] == 'CV_size_250x360'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_250x600'].data" ng-if="$variation_scope[1] == 'CV_size_250x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_250x800'].data" ng-if="$variation_scope[1] == 'CV_size_250x800'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x50'].data" ng-if="$variation_scope[1] == 'CV_size_300x50'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x100'].data" ng-if="$variation_scope[1] == 'CV_size_300x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x200'].data" ng-if="$variation_scope[1] == 'CV_size_300x200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x250'].data" ng-if="$variation_scope[1] == 'CV_size_300x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x300'].data" ng-if="$variation_scope[1] == 'CV_size_300x300'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x600'].data" ng-if="$variation_scope[1] == 'CV_size_300x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_300x1050'].data" ng-if="$variation_scope[1] == 'CV_size_300x1050'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x50'].data" ng-if="$variation_scope[1] == 'CV_size_320x50'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x100'].data" ng-if="$variation_scope[1] == 'CV_size_320x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x160'].data" ng-if="$variation_scope[1] == 'CV_size_320x160'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x240'].data" ng-if="$variation_scope[1] == 'CV_size_320x240'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x250'].data" ng-if="$variation_scope[1] == 'CV_size_320x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x280'].data" ng-if="$variation_scope[1] == 'CV_size_320x280'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x320'].data" ng-if="$variation_scope[1] == 'CV_size_320x320'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x400'].data" ng-if="$variation_scope[1] == 'CV_size_320x400'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_320x480'].data" ng-if="$variation_scope[1] == 'CV_size_320x480'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_336x280'].data" ng-if="$variation_scope[1] == 'CV_size_336x280'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_350x250'].data" ng-if="$variation_scope[1] == 'CV_size_350x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_400x600'].data" ng-if="$variation_scope[1] == 'CV_size_400x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_468x60'].data" ng-if="$variation_scope[1] == 'CV_size_468x60'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_468x360'].data" ng-if="$variation_scope[1] == 'CV_size_468x360'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_468x480'].data" ng-if="$variation_scope[1] == 'CV_size_468x480'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_480x120'].data" ng-if="$variation_scope[1] == 'CV_size_480x120'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_480x300'].data" ng-if="$variation_scope[1] == 'CV_size_480x300'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_480x480'].data" ng-if="$variation_scope[1] == 'CV_size_480x480'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_540x960'].data" ng-if="$variation_scope[1] == 'CV_size_540x960'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_580x400'].data" ng-if="$variation_scope[1] == 'CV_size_580x400'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_600x400'].data" ng-if="$variation_scope[1] == 'CV_size_600x400'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_640x320'].data" ng-if="$variation_scope[1] == 'CV_size_640x320'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_640x360'].data" ng-if="$variation_scope[1] == 'CV_size_640x360'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_640x640'].data" ng-if="$variation_scope[1] == 'CV_size_640x640'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_640x1000'].data" ng-if="$variation_scope[1] == 'CV_size_640x1000'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_660x100'].data" ng-if="$variation_scope[1] == 'CV_size_660x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_712x250'].data" ng-if="$variation_scope[1] == 'CV_size_712x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_720x1280'].data" ng-if="$variation_scope[1] == 'CV_size_720x1280'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_720x1560'].data" ng-if="$variation_scope[1] == 'CV_size_720x1560'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_728x90'].data" ng-if="$variation_scope[1] == 'CV_size_728x90'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_750x100'].data" ng-if="$variation_scope[1] == 'CV_size_750x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key like '+_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_750x200'].data" ng-if="$variation_scope[1] == 'CV_size_750x200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_750x300'].data" ng-if="$variation_scope[1] == 'CV_size_750x300'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_768x240'].data" ng-if="$variation_scope[1] == 'CV_size_768x240'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_800x250'].data" ng-if="$variation_scope[1] == 'CV_size_800x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_825x100'].data" ng-if="$variation_scope[1] == 'CV_size_825x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_852x640'].data" ng-if="$variation_scope[1] == 'CV_size_852x640'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_910x250'].data" ng-if="$variation_scope[1] == 'CV_size_910x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_930x180'].data" ng-if="$variation_scope[1] == 'CV_size_930x180'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_960x540'].data" ng-if="$variation_scope[1] == 'CV_size_960x540'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_960x1200'].data" ng-if="$variation_scope[1] == 'CV_size_960x1200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_970x90'].data" ng-if="$variation_scope[1] == 'CV_size_970x90'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_970x210'].data" ng-if="$variation_scope[1] == 'CV_size_970x210'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_970x250'].data" ng-if="$variation_scope[1] == 'CV_size_970x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_970x300'].data" ng-if="$variation_scope[1] == 'CV_size_970x300'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_970x310'].data" ng-if="$variation_scope[1] == 'CV_size_970x310'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_980x120'].data" ng-if="$variation_scope[1] == 'CV_size_980x120'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_980x240'].data" ng-if="$variation_scope[1] == 'CV_size_980x240'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_980x250'].data" ng-if="$variation_scope[1] == 'CV_size_980x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_980x300'].data" ng-if="$variation_scope[1] == 'CV_size_980x300'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_980x600'].data" ng-if="$variation_scope[1] == 'CV_size_980x600'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1000x100'].data" ng-if="$variation_scope[1] == 'CV_size_1000x100'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1020x200'].data" ng-if="$variation_scope[1] == 'CV_size_1020x200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1024x81'].data" ng-if="$variation_scope[1] == 'CV_size_1024x81'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1080x1080'].data" ng-if="$variation_scope[1] == 'CV_size_1080x1080'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1080x1920'].data" ng-if="$variation_scope[1] == 'CV_size_1080x1920'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1168x250'].data" ng-if="$variation_scope[1] == 'CV_size_1168x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1200x200'].data" ng-if="$variation_scope[1] == 'CV_size_1200x200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1200x250'].data" ng-if="$variation_scope[1] == 'CV_size_1200x250'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1200x628'].data" ng-if="$variation_scope[1] == 'CV_size_1200x628'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1200x1200'].data" ng-if="$variation_scope[1] == 'CV_size_1200x1200'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + thewrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1250x240'].data" ng-if="$variation_scope[1] == 'CV_size_1250x240'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1250x360'].data" ng-if="$variation_scope[1] == 'CV_size_1250x360'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1400x940'].data" ng-if="$variation_scope[1] == 'CV_size_1400x940'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1920x900'].data" ng-if="$variation_scope[1] == 'CV_size_1920x900'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1920x1080'].data" ng-if="$variation_scope[1] == 'CV_size_1920x1080'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <image-picker model="$target_excepts['CV_size_1080x1920_meta_reel'].data" ng-if="$variation_scope[1] == 'CV_size_1080x1920_meta_reel'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+        <image-picker model="$target_excepts['CV_size_1080x1920_meta_story'].data" ng-if="$variation_scope[1] == 'CV_size_1080x1920_meta_story'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></image-picker>
+
+        <block-info ng-class="{disabled: ($target_excepts[$variation_scope[1]].data)}">
+            <p>
+                <small ng-if="$target_excepts[$variation_scope[1]].data.sources != null"><q><a ng-click="$target_excepts[$variation_scope[1]].data = null;">{{ :: $dict.action_remove_source_1 }}</a> {{ :: $dict.action_remove_source_2 }} </q></small>
+                <small><q><a ng-click="$target_excepts[$variation_scope[1]].data = _.omit(_.cloneDeep($target), ['excepts', 'preset'])">{{ :: $dict.action_clone_element_1 }}</a> {{ :: $dict.action_clone_element_2 }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / IMAGE SOURCE PICKER -->
+
+<!-- IMAGE CROP PICKER -->
+<block-group ng-if="$target && $variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_crop }}">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[0]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[1]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[2]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[3]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default' && $target_excepts[$variation_scope[1]].data.sources" ng-class="{disabled: (!$target_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_crop }} *">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[0]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[1]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[2]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[3]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+    </block-field>
+
+</block-group>
+<!-- / IMAGE CROP PICKER -->

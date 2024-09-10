@@ -1,0 +1,68 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field title="$[dealer_name]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.dealer_name.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.dealer_name.value = '${dealer_name}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[dealer_city]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.dealer_city.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.dealer_city.value = '${dealer_city}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<!--<block-field ng-repeat="$key in ['1', '2', '3', '4']" title="$[dealer_{{ $key }}]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros['dealer_' + $key].value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros['dealer_' + $key].value = '${dealer_' + $key + '}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>-->
+
+<block-field title="$[dealer_info]">
+    <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros.dealer_info.value"></text-area>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.dealer_info.value = '${dealer_info}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[dealer_logo_url]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.dealer_logo_url.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.dealer_logo_url.value = '${dealer_logo_url}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[dealer_logo]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.dealer_logo.value" disabled="true"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                Dealer logotype image, macro is not customisable.
+                <!--<a ng-click="$frame.macros.dealer_logo.value = '<img class=\'dealer_logo\' src=\'$[dealer_logo_url]\'>'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}-->
+            </q></small>
+        </p>
+    </block-info>
+</block-field>

@@ -1,0 +1,38 @@
+
+/*
+ * Scale configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$scale: 4rem;
+
+$padding_size: calc($scale * 0.75);
+$padding_big: calc(#{$padding_size}  * 2);
+$padding_big_dbl: calc($padding_big * 2);
+$padding_normal: #{$padding_size};
+$padding_normal_dbl: calc(#{$padding_normal} * 2);
+$padding_small: calc(#{$padding_size} / 2);
+$padding_small_dbl: calc(#{$padding_small} * 2);
+
+$logo_size: calc($scale * 0.5);
+$logo_width_l: calc($logo_size * 731/119);
+$logo_height_l: calc($logo_size* 1);
+$logo_scale_small: 1; //0.75;
+$logo_scale_big: 1; //1.25;
+
+$badge_size: #{$logo_height_l};
+$badge_size_wide: calc($badge_size * 2.5);
+$badge_size_relative: calc(4em * 1.25);
+
+$line_size: calc($scale * 0.2);
+
+$button_height: calc($scale * 1);
+
+$text_spacer_big: calc($padding_big);
+$text_spacer_normal: calc($padding_normal);
+$text_spacer_small: calc($padding_small);
+
+$text_line: calc($scale * 1/2);
+$text_nbsp: 0.1em;
+$text_stroke_weight: 0.1em;
+$text_stroke_weight_absolute: 0.1rem;

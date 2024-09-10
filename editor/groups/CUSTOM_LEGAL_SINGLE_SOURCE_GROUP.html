@@ -1,0 +1,40 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<div ng-if="$wrapper.enabled">
+
+    <!-- BADGE PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_badge }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_type }}">
+            <dropdown-select model="$macros[$alias_key + '_type'].value">
+               <LEGAL_OPTIONS></LEGAL_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_emission }}" ng-if="$macros[$alias_key + '_type'].value !== 'none' && ($macros[$alias_key + '_type'].value.indexOf('emission_dk_') !== -1 || $macros[$alias_key + '_type'].value.indexOf('emission_fr_') !== -1)">
+            <text-field placeholder="{{ :: $dict.label_value }}" model="$macros[$alias_key + '_emission'].value"></text-field>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_model }}" ng-if="$macros[$alias_key + '_type'].value !== 'none' && ($macros[$alias_key + '_type'].value.indexOf('lease_') === -1)">
+            <text-field placeholder="{{ :: $dict.label_value }}" model="$macros[$alias_key + '_model'].value"></text-field>
+        </block-field>-->
+
+    </block-group>
+    <!-- BADGE PICKER -->
+
+</div>

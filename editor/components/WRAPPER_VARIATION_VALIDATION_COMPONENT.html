@@ -1,0 +1,6 @@
+<!-- VALIDATE VARIATION SETUP -->
+<data ng-if="$scope[2][$scope[1]] == undefined" ng-init="$scope[2][$scope[1]] = [$variation_setup, 'default']"></data>
+<data ng-if="$wrapper != undefined && $wrapper.enabled && $group != undefined && $macros_excepts != undefined" ng-init="$scope[2][$scope[1]][0] = $variation_setup"></data>
+<data ng-if="$wrapper == undefined || !$wrapper.enabled || $group == undefined || $macros_excepts == undefined" ng-init="$scope[2][$scope[1]][0] = ['default']"></data>
+<data ng-if="$variation_scope = $scope[2][$scope[1]]"></data>
+<!-- VALIDATE VARIATION SETUP -->

@@ -1,0 +1,69 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<!--<block-field title="{{ :: $dict.label_product }} {{ :: $dict.label_macros }}" class="label"></block-field>-->
+
+<block-field title="$[model]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.model.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.model.value = '${model}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[trim]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.trim.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.trim.value = '${trim}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[emission]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.emission.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.emission.value = 'XXX gCO<sub>2</sub>/km'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[rate]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.rate.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.rate.value = '${rate}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[price]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.price.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.price.value = '${price}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[cur]">
+    <text-field placeholder="{{ :: $dict.label_value }}" model="$frame.macros.cur.value"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.cur.value = '${cur}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>

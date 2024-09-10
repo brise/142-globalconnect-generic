@@ -1,0 +1,133 @@
+
+<HOLDER_MACROS_COMPONENT></HOLDER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<HOLDER_VARIATION_VALIDATION_COMPONENT></HOLDER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- VISIBILITY PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_visibility }}">
+        <toggle-button model="$holder.enabled" on="{{ :: $dict.label_visible }}" off="{{ :: $dict.label_hidden }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / VISIBILITY PICKER -->
+
+<div ng-if="$holder.enabled">
+
+    <!-- IMAGE EFFECTS PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <!--<block-field title="{{ :: $dict.label_trim }}">
+            <dropdown-select model="$macros[$alias_key + '_resize_method'].value">
+                <RESIZE_METHOD_OPTIONS></RESIZE_METHOD_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_resize }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <!--<block-field title="{{ :: $dict.label_size }}">
+            <number-slider model="$macros[$alias_key + '_size'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_size }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <!--<block-field title="{{ :: $dict.label_scale }}">
+            <dropdown-select model="$macros[$alias_key + '_scale'].value">
+                <option value="rem">{{ :: $dict.label_absolute }}</option>
+                <option value="em">{{ :: $dict.label_relative }}</option>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_size_auto }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <block-field title="{{ :: $dict.label_sharpen }}">
+            <number-slider model="$macros[$alias_key + '_sharpen'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_blur }}">
+            <number-slider model="$macros[$alias_key + '_blur'].value"
+                           min="0" max="20" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <!--<block-field title="{{ :: $dict.label_trim }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_resize_method'].value">
+                <RESIZE_METHOD_OPTIONS></RESIZE_METHOD_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_resize }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <!--<block-field title="{{ :: $dict.label_size }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_size }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <!--<block-field title="{{ :: $dict.label_scale }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_scale'].value">
+                <option value="rem">{{ :: $dict.label_absolute }}</option>
+                <option value="em">{{ :: $dict.label_relative }}</option>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_image_size_auto }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <block-field title="{{ :: $dict.label_sharpen }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_sharpen'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_blur }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_blur'].value"
+                           min="0" max="20" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10|1[0-9]|20)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / IMAGE EFFECTS PICKER -->
+
+</div>

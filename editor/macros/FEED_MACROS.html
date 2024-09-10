@@ -1,0 +1,23 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field title="$[feed_key]">
+    <text-field placeholder="{{ :: $dict.label_dynamic }} {{ :: $dict.label_value }}" disabled="true"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                Value from the feed, e.g. "260,70".
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[feed_key_#]">
+    <text-field placeholder="{{ :: $dict.label_dynamic }} {{ :: $dict.label_value }}" disabled="true"></text-field>
+    <block-info>
+        <p>
+            <small><q>
+                Split value from the feed (if applicable), e.g. "260" and "70".
+            </q></small>
+        </p>
+    </block-info>
+</block-field>

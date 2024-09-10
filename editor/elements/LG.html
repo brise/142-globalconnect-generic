@@ -1,0 +1,27 @@
+<data ng-if="$frame = $data.banner.layers.CV"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'LG'"></data>
+<data ng-if="$data.editor.element = $wrapper_key"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['source', 'appear'], 'source', ['appear'], 'appear']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<WRAPPER_SHORTCUT_VALIDATION_COMPONENT></WRAPPER_SHORTCUT_VALIDATION_COMPONENT>
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<TAB_SELECTOR></TAB_SELECTOR>
+
+<div ng-if="($scope[1] == 'source')">
+    <CUSTOM_LOGO_SOURCE_GROUP></CUSTOM_LOGO_SOURCE_GROUP>
+</div>
+
+<div ng-if="($scope[1] == 'appear')">
+    <CUSTOM_LOGO_APPEAR_GROUP></CUSTOM_LOGO_APPEAR_GROUP>
+</div>

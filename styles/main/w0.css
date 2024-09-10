@@ -1,0 +1,527 @@
+/*
+ * Scale configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+* Layer visibility settings.
+* ------------------------------------------------------------------------------------------------------------------
+*/
+[data-key=CV] [data-key=UL] {
+  z-index: 5;
+}
+[data-key=CV] [data-key=UG] {
+  z-index: 10;
+}
+[data-key=CV] [data-key=BG],
+[data-key=CV] [data-key=BG_OBJ] {
+  z-index: 15;
+}
+[data-key=CV] [data-key=FG] {
+  z-index: 20;
+}
+[data-key=CV] [data-key=OL] {
+  z-index: 30;
+}
+[data-key=CV] [data-key=IL] {
+  z-index: 35;
+}
+[data-key=CV] [data-key=MS],
+[data-key=CV] [data-key=PS],
+[data-key=CV] [data-key=CS],
+[data-key=CV] [data-key=LG] {
+  z-index: 50;
+}
+[data-key=CV] [data-key=VS],
+[data-key=CV] [data-key=CX] {
+  z-index: 90;
+}
+[data-key=CV] [data-key=CL] {
+  z-index: 100;
+}
+[data-key=CV] [data-key=FR] {
+  z-index: 200;
+}
+[data-key=CV] [data-key=FR],
+[data-key=CV] [data-key=FR] *,
+[data-key=CV] [data-key=VS] .place * {
+  pointer-events: none;
+}
+[data-key=CV] [data-key=CL_PS_TXT_1] {
+  display: none;
+}
+
+[data-key=CV]:not(.VS_disabled).VS_active [data-key=VS] {
+  z-index: 120;
+}
+[data-key=CV]:not(.VS_disabled).VS_active [data-key=CX] {
+  z-index: 130;
+}
+
+[data-key=CV]:not(.VS_disabled):not(.VS_active) [data-key=CL_PS_TXT_1] {
+  display: block;
+  z-index: 110;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+/*
+ * Global element styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] {
+  overflow: hidden;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+[data-key=CV] [data-key*=_TXT_] p::before,
+[data-key=CV] [data-key*=_TXT_] p::after {
+  content: "";
+  position: relative;
+  display: block;
+}
+[data-key=CV] .gr svg {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Global scrollbar styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+::-webkit-scrollbar {
+  width: calc(calc(calc(4rem * 0.75) / 2) / 2) !important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: calc(calc(calc(4rem * 0.75) / 2) / 2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: calc(calc(calc(4rem * 0.75) / 2) / 2);
+}
+
+/*
+ * Global text formatting styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] button {
+  display: inline-block;
+  padding: 0.8em 1.2em 0.8em 1.2em;
+  line-height: 1 !important;
+  border-radius: 2rem;
+  min-width: 12rem;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  border: solid 0.15rem;
+  text-transform: inherit;
+}
+[data-key=CV].CV_tens_t2 button, [data-key=CV].CV_scale_xs button {
+  word-break: break-word;
+  min-width: 8rem;
+}
+[data-key=CV] hr {
+  display: block;
+  width: 100%;
+  height: 0.1rem;
+  margin: calc(calc(4rem * 0.75)) 0 calc(calc(4rem * 0.75)) 0;
+}
+[data-key=CV] hr:first-child {
+  margin-top: 0;
+}
+[data-key=CV] hr:last-child {
+  margin-bottom: 0;
+  display: none;
+}
+[data-key=CV] br.space {
+  content: "";
+  display: block;
+  font-size: 100%;
+  height: calc(calc(4rem * 0.75) / 2);
+}
+[data-key=CV] hr + br {
+  display: none;
+}
+[data-key=CV] var:empty + br {
+  display: none;
+}
+
+/*
+ * Global LG layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=LG] {
+  text-align: left;
+}
+[data-key=CV] [data-key=LG] .place {
+  top: calc(4rem * 0.75);
+  left: calc(4rem * 0.75);
+  width: calc(100% - calc(calc(4rem * 0.75) * 2));
+  height: calc(100% - calc(calc(4rem * 0.75) * 2));
+}
+[data-key=CV] [data-key=LG] svg {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Global IL styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_layout_boxed [data-key=IL] {
+  border-radius: calc(calc(4rem * 0.75) / 2);
+  overflow: hidden;
+}
+[data-key=CV].CV_layout_boxed .boxed > .margin {
+  top: calc(calc(4rem * 0.75) / 2);
+  left: calc(calc(4rem * 0.75) / 2);
+  width: calc(100% - calc(calc(4rem * 0.75) / 2) * 2);
+  height: calc(100% - calc(calc(4rem * 0.75) / 2) * 2);
+}
+
+/*
+ * Global OL layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=OL] .corner,
+[data-key=CV] [data-key=OL] .radial {
+  display: none;
+}
+[data-key=CV].CV_layout_isolated [data-key=OL] [data-key=OL_GR_0] .corner,
+[data-key=CV].CV_layout_isolated [data-key=OL] [data-key=OL_GR_0] .radial, [data-key=CV].CV_layout_boxed [data-key=OL] [data-key=OL_GR_0] .corner,
+[data-key=CV].CV_layout_boxed [data-key=OL] [data-key=OL_GR_0] .radial {
+  display: none;
+}
+[data-key=CV].CV_layout_isolated [data-key=OL] [data-key=OL_GR_1], [data-key=CV].CV_layout_boxed [data-key=OL] [data-key=OL_GR_1] {
+  display: none;
+}
+
+/*
+ * Global BG, FG layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=UG],
+[data-key=CV] [data-key=BG],
+[data-key=CV] [data-key=FG] {
+  text-align: center;
+  vertical-align: middle;
+}
+[data-key=CV].CV_layout_isolated .isolated {
+  overflow: hidden;
+}
+
+/*
+ * Global MS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=MS] {
+  text-align: left;
+  vertical-align: middle;
+  justify-content: center;
+  line-height: 1.1;
+}
+[data-key=CV] [data-key=MS] .box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+[data-key=CV] [data-key=MS] img.dealer_logo {
+  height: 2em;
+  width: auto;
+  max-width: 100%;
+}
+[data-key=CV] [data-key*=SQ_]:not(.MB_disabled):not(.SQ_split_1) [data-key=MS] .MB p::before {
+  margin: calc(calc(calc(4rem * 0.75) / 2) / 2);
+}
+[data-key=CV] [data-key*=SQ_]:not(.MC_disabled):not(.SQ_split_1) [data-key=MS] .MC p::before {
+  margin: calc(calc(calc(4rem * 0.75)) / 2);
+}
+[data-key=CV] [data-key*=SQ_].SQ_split_1 [data-key=MS] .MA, [data-key=CV] [data-key*=SQ_].SQ_split_0 [data-key=MS] .MB {
+  display: none !important;
+}
+
+/*
+ * Global PS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=PS] {
+  text-align: left;
+  vertical-align: middle;
+  justify-content: center;
+}
+[data-key=CV] [data-key=PS] .box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+[data-key=CV] [data-key=PS] .spacer_between {
+  margin: calc(calc(calc(4rem * 0.75)) / 6);
+}
+[data-key=CV] [data-key=PS] [class*=_orient_l] .box {
+  flex-direction: row;
+  align-items: center;
+}
+[data-key=CV] [data-key=PS] [class*=_orient_l] .spacer_between {
+  margin: calc(calc(calc(4rem * 0.75)) / 4);
+}
+[data-key=CV] [data-key=PS] [class*=_orient_l] .BT {
+  min-width: 40%;
+}
+[data-key=CV] [data-key=PS] [class*=_orient_l] .BT p,
+[data-key=CV] [data-key=PS] [class*=_orient_l] .BT button {
+  min-width: 100%;
+}
+[data-key=CV].BT_disabled [data-key=PS] .spacer_between, [data-key=CV].CN_disabled [data-key=PS] .spacer_between {
+  display: none;
+}
+
+/*
+ * Global LN layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=LN] {
+  width: calc(4rem * 0.2);
+}
+[data-key=CV] [data-key=LN] [data-key=LN_BG] {
+  height: 0px;
+  max-height: 50%;
+}
+
+/*
+ * Global DS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=DS] {
+  text-align: left;
+  vertical-align: middle;
+  justify-content: start;
+}
+[data-key=CV] [data-key=DS] .place {
+  top: calc(4rem * 0.75);
+  left: calc(4rem * 0.75);
+  width: calc(100% - calc(calc(4rem * 0.75) * 2));
+  height: calc(100% - calc(calc(4rem * 0.75) * 2));
+}
+
+[data-key=CV]:not(.DS_IMG_0_disabled.DS_IMG_1_disabled) [data-key=DS] .DA_DB,
+[data-key=BN]:not(.dealer_logo_empty) [data-key=CV]:not(.DS_IMG_1_disabled).DS_IMG_0_disabled [data-key=DS] .DA_DB,
+[data-key=CV].DS_IMG_0_disabled.DS_IMG_1_disabled [data-key=DS] .DL {
+  display: none !important;
+}
+
+/*
+ * Global VS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=VS] {
+  text-align: left;
+  vertical-align: top;
+  justify-content: start;
+}
+[data-key=CV] [data-key=VS] .place {
+  left: calc(4rem * 0.75);
+  width: calc(100% - calc(4rem * 0.75) * 2);
+  top: calc(4rem * 0.75);
+  height: calc(100% - calc(4rem * 0.75) * 2);
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+[data-key=CV] [data-key=VS] .box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+[data-key=CV] [data-key=VS] [class*=_orient_l] .box {
+  flex-direction: row;
+  flex: 2 1 auto;
+}
+[data-key=CV] [data-key=VS] [data-key=VS_TXT] {
+  padding-right: calc(4rem * 0.75);
+}
+[data-key=CV] [data-key=VS] [data-key=VS_IMG] {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+[data-key=CV] [data-key=VS] p {
+  line-height: 1.2;
+}
+[data-key=CV] [data-key=VS] .spacer_between {
+  margin: calc(calc(calc(4rem * 0.75)) / 2);
+}
+[data-key=CV] [data-key=VS] .DN p::after,
+[data-key=CV] [data-key=VS] .VA p::after {
+  margin: calc(calc(calc(4rem * 0.75) / 2) / 2);
+}
+[data-key=CV].DL_disabled.DN_disabled.DD_disabled [data-key=VS] .DL_DN_DD, [data-key=CV].DN_disabled.DD_disabled [data-key=VS] .spacer_between, [data-key=CV].DL_disabled.DN_disabled.DD_disabled [data-key=VS] .spacer_between, [data-key=CV].VA_disabled.VB_disabled [data-key=VS] .VA_VB, [data-key=CV].VA_disabled.VB_disabled [data-key=VS] .spacer_between {
+  display: none !important;
+}
+
+[data-key=BN].dealer_logo_empty [data-key=CV] [data-key=VS] .DL [data-key=VS_IMG].DL_type_link {
+  display: none !important;
+}
+
+/*
+ * w0
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0 .boxed {
+  right: 0;
+  width: 55%;
+}
+[data-key=CV].CV_tens_w0 [data-key=LG] {
+  height: calc(calc(4rem * 0.75) * 1 + calc(4rem * 0.75) * 2);
+  width: 45%;
+}
+[data-key=CV].CV_tens_w0 [data-key=LG] .place {
+  width: calc(100% - calc(4rem * 0.75));
+}
+[data-key=CV].CV_tens_w0 [data-key=MS] {
+  height: calc(100% - (4rem * 1 + 10% + calc(4rem * 0.75)));
+}
+[data-key=CV].CV_tens_w0 [data-key=MS] .place {
+  top: calc(4rem * 0.75);
+  left: calc(4rem * 0.75);
+  width: calc(100% - calc(4rem * 0.75) * 2);
+  height: calc(100% - calc(4rem * 0.75) - calc(4rem * 0.75) / 2);
+}
+[data-key=CV].CV_tens_w0 [data-key=PS],
+[data-key=CV].CV_tens_w0 [data-key=CS] {
+  bottom: 0;
+  height: calc(4rem * 1 + 10% + calc(4rem * 0.75));
+}
+[data-key=CV].CV_tens_w0 [data-key=PS] .place,
+[data-key=CV].CV_tens_w0 [data-key=CS] .place {
+  bottom: calc(calc(4rem * 0.75) / 2);
+  left: calc(4rem * 0.75);
+  width: calc(100% - calc(4rem * 0.75) * 2);
+  height: calc(100% - calc(4rem * 0.75) / 2);
+}
+[data-key=CV].CV_tens_w0 [data-key=BG],
+[data-key=CV].CV_tens_w0 [data-key=FG] {
+  vertical-align: top;
+}
+[data-key=CV].CV_tens_w0 [data-key=BG].BG_place_fit .place,
+[data-key=CV].CV_tens_w0 [data-key=FG].FG_place_fit .place {
+  bottom: calc(4rem * 0.75);
+  left: calc(4rem * 0.75);
+  height: calc(100% - (calc(4rem * 0.75) * 1 + calc(4rem * 0.75) * 2) - calc(4rem * 0.75));
+  width: calc(45% - calc(4rem * 0.75));
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] .linear {
+  display: none;
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] .corner {
+  display: block;
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_0] {
+  height: calc(calc(4rem * 0.75) * 1 + calc(4rem * 0.75) * 2);
+  width: 45%;
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_1] svg rect {
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+[data-key=CV].CV_tens_w0 [data-key=OL] [data-key=OL_GR_1] {
+  right: 0;
+  width: calc(55% + calc(4rem * 0.75));
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=LG] .place {
+  width: calc(100% - calc(4rem * 0.75) - calc(4rem * 0.75) / 2);
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=MS] {
+  height: calc(100% - (4rem * 1 + 15% + calc(4rem * 0.75) / 2));
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=MS] .place {
+  top: calc(calc(4rem * 0.75) / 2);
+  left: calc(calc(4rem * 0.75) / 2);
+  width: calc(100% - calc(calc(4rem * 0.75) / 2) * 2);
+  height: calc(100% - calc(calc(4rem * 0.75) / 2) * 2);
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=PS],
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=CS] {
+  height: calc(4rem * 1 + 15% + calc(4rem * 0.75) / 2);
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=PS] .place,
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=CS] .place {
+  left: calc(calc(4rem * 0.75) / 2);
+  width: calc(100% - calc(calc(4rem * 0.75) / 2) * 2);
+}
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=BG].BG_place_fit .place,
+[data-key=CV].CV_tens_w0.CV_layout_boxed [data-key=FG].FG_place_fit .place {
+  width: calc(45% - calc(4rem * 0.75) - calc(calc(4rem * 0.75) / 2));
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].CV_tens_w0.CV_layout_isolated .isolated {
+  width: 45%;
+}
+[data-key=CV].CV_tens_w0.CV_layout_isolated [data-key=LG] .place {
+  width: calc(100% - calc(4rem * 0.75) * 2);
+}
+[data-key=CV].CV_tens_w0.CV_layout_isolated [data-key=BG].BG_place_fit .place,
+[data-key=CV].CV_tens_w0.CV_layout_isolated [data-key=FG].FG_place_fit .place {
+  width: calc(100% - calc(4rem * 0.75) * 2);
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * SoMe override config. IMPORTANT TO NOT USE %
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Global SOME overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=BN][class*=_meta_] [data-key=CV] {
+  overflow: visible !important;
+}
+[data-key=BN][class*=_meta_] [data-key=CV] [data-key=FR] {
+  display: none !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] {
+  top: 4rem !important;
+  height: calc(100% - 4rem - 5rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] [data-key=OL] [data-key=OL_GR_0] {
+  top: -4rem !important;
+  height: calc(100% + 4rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] [data-key=UL] {
+  top: -4rem !important;
+  height: calc(100% + 4rem + 5rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] {
+  top: 6rem !important;
+  height: calc(100% - 6rem - 12rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] [data-key=OL] [data-key=OL_GR_0] {
+  top: -6rem !important;
+  height: calc(100% + 6rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] [data-key=UL] {
+  top: -6rem !important;
+  height: calc(100% + 6rem + 12rem) !important;
+}
+
+/*# sourceMappingURL=w0.css.map */

@@ -1,0 +1,44 @@
+/*
+ * Scale configuration.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * SoMe override config. IMPORTANT TO NOT USE %
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Global SOME overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=BN][class*=_meta_] [data-key=CV] {
+  overflow: visible !important;
+}
+[data-key=BN][class*=_meta_] [data-key=CV] [data-key=FR] {
+  display: none !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] {
+  top: 4rem !important;
+  height: calc(100% - 4rem - 5rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] [data-key=OL] [data-key=OL_GR_0] {
+  top: -4rem !important;
+  height: calc(100% + 4rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_story [data-key=CV] [data-key=UL] {
+  top: -4rem !important;
+  height: calc(100% + 4rem + 5rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] {
+  top: 6rem !important;
+  height: calc(100% - 6rem - 12rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] [data-key=OL] [data-key=OL_GR_0] {
+  top: -6rem !important;
+  height: calc(100% + 6rem) !important;
+}
+[data-key=BN][class*=_meta_].name_1080x1920_meta_reel [data-key=CV] [data-key=UL] {
+  top: -6rem !important;
+  height: calc(100% + 6rem + 12rem) !important;
+}
+
+/*# sourceMappingURL=layout_some.css.map */

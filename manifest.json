@@ -1,0 +1,5210 @@
+{
+  "type": "MANIFEST",
+  "version": "1.0",
+  "author": "Anton Gorodnyanskiy",
+  "brand": "141",
+  "name": "GlobalConnect Generic",
+  "created": "02/09/2024",
+  "updated": "02/09/2024",
+  "editor": {
+    "url": "editor.html",
+    "version": "1.1"
+  },
+  "brandmaster": {
+    "templateGroups": true
+  },
+  "exports": {
+    "config": [
+      {
+        "type": "html",
+        "speed": 10,
+        "time": 5000
+      },
+      {
+        "type": "gif",
+        "speed": 10,
+        "time": 5000
+      },
+      {
+        "type": "jpeg",
+        "speed": 1,
+        "time": 3000
+      },
+      {
+        "type": "png",
+        "speed": 1,
+        "time": 3000
+      }
+    ]
+  },
+  "assets": [],
+  "sizes": [
+    {
+      "type": "FIXED",
+      "name": "120x600",
+      "width": 120,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "fallbacks/120x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "140x350",
+      "width": 140,
+      "height": 350,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/140x350.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "160x80",
+      "width": 160,
+      "height": 80,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/160x80.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "150x600",
+      "width": 150,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/150x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "160x600",
+      "width": 160,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/160x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "180x500",
+      "width": 180,
+      "height": 500,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/180x500.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "200x200",
+      "width": 200,
+      "height": 200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/200x200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "200x350",
+      "width": 200,
+      "height": 350,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/200x350.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "200x600",
+      "width": 200,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/200x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "200x700",
+      "width": 200,
+      "height": 700,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/200x700.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "240x400",
+      "width": 240,
+      "height": 400,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/240x400.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "250x250",
+      "width": 250,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/250x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "250x360",
+      "width": 250,
+      "height": 360,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/250x360.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "250x600",
+      "width": 250,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/250x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "250x800",
+      "width": 250,
+      "height": 800,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/250x800.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x50",
+      "width": 300,
+      "height": 50,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x50.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x100",
+      "width": 300,
+      "height": 100,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x100.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x200",
+      "width": 300,
+      "height": 200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x250",
+      "width": 300,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x300",
+      "width": 300,
+      "height": 300,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x300.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "300x600",
+      "width": 300,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/300x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x50",
+      "width": 320,
+      "height": 50,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x50.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x100",
+      "width": 320,
+      "height": 100,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x100.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x160",
+      "width": 320,
+      "height": 160,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x160.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x240",
+      "width": 320,
+      "height": 240,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x240.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x250",
+      "width": 320,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x280",
+      "width": 320,
+      "height": 280,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x280.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x320",
+      "width": 320,
+      "height": 320,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x320.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x400",
+      "width": 320,
+      "height": 400,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x400.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "320x480",
+      "width": 320,
+      "height": 480,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/320x480.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "336x280",
+      "width": 336,
+      "height": 280,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/336x280.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "350x250",
+      "width": 350,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/350x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "400x600",
+      "width": 400,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/400x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "468x60",
+      "width": 468,
+      "height": 60,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/468x60.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "468x360",
+      "width": 468,
+      "height": 360,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/468x360.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "468x480",
+      "width": 468,
+      "height": 480,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/468x480.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "480x120",
+      "width": 480,
+      "height": 120,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/480x120.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "480x300",
+      "width": 480,
+      "height": 300,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/480x300.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "480x480",
+      "width": 480,
+      "height": 480,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/480x480.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "580x400",
+      "width": 580,
+      "height": 400,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/580x400.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "600x400",
+      "width": 600,
+      "height": 400,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/600x400.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "640x320",
+      "width": 640,
+      "height": 320,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/640x320.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "640x360",
+      "width": 640,
+      "height": 360,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/640x360.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "640x1000",
+      "width": 640,
+      "height": 1000,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/640x1000.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "660x100",
+      "width": 660,
+      "height": 100,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/660x100.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "712x250",
+      "width": 712,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/712x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "728x90",
+      "width": 728,
+      "height": 90,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/728x90.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "750x100",
+      "width": 750,
+      "height": 100,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/750x100.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "750x200",
+      "width": 750,
+      "height": 200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/750x200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "750x300",
+      "width": 750,
+      "height": 300,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/750x300.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "768x240",
+      "width": 768,
+      "height": 240,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/768x240.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "800x250",
+      "width": 800,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/800x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "825x110",
+      "width": 825,
+      "height": 110,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/825x110.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "852x640",
+      "width": 852,
+      "height": 640,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/852x640.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "910x250",
+      "width": 910,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/910x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "930x180",
+      "width": 930,
+      "height": 180,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/930x180.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "960x1200",
+      "width": 960,
+      "height": 1200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/960x1200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "970x90",
+      "width": 970,
+      "height": 90,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/970x90.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "970x210",
+      "width": 970,
+      "height": 210,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/970x210.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "970x250",
+      "width": 970,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/970x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "970x300",
+      "width": 970,
+      "height": 300,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/970x300.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "970x310",
+      "width": 970,
+      "height": 310,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/970x310.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "980x120",
+      "width": 980,
+      "height": 120,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/980x120.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "980x240",
+      "width": 980,
+      "height": 240,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/980x240.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "980x250",
+      "width": 980,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/980x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "980x300",
+      "width": 980,
+      "height": 300,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/980x300.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "980x600",
+      "width": 980,
+      "height": 600,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/980x600.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1000x100",
+      "width": 1000,
+      "height": 100,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1000x100.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1020x200",
+      "width": 1020,
+      "height": 200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1020x200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1024x81",
+      "width": 1024,
+      "height": 81,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1024x81.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1080x1080",
+      "width": 1080,
+      "height": 1080,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1080x1080.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1080x1920",
+      "width": 1080,
+      "height": 1920,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1080x1920.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1168x250",
+      "width": 1168,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1168x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1200x200",
+      "width": 1200,
+      "height": 200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1200x200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1200x250",
+      "width": 1200,
+      "height": 250,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1200x250.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1200x628",
+      "width": 1200,
+      "height": 628,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1200x628.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1200x1200",
+      "width": 1200,
+      "height": 1200,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1200x1200.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1250x360",
+      "width": 1250,
+      "height": 360,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1250x360.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1400x940",
+      "width": 1400,
+      "height": 940,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1400x940.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1920x900",
+      "width": 1920,
+      "height": 900,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1920x900.png"
+      }
+    },
+    {
+      "type": "FIXED",
+      "name": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/1920x1080.png"
+      }
+    },
+    {
+      "type": "RESPONSIVE",
+      "name": "RxR",
+      "width": "100%",
+      "height": "100%",
+      "index": "banner.min.html",
+      "fallback": {
+        "static": "./fallbacks/0x0.png"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "TENSION",
+      "id": "CV_tens_t3",
+      "name": "Extra Tall",
+      "min": 0,
+      "max": 0.2
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_t2",
+      "name": "Very Tall",
+      "min": 0.2,
+      "max": 0.4
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_t1",
+      "name": "Tall",
+      "min": 0.4,
+      "max": 0.6
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_t0",
+      "name": "Equal Tall",
+      "min": 0.6,
+      "max": 0.8
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_e0",
+      "name": "Equal",
+      "min": 0.8,
+      "max": 1.2
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_w0",
+      "name": "Equal Wide",
+      "min": 1.2,
+      "max": 1.6
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_w1",
+      "name": "Wide",
+      "min": 1.6,
+      "max": 3.2
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_w2",
+      "name": "Very Wide",
+      "min": 3.2,
+      "max": 6.0
+    },
+    {
+      "type": "TENSION",
+      "id": "CV_tens_w2",
+      "name": "Extra Wide",
+      "min": 6.0,
+      "max": null
+    },
+    {
+      "type": "SCALE",
+      "id": "CV_scale_xs",
+      "name": "Micro",
+      "min": 0,
+      "max": 40000
+    },
+    {
+      "type": "SCALE",
+      "id": "CV_scale_s",
+      "name": "Small",
+      "min": 40000,
+      "max": 80000
+    },
+    {
+      "type": "SCALE",
+      "id": "CV_scale_m",
+      "name": "Medium",
+      "min": 80000,
+      "max": 160000
+    },
+    {
+      "type": "SCALE",
+      "id": "CV_scale_l",
+      "name": "Large",
+      "min": 160000,
+      "max": 320000
+    },
+    {
+      "type": "SCALE",
+      "id": "CV_scale_xl",
+      "name": "Huge",
+      "min": 320000,
+      "max": null
+    }
+  ],
+  "macros": [
+    {
+      "name": "${compression}",
+      "type": "text"
+    },
+    {
+      "name": "${dest_url}",
+      "type": "text"
+    },
+    {
+      "name": "${message_1}",
+      "type": "text"
+    },
+    {
+      "name": "${message_1_l}",
+      "type": "text"
+    },
+    {
+      "name": "${message_1_p}",
+      "type": "text"
+    },
+    {
+      "name": "${message_2}",
+      "type": "text"
+    },
+    {
+      "name": "${message_2_l}",
+      "type": "text"
+    },
+    {
+      "name": "${message_2_p}",
+      "type": "text"
+    },
+    {
+      "name": "${message_3}",
+      "type": "text"
+    },
+    {
+      "name": "${message_3_l}",
+      "type": "text"
+    },
+    {
+      "name": "${message_3_p}",
+      "type": "text"
+    },
+    {
+      "name": "${message_4}",
+      "type": "text"
+    },
+    {
+      "name": "${message_4_l}",
+      "type": "text"
+    },
+    {
+      "name": "${message_4_p}",
+      "type": "text"
+    },
+    {
+      "name": "${message_5}",
+      "type": "text"
+    },
+    {
+      "name": "${message_5_l}",
+      "type": "text"
+    },
+    {
+      "name": "${message_5_p}",
+      "type": "text"
+    },
+    {
+      "name": "${price}",
+      "type": "text"
+    },
+    {
+      "name": "${rate}",
+      "type": "text"
+    },
+    {
+      "name": "${cur}",
+      "type": "text"
+    },
+    {
+      "name": "${button}",
+      "type": "text"
+    },
+    {
+      "name": "${terms}",
+      "type": "text"
+    },
+    {
+      "name": "${condition}",
+      "type": "text"
+    },
+    {
+      "name": "${disclaimer}",
+      "type": "text"
+    },
+    {
+      "name": "${var_1}",
+      "type": "text"
+    },
+    {
+      "name": "${var_2}",
+      "type": "text"
+    },
+    {
+      "name": "${var_3}",
+      "type": "text"
+    },
+    {
+      "name": "${var_4}",
+      "type": "text"
+    },
+    {
+      "name": "${var_5}",
+      "type": "text"
+    },
+    {
+      "name": "${var_6}",
+      "type": "text"
+    },
+    {
+      "name": "${var_7}",
+      "type": "text"
+    },
+    {
+      "name": "${var_8}",
+      "type": "text"
+    },
+    {
+      "name": "${var_9}",
+      "type": "text"
+    },
+    {
+      "name": "${var_10}",
+      "type": "text"
+    }
+  ],
+  "data": {
+    "editor": {
+      "scope": [
+        0, "", "", ""
+      ],
+      "element": "",
+      "frame": 0,
+      "pause": true,
+      "jump": true,
+      "grid": false
+    },
+    "banner": {
+      "type": "BannerLayer",
+      "definition": {
+        "utm_campaign": "",
+        "utm_content": "",
+        "utm_medium": "",
+        "utm_source": "",
+        "utm_term": ""
+      },
+      "clicktag": {
+        "override": false,
+        "synchronise": false,
+        "encode": true,
+        "url": "$[dest_url]"
+      },
+      "macros": {
+        "region": {
+          "value": "auto",
+          "global": true,
+          "attr": {
+            "name": true
+          }
+        },
+        "brand": {
+          "value": "eika",
+          "global": true,
+          "attr": {
+            "name": true
+          }
+        },
+        "compression": {
+          "value": "${compression}",
+          "global": true
+        },
+        "dest_url": {
+          "value": "${dest_url}",
+          "global": true
+        },
+        "message_1": {
+          "value": "Få full <em>kontroll</em> over regns&shy;kapet!",
+          "global": true
+        },
+        "message_1_p": {
+          "value": "${message_1_p}",
+          "global": true
+        },
+        "message_1_l": {
+          "value": "${message_1_l}",
+          "global": true
+        },
+        "message_2": {
+          "value": "Vi tilbyr gratis chat med erfarne regnskaps&shy;førete og bankin&shy;tegrering uten ekstra kostnad.",
+          "global": true
+        },
+        "message_2_p": {
+          "value": "${message_2_p}",
+          "global": true
+        },
+        "message_2_l": {
+          "value": "${message_2_l}",
+          "global": true
+        },
+        "message_3": {
+          "value": "${message_3}",
+          "global": true
+        },
+        "message_3_p": {
+          "value": "${message_3_p}",
+          "global": true
+        },
+        "message_3_l": {
+          "value": "${message_3_l}",
+          "global": true
+        },
+        "message_4": {
+          "value": "${message_4}",
+          "global": true
+        },
+        "message_4_p": {
+          "value": "${message_4_p}",
+          "global": true
+        },
+        "message_4_l": {
+          "value": "${message_4_l}",
+          "global": true
+        },
+        "message_5": {
+          "value": "${message_5}",
+          "global": true
+        },
+        "message_5_p": {
+          "value": "${message_5_p}",
+          "global": true
+        },
+        "message_5_l": {
+          "value": "${message_5_l}",
+          "global": true
+        },
+        "price": {
+          "value": "${price}",
+          "global": true
+        },
+        "rate": {
+          "value": "${rate}",
+          "global": true
+        },
+        "cur": {
+          "value": "KR",
+          "global": true
+        },
+        "button": {
+          "value": "Søk nå",
+          "global": true
+        },
+        "terms": {
+          "value": "Vilkår og betingelser",
+          "global": true
+        },
+        "condition": {
+          "value": "Hvis søknaden går til manuell behandling får du endelig svar innen to arbeidsdager.",
+          "global": true
+        },
+        "disclaimer": {
+          "value": "${disclaimer}",
+          "global": true
+        },
+        "var_1": {
+          "value": "${var_1}",
+          "global": true
+        },
+        "var_2": {
+          "value": "${var_2}",
+          "global": true
+        },
+        "var_3": {
+          "value": "${var_3}",
+          "global": true
+        },
+        "var_4": {
+          "value": "${var_4}",
+          "global": true
+        },
+        "var_5": {
+          "value": "${var_5}",
+          "global": true
+        },
+        "var_6": {
+          "value": "${var_6}",
+          "global": true
+        },
+        "var_7": {
+          "value": "${var_7}",
+          "global": true
+        },
+        "var_8": {
+          "value": "${var_8}",
+          "global": true
+        },
+        "var_9": {
+          "value": "${var_9}",
+          "global": true
+        },
+        "var_10": {
+          "value": "${var_10}",
+          "global": true
+        }
+      },
+      "feeds": [],
+      "fonts": {
+        "font_A_300": {
+          "enabled": true,
+          "family": "font_A",
+          "fallback": "Arial",
+          "weight": 300,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_A_300 s"
+          ]
+        },
+        "font_A_400": {
+          "enabled": true,
+          "family": "font_A",
+          "fallback": "Arial",
+          "weight": 400,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_A_400 s",
+            ".font_A_300 b"
+          ]
+        },
+        "font_A_600": {
+          "enabled": true,
+          "family": "font_A",
+          "fallback": "Arial",
+          "weight": 600,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "selector": [
+            ".font_A_600 s",
+            ".font_A_400 b",
+            ".font_A_300 b b"
+          ],
+          "types": [
+            "woff2"
+          ]
+        },
+        "font_B_300": {
+          "enabled": true,
+          "family": "font_B",
+          "fallback": "Arial",
+          "weight": 300,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/adventpro/v28/V8mVoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUC4nMm4JHs1r",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_B_300 s"
+          ]
+        },
+        "font_B_400": {
+          "enabled": true,
+          "family": "font_B",
+          "fallback": "Arial",
+          "weight": 400,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/adventpro/v28/V8mVoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUC4nMm4JHs1r",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_B_400 s"
+          ]
+        },
+        "font_B_500": {
+          "enabled": true,
+          "family": "font_B",
+          "fallback": "Arial",
+          "weight": 500,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/adventpro/v28/V8mVoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUC4nMm4JHs1r",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_B_500 s"
+          ]
+        },
+        "font_B_600": {
+          "enabled": true,
+          "family": "font_B",
+          "fallback": "Arial",
+          "weight": 600,
+          "sources": [
+            {
+              "url": "//fonts.gstatic.com/s/adventpro/v28/V8mVoQfxVT4Dvddr_yOwrzaFxV7JtdQgFqXdUC4nMm4JHs1r",
+              "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "types": [
+            "woff2"
+          ],
+          "selector": [
+            ".font_B_600 s"
+          ]
+        }
+      },
+      "params": {
+        "wait": {
+          "fonts": [
+            "font_A_400",
+            "font_A_600",
+            "font_B_500"
+          ],
+          "assets": []
+        },
+        "stop": {
+          "after": 30000
+        }
+      },
+      "props": {
+        "mode": {
+          "name": "debug"
+        },
+        "purpose": {
+          "name": "none"
+        },
+        "compression": {
+          "name": "$[compression]"
+        }
+      },
+      "layers": {
+        "CV": {
+          "type": "JointLayer",
+          "enabled": true,
+          "props": {
+            "tension": {
+              "name": "CV_tens",
+              "options": [
+                [
+                  0,
+                  "t3"
+                ],
+                [
+                  0.2,
+                  "t2"
+                ],
+                [
+                  0.4,
+                  "t1"
+                ],
+                [
+                  0.6,
+                  "t0"
+                ],
+                [
+                  0.8,
+                  "e0"
+                ],
+                [
+                  1.2,
+                  "w0"
+                ],
+                [
+                  1.6,
+                  "w1"
+                ],
+                [
+                  3.2,
+                  "w2"
+                ],
+                [
+                  6.0,
+                  "w3"
+                ]
+              ]
+            },
+            "scale": {
+              "name": "CV_scale",
+              "font": 4,
+              "area": 22000,
+              "options": [
+                [
+                  0,
+                  "xs",
+                  1
+                ],
+                [
+                  40000,
+                  "s",
+                  1
+                ],
+                [
+                  80000,
+                  "m",
+                  1
+                ],
+                [
+                  160000,
+                  "l",
+                  1
+                ],
+                [
+                  320000,
+                  "xl",
+                  1
+                ]
+              ]
+            },
+            "size": {
+              "name": "CV_size"
+            }
+          },
+          "groups": {
+            "CV_appear": {
+              "enabled": true,
+              "macros": {
+                "CV_layout": {
+                  "value": "boxed",
+                  "global": true,
+                  "attr": {
+                    "name": true
+                  }
+                },
+                "excepts": {
+                  "preset": {
+                    "enabled": false,
+                    "data": {}
+                  }
+                }
+              }
+            },
+            "CV_colors": {
+              "enabled": true,
+              "macros": {
+                "CV_theme": {
+                  "value": "light",
+                  "global": true
+                },
+                "UL_bg": {
+                  "value": "auto",
+                  "global": true
+                },
+                "UL_bg_custom": {
+                  "value": "#000"
+                },
+                "IL_bg": {
+                  "value": "auto",
+                  "global": true
+                },
+                "IL_bg_custom": {
+                  "value": "#fff"
+                },
+                "OL_gr": {
+                  "value": "auto_a20",
+                  "global": true
+                },
+                "OL_gr_custom_0": {
+                  "value": "rgba(0,0,0,0.2)"
+                },
+                "OL_gr_custom_1": {
+                  "value": "rgba(0,0,0,0.2)"
+                },
+                "CV_sh": {
+                  "value": "transparent",
+                  "global": true
+                },
+                "CV_sh_custom": {
+                  "value": "rgba(0,0,0,0.4)"
+                },
+                "MS_st": {
+                  "value": "auto",
+                  "global": true
+                },
+                "BS_bt": {
+                  "value": "auto",
+                  "global": true
+                },
+                "LG_lg": {
+                  "value": "auto",
+                  "global": true
+                },
+                "VS_st": {
+                  "value": "auto",
+                  "global": true
+                },
+                "VS_bg": {
+                  "value": "auto",
+                  "global": true
+                },
+                "excepts": {
+                  "preset": {
+                    "enabled": false,
+                    "data": {}
+                  }
+                }
+              },
+              "attrs": {
+                "UL_bg_custom_0": {
+                  "selector": [
+                    "! [data-key=CV] [data-key=UL] .bg_custom .bg"
+                  ],
+                  "css": {
+                    "background": "$[UL_bg_custom]"
+                  }
+                },
+                "IL_bg_custom_0": {
+                  "selector": [
+                    "! [data-key=CV] [data-key=IL] .bg_custom .bg"
+                  ],
+                  "css": {
+                    "background": "$[IL_bg_custom]"
+                  }
+                },
+                "OL_gr_custom_0": {
+                  "selector": [
+                    "! [data-key=CV] .gr_custom .gr.gr_0 svg .fill"
+                  ],
+                  "css": {
+                    "stop-color": "$[OL_gr_custom_0]"
+                  }
+                },
+                "OL_gr_custom_1": {
+                  "selector": [
+                    "! [data-key=CV]  .gr_custom .gr.gr_1 svg .fill"
+                  ],
+                  "css": {
+                    "stop-color": "$[OL_gr_custom_1]"
+                  }
+                },
+                "CV_sh_custom_shadow": {
+                  "selector": [
+                    "! [data-key=CV] .sh_custom p"
+                  ],
+                  "css": {
+                    "text-shadow": "$[CV_sh_custom] 0 0 2rem"
+                  }
+                },
+                "CV_sh_custom_filter": {
+                  "selector": [
+                    "! [data-key=CV] .sh_custom p button",
+                    "! [data-key=CV] .sh_custom img",
+                    "! [data-key=CV] .sh_custom svg"
+                  ],
+                  "css": {
+                    "filter": "drop-shadow(0 0 2rem $[CV_sh_custom])"
+                  }
+                }
+              }
+            },
+            "CV_texts": {
+              "enabled": true,
+              "macros": {
+                "CV_TXT_size_h1": {
+                  "value": 24,
+                  "calc": "($[value]/10)",
+                  "global": true
+                },
+                "CV_TXT_size_h2": {
+                  "value": 18,
+                  "calc": "($[value]*0.1)",
+                  "global": true
+                },
+                "CV_TXT_size_h3": {
+                  "value": 16,
+                  "calc": "($[value]*0.1)",
+                  "global": true
+                },
+                "CV_TXT_size_p": {
+                  "value": 14,
+                  "calc": "($[value]*0.1)",
+                  "global": true
+                },
+                "CV_TXT_size_h4": {
+                  "value": 12,
+                  "calc": "($[value]*0.1)",
+                  "global": true
+                },
+                "CV_TXT_size_h5": {
+                  "value": 8,
+                  "calc": "($[value]*0.1)",
+                  "global": true
+                },
+                "CV_TXT_spacing": {
+                  "value": 0,
+                  "calc": "($[value]*0.05)",
+                  "global": true
+                },
+                "CV_TXT_spacing_MA": {
+                  "value": 0,
+                  "calc": "($[value]*0.05)",
+                  "global": true
+                },
+                "CV_TXT_spacing_MB": {
+                  "value": 0,
+                  "calc": "($[value]*0.05)",
+                  "global": true
+                },
+                "CV_TXT_spacing_BT": {
+                  "value": 0,
+                  "calc": "($[value]*0.05)",
+                  "global": true
+                },
+                "excepts": {
+                  "preset": {
+                    "enabled": false,
+                    "data": {}
+                  }
+                }
+              },
+              "attrs": {
+                "CV_TXT_style": {
+                  "selector": [
+                    "p",
+                    "button"
+                  ],
+                  "css": {
+                    "letter-spacing": {
+                      "value": "calc($[CV_TXT_spacing]em)"
+                    }
+                  }
+                },
+                "CV_TXT_style_MA": {
+                  "selector": [
+                    ".MA p"
+                  ],
+                  "css": {
+                    "letter-spacing": {
+                      "value": "calc($[CV_TXT_spacing_MA]em)"
+                    }
+                  }
+                },
+                "CV_TXT_style_MB": {
+                  "selector": [
+                    ".MB p"
+                  ],
+                  "css": {
+                    "letter-spacing": {
+                      "value": "calc($[CV_TXT_spacing_MB]em)"
+                    }
+                  }
+                },
+                "CV_TXT_style_BT": {
+                  "selector": [
+                    "p button"
+                  ],
+                  "css": {
+                    "letter-spacing": {
+                      "value": "calc($[CV_TXT_spacing_BT]em)"
+                    }
+                  }
+                }
+              }
+            },
+            "CV_images": {
+              "enabled": true,
+              "macros": {
+                "CV_IMG_format": {
+                  "value": "auto",
+                  "global": true
+                },
+                "CV_IMG_quality_level": {
+                  "value": 8,
+                  "calc": "((10 + (100 * ($[value] - 1) / 10)))",
+                  "global": true
+                },
+                "CV_IMG_quality_velocity": {
+                  "value": 4,
+                  "global": true
+                },
+                "CV_IMG_ratio_level": {
+                  "value": 4,
+                  "calc": "(1 + $[value]/4)",
+                  "global": true
+                },
+                "CV_IMG_ratio_velocity": {
+                  "value": 8,
+                  "global": true
+                },
+                "excepts": {
+                  "preset": {
+                    "enabled": false,
+                    "data": {}
+                  }
+                }
+              }
+            },
+            "CV_videos": {
+              "enabled": true,
+              "macros": {
+                "CV_VID_ratio_level": {
+                  "value": 2,
+                  "calc": "(1 + $[value]/4)",
+                  "global": true
+                },
+                "CV_VID_ratio_velocity": {
+                  "value": 4,
+                  "global": true
+                },
+                "CV_VID_limit_min": {
+                  "value": 320,
+                  "global": true
+                },
+                "CV_VID_limit_max": {
+                  "value": 1280,
+                  "global": true
+                },
+                "excepts": {
+                  "preset": {
+                    "enabled": false,
+                    "data": {}
+                  }
+                }
+              }
+            },
+            "CV_symbols": {
+              "macros": {
+                "BR": {
+                  "value": "&shy;",
+                  "global": true
+                }
+              }
+            }
+          },
+          "layers": {
+            "CL": {
+              "type": "JointLayer"
+            },
+            "CL_PS_TXT_1": {
+              "type": "JointLayer"
+            },
+            "CX": {
+              "type": "JointLayer",
+              "layers": {
+                "CX_IMG": {
+                  "type": "JointLayer",
+                  "anims": {
+                    "anim": {
+                      "name": "anim",
+                      "skip": false
+                    }
+                  },
+                  "layers": [
+                    {
+                      "type": "JointLayer"
+                    }
+                  ]
+                }
+              }
+            },
+            "FR": {
+              "type": "JointLayer"
+            },
+            "UL": {
+              "type": "JointLayer",
+              "enabled": true,
+              "layers": {
+                "UL_BG": {
+                  "type": "JointLayer",
+                  "layers": [
+                    {
+                      "type": "JointLayer"
+                    }
+                  ]
+                }
+              }
+            },
+            "IL": {
+              "type": "JointLayer",
+              "enabled": false,
+              "excepts": {
+                "CV_layout_isolated": {
+                  "data": {
+                    "enabled": true
+                  }
+                },
+                "CV_layout_boxed": {
+                  "data": {
+                    "enabled": true
+                  }
+                }
+              },
+              "layers": {
+                "IL_BG": {
+                  "type": "JointLayer",
+                  "attrs": {
+                    "inverted": {
+                      "name": true,
+                      "enabled": true,
+                      "excepts": {
+                        "CV_layout_default": {
+                          "data": {
+                            "enabled": false
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "layers": [
+                    {
+                      "type": "JointLayer"
+                    }
+                  ]
+                }
+              }
+            },
+            "OL": {
+              "type": "JointLayer",
+              "enabled": false,
+              "excepts": {
+                "CV_layout_default": {
+                  "data": {
+                    "enabled": true
+                  }
+                }
+              },
+              "layers": {
+                "OL_GR": {
+                  "type": "JointLayer",
+                  "layers": [
+                    {
+                      "type": "JointLayer"
+                    },
+                    {
+                      "type": "JointLayer"
+                    }
+                  ]
+                }
+              }
+            },
+            "CS": {
+              "type": "JointLayer",
+              "enabled": false,
+              "excepts": {
+                "CV_scale_xs": {
+                  "data": {
+                    "enabled": true
+                  }
+                }
+              },
+              "groups": {
+                "CS_appear": {
+                  "enabled": true,
+                  "macros": {
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "layers": {
+                "CS_OBJ": {
+                  "type": "JointLayer",
+                  "props": {
+                    "tension": {
+                      "name": "EL_orient",
+                      "options": [
+                        [
+                          0,
+                          "p"
+                        ],
+                        [
+                          0.8,
+                          "s"
+                        ],
+                        [
+                          2.4,
+                          "l"
+                        ]
+                      ]
+                    }
+                  },
+                  "layers": {
+                    "CS_BOX": {
+                      "type": "JointLayer"
+                    },
+                    "CS_TXT": {
+                      "type": "JointLayer",
+                      "layers": [
+                        null
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "PS": {
+              "type": "JointLayer",
+              "enabled": true,
+              "excepts": {
+                "name_1080x1920_meta_story": {
+                  "data": {
+                    "enabled": false
+                  }
+                },
+                "name_1080x1920_meta_reel": {
+                  "data": {
+                    "enabled": false
+                  }
+                }
+              },
+              "groups": {
+                "PS_anim": {
+                  "enabled": false,
+                  "macros": {
+                    "PS_anim_delay": {
+                      "value": 0,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "PS_anim_in_speed_opacity": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "PS_anim_in_speed_transform": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "PS_anim_in_ease": {
+                      "value": "ease-out"
+                    },
+                    "PS_anim_in_x": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "PS_anim_in_y": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "PS_anim_in_z": {
+                      "value": 0,
+                      "calc": "1+($[value]/20)",
+                      "global": true
+                    },
+                    "PS_anim_in_r": {
+                      "value": 0,
+                      "global": true
+                    },
+                    "PS_anim_in_origin": {
+                      "value": "center"
+                    },
+                    "PS_anim_out_speed_opacity": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "PS_anim_out_speed_transform": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "PS_anim_out_ease": {
+                      "value": "ease-out"
+                    },
+                    "PS_anim_out_x": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "PS_anim_out_y": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "PS_anim_out_z": {
+                      "value": 0,
+                      "calc": "1+($[value]/20)",
+                      "global": true
+                    },
+                    "PS_anim_out_r": {
+                      "value": 0,
+                      "global": true
+                    },
+                    "PS_anim_out_origin": {
+                      "value": "center"
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  },
+                  "attrs": {
+                    "anim_custom": {
+                      "name": true,
+                      "global": true
+                    },
+                    "anim_init": {
+                      "selector": [
+                        ".anim"
+                      ],
+                      "css": {
+                        "transform": "scale($[PS_anim_in_z]) translateX($[PS_anim_in_x]rem) translateY($[PS_anim_in_y]rem) rotate($[PS_anim_in_r]deg)",
+                        "opacity": 0
+                      }
+                    },
+                    "anim_in": {
+                      "selector": [
+                        ".anim.anim_in"
+                      ],
+                      "css": {
+                        "transition": "opacity $[PS_anim_in_speed_opacity]s $[PS_anim_in_ease] $[PS_anim_delay]s, transform $[PS_anim_in_speed_transform]s $[PS_anim_in_ease] $[PS_anim_delay]s",
+                        "transform": "scale(1) translateX(0) translateY(0) rotate(0)",
+                        "transform-origin": "$[PS_anim_in_origin]",
+                        "opacity": 1
+                      }
+                    },
+                    "anim_out": {
+                      "selector": [
+                        ".anim.anim_out"
+                      ],
+                      "css": {
+                        "transition": "opacity $[PS_anim_out_speed_opacity]s $[PS_anim_out_ease], transform $[PS_anim_out_speed_transform]s $[PS_anim_out_ease]",
+                        "transform": "scale($[PS_anim_out_z]) translateX($[PS_anim_out_x]rem) translateY($[PS_anim_out_y]rem) rotate($[PS_anim_out_r]deg)",
+                        "transform-origin": "$[PS_anim_out_origin]",
+                        "opacity": 0
+                      }
+                    }
+                  }
+                },
+                "PS_layout": {
+                  "enabled": false,
+                  "macros": {
+                    "PS_arrangement": {
+                      "value": "default",
+                      "attr": {
+                        "name": true
+                      }
+                    },
+                    "PS_justify": {
+                      "value": "inherit",
+                      "attr": {
+                        "name": true
+                      }
+                    },
+                    "PS_align_x": {
+                      "value": "inherit",
+                      "global": true
+                    },
+                    "PS_align_y": {
+                      "value": "inherit",
+                      "global": true
+                    },
+                    "PS_margin": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "PS_size_top": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "PS_size_right": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "PS_size_bottom": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "PS_size_left": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "PS_offset_left": {
+                      "value": 0,
+                      "calc": "($[value]*0.5)"
+                    },
+                    "PS_offset_top": {
+                      "value": 0,
+                      "calc": "($[value]*0.5)"
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  },
+                  "attrs": {
+                    "PS_justify_css": {
+                      "selector": [
+                        "[data-key=PS_BOX]"
+                      ],
+                      "css": {
+                        "justify-content": "$[PS_justify]"
+                      }
+                    },
+                    "PS_margin": {
+                      "selector": [
+                        ".margin"
+                      ],
+                      "css": {
+                        "left": "calc($[PS_margin]rem)",
+                        "top": "calc($[PS_margin]rem)",
+                        "width": "calc(100% - ($[PS_margin]rem * 2))",
+                        "height": "calc(100% - ($[PS_margin]rem * 2))"
+                      }
+                    },
+                    "PS_size": {
+                      "selector": [
+                        ".size"
+                      ],
+                      "css": {
+                        "left": "calc($[PS_size_left]rem)",
+                        "top": "calc($[PS_size_top]rem)",
+                        "width": "calc(100% - ($[PS_size_left]rem + $[PS_size_right]rem))",
+                        "height": "calc(100% - ($[PS_size_top]rem + $[PS_size_bottom]rem))"
+                      }
+                    },
+                    "PS_offset": {
+                      "selector": [
+                        ".offset"
+                      ],
+                      "css": {
+                        "margin-left": "$[PS_offset_left]rem",
+                        "margin-top": "$[PS_offset_top]rem"
+                      }
+                    },
+                    "PS_align": {
+                      "selector": [
+                        "[data-key=PS_TXT]"
+                      ],
+                      "css": {
+                        "text-align": "$[PS_align_x]",
+                        "vertical-align": "$[PS_align_y]"
+                      }
+                    }
+                  }
+                },
+                "PS_appear": {
+                  "enabled": true,
+                  "macros": {
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "layers": {
+                "PS_OBJ": {
+                  "type": "JointLayer",
+                  "props": {
+                    "tension": {
+                      "name": "EL_orient",
+                      "options": [
+                        [
+                          0,
+                          "p"
+                        ],
+                        [
+                          0.8,
+                          "s"
+                        ],
+                        [
+                          4.0,
+                          "l"
+                        ]
+                      ]
+                    }
+                  },
+                  "layers": {
+                    "PS_BOX": {
+                      "type": "JointLayer"
+                    },
+                    "PS_TXT": {
+                      "type": "JointLayer",
+                      "layers": [
+                        {
+                          "type": "TextLayer",
+                          "alias": "BT",
+                          "enabled": true,
+                          "groups": {
+                            "BT_source": {
+                              "enabled": true,
+                              "macros": {
+                                "BT_source": {
+                                  "value": "$[button]"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "BT_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "BT_trans": {
+                                  "value": "none"
+                                },
+                                "BT_font": {
+                                  "value": "font_A_600",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "BT_ratio": {
+                                  "value": 1
+                                },
+                                "BT_size": {
+                                  "value": "$[CV_TXT_size_p]"
+                                },
+                                "BT_scale": {
+                                  "value": "em"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "BT_anim": {
+                              "enabled": true,
+                              "macros": {
+                                "BT_anim_skip": {
+                                  "value": false,
+                                  "global": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "params": {
+                            "wrapper": "PS_OBJ",
+                            "holder": "PS_TXT",
+                            "tags": [
+                              "p",
+                              "button"
+                            ]
+                          },
+                          "attrs": {
+                            "BT_style": {
+                              "selector": "button",
+                              "css": {
+                                "text-transform": "$[BT_trans]",
+                                "font-size": {
+                                  "value": "$[BT_size]",
+                                  "calc": "($[BT_ratio]*$[value]) + '$[BT_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[BT_anim_skip]"
+                            },
+                            "anim_pulse": {
+                              "name": "anim_pulse",
+                              "skip": false
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[BT_source]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextLayer",
+                          "alias": "CN",
+                          "enabled": true,
+                          "groups": {
+                            "CN_source": {
+                              "enabled": true,
+                              "macros": {
+                                "CN_source": {
+                                  "value": "<q>$[condition]</q>"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "CN_anim": {
+                              "enabled": true,
+                              "macros": {
+                                "CN_anim_skip": {
+                                  "value": false,
+                                  "global": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "CN_action": {
+                              "enabled": false,
+                              "macros": {
+                                "gesture_hover": {
+                                  "value": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "CN_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "CN_trans": {
+                                  "value": "none"
+                                },
+                                "CN_font": {
+                                  "value": "font_A_400",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "CN_ratio": {
+                                  "value": 1,
+                                  "excepts": {
+                                    "CV_scale_s": {
+                                      "data": {
+                                        "value": 1.1
+                                      }
+                                    },
+                                    "CV_scale_xs": {
+                                      "data": {
+                                        "value": 1.2
+                                      }
+                                    }
+                                  }
+                                },
+                                "CN_size": {
+                                  "value": "$[CV_TXT_size_h5]"
+                                },
+                                "CN_scale": {
+                                  "value": "em"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "params": {
+                            "wrapper": "PS_OBJ",
+                            "holder": "PS_TXT",
+                            "tags": [
+                              "p"
+                            ]
+                          },
+                          "attrs": {
+                            "CN_style": {
+                              "selector": "p",
+                              "css": {
+                                "text-transform": "$[CN_trans]",
+                                "font-size": {
+                                  "value": "$[CN_size]",
+                                  "calc": "($[CN_ratio]*$[value]) + '$[CN_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[CN_anim_skip]"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[CN_source]"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "SQ": {
+              "type": "SequenceLayer",
+              "params": {
+                "stop": {
+                  "on": "first"
+                },
+                "play": {
+                  "from": null
+                },
+                "pause": {
+                  "after": {
+                    "time": 0,
+                    "frame": 0,
+                    "loop": 0,
+                    "excepts": {
+                      "snapshot": {
+                        "data": {
+                          "loop": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "load": {
+                  "before": 1,
+                  "after": 2,
+                  "excepts": {
+                    "snapshot": {
+                      "data": {
+                        "after": 20
+                      }
+                    }
+                  }
+                },
+                "direction": 1
+              },
+              "frames": [
+                {
+                  "type": "FrameLayer",
+                  "enabled": true,
+                  "params": {
+                    "duration": 4000
+                  },
+                  "groups": {
+                    "SQ_setup": {
+                      "enabled": true,
+                      "macros": {
+                        "SQ_type": {
+                          "value": "split",
+                          "global": true,
+                          "attr": {
+                            "name": true
+                          }
+                        },
+                        "SQ_filter": {
+                          "value": "split_limited",
+                          "attr": {
+                            "name": true
+                          }
+                        },
+                        "SQ_split": {
+                          "value": "none",
+                          "attr": {
+                            "name": true
+                          }
+                        },
+                        "SQ_priority": {
+                          "value": "high",
+                          "global": true,
+                          "attr": {
+                            "name": true
+                          }
+                        }
+                      }
+                    },
+                    "SQ_appear": {
+                      "macros": {
+                        "SQ_layout": {
+                          "value": "default",
+                          "global": true,
+                          "attr": {
+                            "name": true
+                          }
+                        },
+                        "SQ_CV_theme": {
+                          "value": "$[CV_theme]"
+                        },
+                        "SQ_VS_bg": {
+                          "value": "$[VS_bg]"
+                        },
+                        "SQ_VS_st": {
+                          "value": "$[VS_st]"
+                        },
+                        "SQ_UL_bg": {
+                          "value": "$[UL_bg]"
+                        },
+                        "SQ_IL_bg": {
+                          "value": "$[IL_bg]"
+                        },
+                        "SQ_OL_gr": {
+                          "value": "$[OL_gr]"
+                        },
+                        "SQ_MS_st": {
+                          "value": "$[MS_st]"
+                        },
+                        "SQ_MS_sh": {
+                          "value": "$[CV_sh]"
+                        },
+                        "SQ_BS_bt": {
+                          "value": "$[BS_bt]"
+                        },
+                        "SQ_LG_lg": {
+                          "value": "$[LG_lg]"
+                        },
+                        "SQ_LG_sh": {
+                          "value": "$[CV_sh]"
+                        },
+                        "excepts": {
+                          "preset": {
+                            "enabled": false,
+                            "data": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "clicktag": {
+                    "url": ""
+                  },
+                  "layers": {
+                    "FG": {
+                      "type": "JointLayer",
+                      "enabled": true,
+                      "excepts": {
+                        "SQ_type_disclaimer": {
+                          "data": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "macros": {
+                        "FG_align_x": {
+                          "value": "inherit",
+                          "global": true
+                        },
+                        "FG_align_y": {
+                          "value": "inherit",
+                          "global": true
+                        }
+                      },
+                      "groups": {
+                        "FG_anim": {
+                          "enabled": false,
+                          "macros": {
+                            "FG_anim_delay": {
+                              "value": 0,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "FG_anim_in_speed_opacity": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "FG_anim_in_speed_transform": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "FG_anim_in_ease": {
+                              "value": "ease-out"
+                            },
+                            "FG_anim_in_x": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "FG_anim_in_y": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "FG_anim_in_z": {
+                              "value": 0,
+                              "calc": "1+($[value]/20)",
+                              "global": true
+                            },
+                            "FG_anim_in_r": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "FG_anim_in_origin": {
+                              "value": "center"
+                            },
+                            "FG_anim_out_speed_opacity": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "FG_anim_out_speed_transform": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "FG_anim_out_ease": {
+                              "value": "ease-out"
+                            },
+                            "FG_anim_out_x": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "FG_anim_out_y": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "FG_anim_out_z": {
+                              "value": 0,
+                              "calc": "1+($[value]/20)",
+                              "global": true
+                            },
+                            "FG_anim_out_r": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "FG_anim_out_origin": {
+                              "value": "center"
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "anim_custom": {
+                              "name": true,
+                              "global": true
+                            },
+                            "anim_init": {
+                              "selector": [
+                                ".anim"
+                              ],
+                              "css": {
+                                "transform": "scale($[FG_anim_in_z]) translateX($[FG_anim_in_x]rem) translateY($[FG_anim_in_y]rem) rotate($[FG_anim_in_r]deg)",
+                                "opacity": 0
+                              }
+                            },
+                            "anim_in": {
+                              "selector": [
+                                ".anim.anim_in"
+                              ],
+                              "css": {
+                                "transition": "opacity $[FG_anim_in_speed_opacity]s $[FG_anim_in_ease] $[FG_anim_delay]s, transform $[FG_anim_in_speed_transform]s $[FG_anim_in_ease] $[FG_anim_delay]s",
+                                "transform": "scale(1) translateX(0) translateY(0) rotate(0)",
+                                "transform-origin": "$[FG_anim_in_origin]",
+                                "opacity": 1
+                              }
+                            },
+                            "anim_out": {
+                              "selector": [
+                                ".anim.anim_out"
+                              ],
+                              "css": {
+                                "transition": "opacity $[FG_anim_out_speed_opacity]s $[FG_anim_out_ease], transform $[FG_anim_out_speed_transform]s $[FG_anim_out_ease]",
+                                "transform": "scale($[FG_anim_out_z]) translateX($[FG_anim_out_x]rem) translateY($[FG_anim_out_y]rem) rotate($[FG_anim_out_r]deg)",
+                                "transform-origin": "$[FG_anim_out_origin]",
+                                "opacity": 0
+                              }
+                            }
+                          }
+                        },
+                        "FG_layout": {
+                          "enabled": false,
+                          "macros": {
+                            "FG_align_x": {
+                              "value": "inherit",
+                              "global": true
+                            },
+                            "FG_align_y": {
+                              "value": "inherit",
+                              "global": true
+                            },
+                            "FG_margin": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "FG_size_top": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "FG_size_right": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "FG_size_bottom": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "FG_size_left": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "FG_offset_left": {
+                              "value": 0,
+                              "calc": "($[value]*0.5)"
+                            },
+                            "FG_offset_top": {
+                              "value": 0,
+                              "calc": "($[value]*0.5)"
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "FG_margin": {
+                              "selector": [
+                                ".margin"
+                              ],
+                              "css": {
+                                "left": "calc($[FG_margin]rem)",
+                                "top": "calc($[FG_margin]rem)",
+                                "width": "calc(100% - ($[FG_margin]rem * 2))",
+                                "height": "calc(100% - ($[FG_margin]rem * 2))"
+                              }
+                            },
+                            "FG_size": {
+                              "selector": [
+                                ".size"
+                              ],
+                              "css": {
+                                "left": "calc($[FG_size_left]rem)",
+                                "top": "calc($[FG_size_top]rem)",
+                                "width": "calc(100% - ($[FG_size_left]rem + $[FG_size_right]rem))",
+                                "height": "calc(100% - ($[FG_size_top]rem + $[FG_size_bottom]rem))"
+                              }
+                            },
+                            "FG_offset": {
+                              "selector": [
+                                ".offset"
+                              ],
+                              "css": {
+                                "margin-left": "$[FG_offset_left]rem",
+                                "margin-top": "$[FG_offset_top]rem"
+                              }
+                            }
+                          }
+                        },
+                        "FG_appear": {
+                          "enabled": true,
+                          "macros": {
+                            "FG_place": {
+                              "value": "fit",
+                              "global": true,
+                              "attr": {
+                                "name": true
+                              }
+                            },
+                            "FG_opacity": {
+                              "value": 10,
+                              "calc": "$[value]/10"
+                            },
+                            "FG_overflow": {
+                              "value": "visible"
+                            },
+                            "FG_mask": {
+                              "value": "auto"
+                            },
+                            "FG_mask_mode": {
+                              "value": "natural"
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "FG_style": {
+                              "selector": [
+                                "[data-key=FG_OBJ]"
+                              ],
+                              "css": {
+                                "opacity": {
+                                  "value": "$[FG_opacity]"
+                                },
+                                "overflow": {
+                                  "value": "$[FG_overflow]"
+                                }
+                              }
+                            },
+                            "FG_mask": {
+                              "name": "FG_mask_$[FG_mask]"
+                            },
+                            "FG_mask_mode": {
+                              "name": "FG_mask_mode_$[FG_mask_mode]"
+                            }
+                          }
+                        }
+                      },
+                      "layers": {
+                        "FG_ARE": {
+                          "type": "JointLayer",
+                          "groups": {
+                            "FG_area_place": {
+                              "enabled": false,
+                              "excepts": {
+                                "anim_custom": {
+                                  "data": {
+                                    "enabled": true
+                                  }
+                                }
+                              },
+                              "macros": {
+                                "FG_area_x_offset_pos": {
+                                  "value": "$[FG_anim_in_x]",
+                                  "calc": "Math.abs($[value])"
+                                },
+                                "FG_area_x_offset": {
+                                  "value": "$[FG_anim_in_x]",
+                                  "calc": "$[value] > 0 ? $[value] : $[FG_area_x_offset_pos]"
+                                },
+                                "FG_area_y_offset_pos": {
+                                  "value": "$[FG_anim_in_y]",
+                                  "calc": "Math.abs($[value])"
+                                },
+                                "FG_area_y_offset": {
+                                  "value": "$[FG_anim_in_y]",
+                                  "calc": "$[value] > 0 ? $[value] : $[FG_area_y_offset_pos]"
+                                },
+                                "FG_area_z_offset": {
+                                  "value": "$[FG_anim_in_z]",
+                                  "calc": "$[value] > 1 ? 1 : (1 / $[value])"
+                                }
+                              },
+                              "attrs": {
+                                "FG_area_place": {
+                                  "css": {
+                                    "left": "calc(0% - ($[FG_area_x_offset]rem * 1))",
+                                    "width": "calc(100% + ($[FG_area_x_offset_pos]rem * 1))",
+                                    "top": "calc(0% - ($[FG_area_y_offset]rem  * 1))",
+                                    "height": "calc(100% + ($[FG_area_y_offset_pos]rem * 1))",
+                                    "transform": "scale($[FG_area_z_offset])",
+                                    "transform-origin": "$[FG_anim_in_origin]"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "FG_OBJ": {
+                          "type": "JointLayer",
+                          "props": {
+                            "tension": {
+                              "name": "EL_orient",
+                              "options": [
+                                [
+                                  0,
+                                  "p"
+                                ],
+                                [
+                                  0.8,
+                                  "s"
+                                ],
+                                [
+                                  1.6,
+                                  "l"
+                                ]
+                              ]
+                            }
+                          },
+                          "layers": {
+                            "FG_IMG": {
+                              "type": "JointLayer",
+                              "enabled": true,
+                              "macros": {
+                                "FI_ratio_level": {
+                                  "value": "$[CV_IMG_ratio_level]",
+                                  "global": true
+                                },
+                                "FI_ratio_velocity": {
+                                  "value": "$[CV_IMG_ratio_velocity]",
+                                  "global": true
+                                },
+                                "FI_format": {
+                                  "value": "$[CV_IMG_format]",
+                                  "global": true
+                                },
+                                "FI_quality_level": {
+                                  "value": "$[CV_IMG_quality_level]",
+                                  "global": true
+                                },
+                                "FI_quality_velocity": {
+                                  "value": "$[CV_IMG_quality_velocity]",
+                                  "global": true
+                                }
+                              },
+                              "groups": {
+                                "FI_source": {
+                                  "macros": {
+                                    "excepts": {
+                                      "preset": {
+                                        "enabled": false,
+                                        "data": {}
+                                      }
+                                    }
+                                  }
+                                },
+                                "FI_anim": {
+                                  "macros": {
+                                    "FI_anim_skip": {
+                                      "value": true,
+                                      "global": true
+                                    },
+                                    "excepts": {
+                                      "preset": {
+                                        "enabled": false,
+                                        "data": {}
+                                      }
+                                    }
+                                  }
+                                },
+                                "FI_quality": {
+                                  "enabled": false,
+                                  "macros": {
+                                    "FI_format": {
+                                      "value": "auto",
+                                      "global": true
+                                    },
+                                    "FI_ratio_level": {
+                                      "value": 4,
+                                      "calc": "(1 + $[value]/4)",
+                                      "global": true
+                                    },
+                                    "FI_ratio_velocity": {
+                                      "value": 8,
+                                      "global": true
+                                    },
+                                    "FI_quality_level": {
+                                      "value": 8,
+                                      "calc": "((10 + (100 * ($[value] - 1) / 10)))",
+                                      "global": true
+                                    },
+                                    "FI_quality_velocity": {
+                                      "value": 4,
+                                      "global": true
+                                    },
+                                    "excepts": {
+                                      "preset": {
+                                        "enabled": false,
+                                        "data": {}
+                                      }
+                                    }
+                                  }
+                                },
+                                "FI_appear": {
+                                  "enabled": true,
+                                  "macros": {
+                                    "FI_resize_extend": {
+                                      "value": 0,
+                                      "calc": "(1 + $[value]*Math.abs($[value]*0.25))",
+                                      "global": true
+                                    },
+                                    "FI_resize_method": {
+                                      "value": "holder",
+                                      "global": true
+                                    },
+                                    "FI_blur": {
+                                      "value": 0,
+                                      "global": true
+                                    },
+                                    "FI_sharpen": {
+                                      "value": 0,
+                                      "global": true
+                                    },
+                                    "excepts": {
+                                      "preset": {
+                                        "enabled": false,
+                                        "data": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "layers": [
+                                null
+                              ],
+                              "presets": [
+                                {
+                                  "type": "ImageLayer",
+                                  "params": {
+                                    "wrapper": "FG",
+                                    "holder": "FG_IMG",
+                                    "area": "FG_ARE",
+                                    "scale": "$[FG_place]",
+                                    "polite": false,
+                                    "align": [
+                                      "$[FG_align_x]",
+                                      "$[FG_align_y]"
+                                    ],
+                                    "format": "$[FI_format]",
+                                    "resize": {
+                                      "method": "$[FI_resize_method]",
+                                      "extend": "$[FI_resize_extend]"
+                                    },
+                                    "quality": {
+                                      "level": "$[FI_quality_level]",
+                                      "velocity": "$[FI_quality_velocity]"
+                                    },
+                                    "ratio": {
+                                      "level": "$[FI_ratio_level]",
+                                      "velocity": "$[FI_ratio_velocity]"
+                                    },
+                                    "blur": "$[FI_blur]",
+                                    "sharpen": "$[FI_sharpen]"
+                                  },
+                                  "anims": {
+                                    "anim": {
+                                      "name": "anim",
+                                      "skip": "$[FI_anim_skip]"
+                                    }
+                                  },
+                                  "excepts": {
+                                    "preset": {
+                                      "enabled": false,
+                                      "data": {
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "MS": {
+                      "type": "JointLayer",
+                      "enabled": true,
+                      "excepts": {
+                        "SQ_type_legal": {
+                          "data": {
+                            "enabled": false
+                          }
+                        },
+                        "SQ_type_disclaimer": {
+                          "data": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "groups": {
+                        "MS_anim": {
+                          "enabled": false,
+                          "macros": {
+                            "MS_anim_delay": {
+                              "value": 0,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "MS_anim_in_speed_opacity": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "MS_anim_in_speed_transform": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "MS_anim_in_ease": {
+                              "value": "ease-out"
+                            },
+                            "MS_anim_in_x": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "MS_anim_in_y": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "MS_anim_in_z": {
+                              "value": 0,
+                              "calc": "1+($[value]/20)",
+                              "global": true
+                            },
+                            "MS_anim_in_r": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "MS_anim_in_origin": {
+                              "value": "center"
+                            },
+                            "MS_anim_out_speed_opacity": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "MS_anim_out_speed_transform": {
+                              "value": 500,
+                              "calc": "$[value]/1000/$[speed]"
+                            },
+                            "MS_anim_out_ease": {
+                              "value": "ease-out"
+                            },
+                            "MS_anim_out_x": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "MS_anim_out_y": {
+                              "value": 0,
+                              "calc": "($[value]/1)",
+                              "global": true
+                            },
+                            "MS_anim_out_z": {
+                              "value": 0,
+                              "calc": "1+($[value]/20)",
+                              "global": true
+                            },
+                            "MS_anim_out_r": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "MS_anim_out_origin": {
+                              "value": "center"
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "anim_custom": {
+                              "name": true,
+                              "global": true
+                            },
+                            "anim_init": {
+                              "selector": [
+                                ".anim"
+                              ],
+                              "css": {
+                                "transform": "scale($[MS_anim_in_z]) translateX($[MS_anim_in_x]rem) translateY($[MS_anim_in_y]rem) rotate($[MS_anim_in_r]deg)",
+                                "opacity": 0
+                              }
+                            },
+                            "anim_in": {
+                              "selector": [
+                                ".anim.anim_in"
+                              ],
+                              "css": {
+                                "transition": "opacity $[MS_anim_in_speed_opacity]s $[MS_anim_in_ease] $[MS_anim_delay]s, transform $[MS_anim_in_speed_transform]s $[MS_anim_in_ease] $[MS_anim_delay]s",
+                                "transform": "scale(1) translateX(0) translateY(0) rotate(0)",
+                                "transform-origin": "$[MS_anim_in_origin]",
+                                "opacity": 1
+                              }
+                            },
+                            "anim_out": {
+                              "selector": [
+                                ".anim.anim_out"
+                              ],
+                              "css": {
+                                "transition": "opacity $[MS_anim_out_speed_opacity]s $[MS_anim_out_ease], transform $[MS_anim_out_speed_transform]s $[MS_anim_out_ease]",
+                                "transform": "scale($[MS_anim_out_z]) translateX($[MS_anim_out_x]rem) translateY($[MS_anim_out_y]rem) rotate($[MS_anim_out_r]deg)",
+                                "transform-origin": "$[MS_anim_out_origin]",
+                                "opacity": 0
+                              }
+                            }
+                          }
+                        },
+                        "MS_layout": {
+                          "enabled": false,
+                          "macros": {
+                            "MS_arrangement": {
+                              "value": "default",
+                              "attr": {
+                                "name": true
+                              }
+                            },
+                            "MS_justify": {
+                              "value": "inherit",
+                              "attr": {
+                                "name": true
+                              }
+                            },
+                            "MS_align_x": {
+                              "value": "inherit",
+                              "global": true
+                            },
+                            "MS_align_y": {
+                              "value": "inherit",
+                              "global": true
+                            },
+                            "MS_margin": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "MS_size_top": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "MS_size_right": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "MS_size_bottom": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "MS_size_left": {
+                              "value": 0,
+                              "calc": "($[value]*-0.5)"
+                            },
+                            "MS_offset_left": {
+                              "value": 0,
+                              "calc": "($[value]*0.5)"
+                            },
+                            "MS_offset_top": {
+                              "value": 0,
+                              "calc": "($[value]*0.5)"
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "MS_justify_css": {
+                              "selector": [
+                                "[data-key=MS_BOX]"
+                              ],
+                              "css": {
+                                "justify-content": "$[MS_justify]"
+                              }
+                            },
+                            "MS_margin": {
+                              "selector": [
+                                ".margin"
+                              ],
+                              "css": {
+                                "left": "calc($[MS_margin]rem)",
+                                "top": "calc($[MS_margin]rem)",
+                                "width": "calc(100% - ($[MS_margin]rem * 2))",
+                                "height": "calc(100% - ($[MS_margin]rem * 2))"
+                              }
+                            },
+                            "MS_size": {
+                              "selector": [
+                                ".size"
+                              ],
+                              "css": {
+                                "left": "calc($[MS_size_left]rem)",
+                                "top": "calc($[MS_size_top]rem)",
+                                "width": "calc(100% - ($[MS_size_left]rem + $[MS_size_right]rem))",
+                                "height": "calc(100% - ($[MS_size_top]rem + $[MS_size_bottom]rem))"
+                              }
+                            },
+                            "MS_offset": {
+                              "selector": [
+                                ".offset"
+                              ],
+                              "css": {
+                                "margin-left": "$[MS_offset_left]rem",
+                                "margin-top": "$[MS_offset_top]rem"
+                              }
+                            },
+                            "MS_align": {
+                              "selector": [
+                                "[data-key=MS_TXT]"
+                              ],
+                              "css": {
+                                "text-align": "$[MS_align_x]",
+                                "vertical-align": "$[MS_align_y]"
+                              }
+                            }
+                          }
+                        },
+                        "MS_appear": {
+                          "enabled": true,
+                          "macros": {
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "layers": {
+                        "MS_OBJ": {
+                          "type": "JointLayer",
+                          "props": {
+                            "tension": {
+                              "name": "EL_orient",
+                              "options": [
+                                [
+                                  0,
+                                  "p"
+                                ],
+                                [
+                                  0.8,
+                                  "s"
+                                ],
+                                [
+                                  2.4,
+                                  "l"
+                                ]
+                              ]
+                            }
+                          },
+                          "layers": {
+                            "MS_BOX": {
+                              "type": "JointLayer"
+                            },
+                            "MS_TXT": {
+                              "type": "JointLayer",
+                              "layers": [
+                                {
+                                  "type": "TextLayer",
+                                  "alias": "MA",
+                                  "enabled": true,
+                                  "groups": {
+                                    "MA_source": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MA_source": {
+                                          "value": "$[message_1]"
+                                        },
+                                        "excepts": {
+                                          "EL_orient_p": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MA_source": {
+                                                "value": "$[message_1_p]"
+                                              }
+                                            }
+                                          },
+                                          "EL_orient_l": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MA_source": {
+                                                "value": "$[message_1_l]"
+                                              }
+                                            }
+                                          },
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MA_anim": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MA_anim_skip": {
+                                          "value": true,
+                                          "global": true
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MA_appear": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MA_trans": {
+                                          "value": "none"
+                                        },
+                                        "MA_font": {
+                                          "value": "font_B_500",
+                                          "attr": {
+                                            "name": "$[value]"
+                                          }
+                                        },
+                                        "MA_ratio": {
+                                          "value": 1
+                                        },
+                                        "MA_size": {
+                                          "value": "$[CV_TXT_size_h1]"
+                                        },
+                                        "MA_scale": {
+                                          "value": "em"
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "params": {
+                                    "wrapper": "MS_OBJ",
+                                    "holder": "MS_TXT",
+                                    "tags": [
+                                      "p"
+                                    ],
+                                    "line": {
+                                      "space": "<br class='space' />"
+                                    }
+                                  },
+                                  "attrs": {
+                                    "MA_style": {
+                                      "selector": "p",
+                                      "css": {
+                                        "text-transform": "$[MA_trans]",
+                                        "font-size": {
+                                          "value": "$[MA_size]",
+                                          "calc": "($[MA_ratio]*$[value]) + '$[MA_scale]'"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "anims": {
+                                    "anim": {
+                                      "name": "anim",
+                                      "skip": "$[MA_anim_skip]"
+                                    }
+                                  },
+                                  "sources": [
+                                    {
+                                      "text": "$[MA_source]"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "TextLayer",
+                                  "alias": "MB",
+                                  "enabled": true,
+                                  "groups": {
+                                    "MB_source": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MB_source": {
+                                          "value": "$[message_2]"
+                                        },
+                                        "excepts": {
+                                          "EL_orient_p": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MB_source": {
+                                                "value": "$[message_2_p]"
+                                              }
+                                            }
+                                          },
+                                          "EL_orient_l": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MB_source": {
+                                                "value": "$[message_2_l]"
+                                              }
+                                            }
+                                          },
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MB_appear": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MB_trans": {
+                                          "value": "none"
+                                        },
+                                        "MB_font": {
+                                          "value": "font_A_400",
+                                          "attr": {
+                                            "name": "$[value]"
+                                          }
+                                        },
+                                        "MB_ratio": {
+                                          "value": 1
+                                        },
+                                        "MB_size": {
+                                          "value": "$[CV_TXT_size_p]"
+                                        },
+                                        "MB_scale": {
+                                          "value": "em"
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MB_anim": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MB_anim_skip": {
+                                          "value": true,
+                                          "global": true
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "params": {
+                                    "wrapper": "MS_OBJ",
+                                    "holder": "MS_TXT",
+                                    "tags": [
+                                      "p"
+                                    ],
+                                    "line": {
+                                      "space": "<br class='space' />"
+                                    }
+                                  },
+                                  "attrs": {
+                                    "MB_style": {
+                                      "selector": "p",
+                                      "css": {
+                                        "text-transform": "$[MB_trans]",
+                                        "font-size": {
+                                          "value": "$[MB_size]",
+                                          "calc": "($[MB_ratio]*$[value]) + '$[MB_scale]'"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "anims": {
+                                    "anim": {
+                                      "name": "anim",
+                                      "skip": "$[MB_anim_skip]"
+                                    }
+                                  },
+                                  "sources": [
+                                    {
+                                      "text": "$[MB_source]"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "TextLayer",
+                                  "alias": "MC",
+                                  "enabled": false,
+                                  "groups": {
+                                    "MC_source": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MC_source": {
+                                          "value": "$[message_3]"
+                                        },
+                                        "excepts": {
+                                          "EL_orient_p": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MC_source": {
+                                                "value": "$[message_3_p]"
+                                              }
+                                            }
+                                          },
+                                          "EL_orient_l": {
+                                            "enabled": false,
+                                            "data": {
+                                              "MC_source": {
+                                                "value": "$[message_3_l]"
+                                              }
+                                            }
+                                          },
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MC_appear": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MC_trans": {
+                                          "value": "none"
+                                        },
+                                        "MC_font": {
+                                          "value": "font_A_400",
+                                          "attr": {
+                                            "name": "$[value]"
+                                          }
+                                        },
+                                        "MC_ratio": {
+                                          "value": 1
+                                        },
+                                        "MC_size": {
+                                          "value": "$[CV_TXT_size_p]"
+                                        },
+                                        "MC_scale": {
+                                          "value": "em"
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "MC_anim": {
+                                      "enabled": true,
+                                      "macros": {
+                                        "MC_anim_skip": {
+                                          "value": true,
+                                          "global": true
+                                        },
+                                        "excepts": {
+                                          "preset": {
+                                            "enabled": false,
+                                            "data": {}
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "params": {
+                                    "wrapper": "MS_OBJ",
+                                    "holder": "MS_TXT",
+                                    "tags": [
+                                      "p"
+                                    ],
+                                    "line": {
+                                      "space": "<br class='space' />"
+                                    }
+                                  },
+                                  "attrs": {
+                                    "MC_style": {
+                                      "selector": "p",
+                                      "css": {
+                                        "text-transform": "$[MC_trans]",
+                                        "font-size": {
+                                          "value": "$[MC_size]",
+                                          "calc": "($[MC_ratio]*$[value]) + '$[MC_scale]'"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "anims": {
+                                    "anim": {
+                                      "name": "anim",
+                                      "skip": "$[MC_anim_skip]"
+                                    }
+                                  },
+                                  "sources": [
+                                    {
+                                      "text": "$[MC_source]"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "LG": {
+              "type": "JointLayer",
+              "enabled": true,
+              "groups": {
+                "LG_source": {
+                  "enabled": true,
+                  "macros": {
+                    "LG_type": {
+                      "value": "default",
+                      "global": true,
+                      "attr": {
+                        "name": true
+                      }
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  }
+                },
+                "LG_appear": {
+                  "macros": {
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "layers": {
+                "LG_OBJ": {
+                  "type": "JointLayer",
+                  "layers": {
+                    "LG_IMG": {
+                      "type": "JointLayer",
+                      "layers": [
+                        {
+                          "type": "ImageLayer",
+                          "enabled": true,
+                          "params": {
+                            "wrapper": "LG_OBJ",
+                            "holder": "LG_IMG",
+                            "scale": "fit",
+                            "ratio": {
+                              "level": 2,
+                              "velocity": 0
+                            },
+                            "align": [
+                              "inherit",
+                              "inherit"
+                            ]
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": false
+                            }
+                          },
+                          "sources": [
+                            {
+                              "url": "./assets/logos/logo_l.min.js"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "VS": {
+              "type": "JointLayer",
+              "enabled": true,
+              "anims": {
+                "anim": {
+                  "name": "anim",
+                  "skip": false
+                }
+              },
+              "groups": {
+                "VS_appear": {
+                  "enabled": true,
+                  "macros": {
+                    "preset": {
+                      "enabled": false,
+                      "data": {}
+                    }
+                  }
+                }
+              },
+              "layers": {
+                "VS_BG": {
+                  "type": "JointLayer",
+                  "layers": [
+                    {
+                      "type": "JointLayer"
+                    }
+                  ]
+                },
+                "VS_OBJ": {
+                  "type": "JointLayer",
+                  "props": {
+                    "tension": {
+                      "name": "EL_orient",
+                      "options": [
+                        [
+                          0,
+                          "p"
+                        ],
+                        [
+                          2.4,
+                          "l"
+                        ]
+                      ]
+                    }
+                  },
+                  "layers": {
+                    "VS_BOX": {
+                      "type": "JointLayer"
+                    },
+                    "VS_TXT": {
+                      "type": "JointLayer",
+                      "layers": [
+                        {
+                          "type": "JointLayer",
+                          "enabled": false
+                        },
+                        {
+                          "type": "TextLayer",
+                          "alias": "DN",
+                          "enabled": false,
+                          "groups": {
+                            "DN_source": {
+                              "enabled": true,
+                              "macros": {
+                                "DN_source": {
+                                  "value": "$[dealer_name]"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "DN_anim": {
+                              "enabled": true,
+                              "macros": {
+                                "DN_anim_skip": {
+                                  "value": false,
+                                  "global": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "DN_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "DN_trans": {
+                                  "value": "none"
+                                },
+                                "DN_font": {
+                                  "value": "font_A_400",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "DN_ratio": {
+                                  "value": 1,
+                                  "excepts": {
+                                    "CV_scale_s": {
+                                      "data": {
+                                        "value": 1.1
+                                      }
+                                    },
+                                    "CV_scale_xs": {
+                                      "data": {
+                                        "value": 1.2
+                                      }
+                                    }
+                                  }
+                                },
+                                "DN_size": {
+                                  "value": "$[CV_TXT_size_h4]"
+                                },
+                                "DN_scale": {
+                                  "value": "rem"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "props": {
+                            "font": {
+                              "enabled": false
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_OBJ",
+                            "holder": "VS_TXT",
+                            "tags": [
+                              "p"
+                            ],
+                            "line": {
+                              "space": "<br class='space' />"
+                            }
+                          },
+                          "attrs": {
+                            "DN_style": {
+                              "selector": "p",
+                              "css": {
+                                "text-transform": "$[DN_trans]",
+                                "font-size": {
+                                  "value": "$[DN_size]",
+                                  "calc": "($[DN_ratio]*$[value]) + '$[DN_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[DN_anim_skip]"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[DN_source]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextLayer",
+                          "alias": "DD",
+                          "enabled": false,
+                          "excepts": {
+                            "DD_empty" : {
+                              "data": {
+                                "enabled": false
+                              }
+                            }
+                          },
+                          "groups": {
+                            "DD_source": {
+                              "enabled": true,
+                              "macros": {
+                                "DD_source": {
+                                  "value": "$[dealer_info]"
+                                }
+                              }
+                            },
+                            "DD_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "DD_trans": {
+                                  "value": "none"
+                                },
+                                "DD_font": {
+                                  "value": "font_A_400",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "DD_ratio": {
+                                  "value": 1,
+                                  "excepts": {
+                                    "CV_scale_s": {
+                                      "data": {
+                                        "value": 1.1
+                                      }
+                                    },
+                                    "CV_scale_xs": {
+                                      "data": {
+                                        "value": 1.2
+                                      }
+                                    }
+                                  }
+                                },
+                                "DD_size": {
+                                  "value": "$[CV_TXT_size_p]"
+                                },
+                                "DD_scale": {
+                                  "value": "rem"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "props": {
+                            "font": {
+                              "enabled": false
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_OBJ",
+                            "holder": "VS_TXT",
+                            "tags": [
+                              "p"
+                            ]
+                          },
+                          "attrs": {
+                            "DD_style": {
+                              "selector": "p",
+                              "css": {
+                                "text-transform": "$[DD_trans]",
+                                "font-size": {
+                                  "value": "$[DD_size]",
+                                  "calc": "($[DD_ratio]*$[value]) + '$[DD_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": false
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[DD_source]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextLayer",
+                          "enabled": true,
+                          "alias": "VA",
+                          "groups": {
+                            "VA_source": {
+                              "enabled": true,
+                              "macros": {
+                                "VA_source": {
+                                  "value": "$[terms]"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "VA_anim": {
+                              "enabled": true,
+                              "macros": {
+                                "VA_anim_skip": {
+                                  "value": false,
+                                  "global": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "VA_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "VA_trans": {
+                                  "value": "none"
+                                },
+                                "VA_font": {
+                                  "value": "font_A_600",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "VA_ratio": {
+                                  "value": 1,
+                                  "excepts": {
+                                    "CV_scale_s": {
+                                      "data": {
+                                        "value": 1.1
+                                      }
+                                    },
+                                    "CV_scale_xs": {
+                                      "data": {
+                                        "value": 1.2
+                                      }
+                                    }
+                                  }
+                                },
+                                "VA_size": {
+                                  "value": "$[CV_TXT_size_h3]"
+                                },
+                                "VA_scale": {
+                                  "value": "rem"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "props": {
+                            "font": {
+                              "enabled": false
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_OBJ",
+                            "holder": "VS_TXT",
+                            "tags": [
+                              "p"
+                            ],
+                            "line": {
+                              "space": "<br class='space' />"
+                            }
+                          },
+                          "attrs": {
+                            "VA_style": {
+                              "selector": "p",
+                              "css": {
+                                "text-transform": "$[VA_trans]",
+                                "font-size": {
+                                  "value": "$[VA_size]",
+                                  "calc": "($[VA_ratio]*$[value]) + '$[VA_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[VA_anim_skip]"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[VA_source]"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "TextLayer",
+                          "enabled": true,
+                          "alias": "VB",
+                          "groups": {
+                            "VB_source": {
+                              "enabled": true,
+                              "macros": {
+                                "VB_source": {
+                                  "value": "$[disclaimer]"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "VB_anim": {
+                              "enabled": true,
+                              "macros": {
+                                "VB_anim_skip": {
+                                  "value": false,
+                                  "global": true
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            },
+                            "VB_appear": {
+                              "enabled": true,
+                              "macros": {
+                                "VB_trans": {
+                                  "value": "none"
+                                },
+                                "VB_font": {
+                                  "value": "font_A_400",
+                                  "attr": {
+                                    "name": "$[value]"
+                                  }
+                                },
+                                "VB_ratio": {
+                                  "value": 1,
+                                  "excepts": {
+                                    "CV_scale_s": {
+                                      "data": {
+                                        "value": 1.1
+                                      }
+                                    },
+                                    "CV_scale_xs": {
+                                      "data": {
+                                        "value": 1.2
+                                      }
+                                    }
+                                  }
+                                },
+                                "VB_size": {
+                                  "value": "$[CV_TXT_size_p]"
+                                },
+                                "VB_scale": {
+                                  "value": "rem"
+                                },
+                                "excepts": {
+                                  "preset": {
+                                    "enabled": false,
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "props": {
+                            "font": {
+                              "enabled": false
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_OBJ",
+                            "holder": "VS_TXT",
+                            "tags": [
+                              "p"
+                            ],
+                            "line": {
+                              "space": "<br class='space' />"
+                            }
+                          },
+                          "attrs": {
+                            "VB_style": {
+                              "selector": "p",
+                              "css": {
+                                "text-transform": "$[VB_trans]",
+                                "font-size": {
+                                  "value": "$[VB_size]",
+                                  "calc": "($[VB_ratio]*$[value]) + '$[VB_scale]'"
+                                }
+                              }
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[VB_anim_skip]"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "text": "$[VB_source]"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "VS_IMG": {
+                      "type": "JointLayer",
+                      "enabled": true,
+                      "alias": "DL",
+                      "macros": {
+                        "DL_ratio_level": {
+                          "value": "$[CV_IMG_ratio_level]",
+                          "global": true
+                        },
+                        "DL_ratio_velocity": {
+                          "value": "$[CV_IMG_ratio_velocity]",
+                          "global": true
+                        },
+                        "DL_format": {
+                          "value": "$[CV_IMG_format]",
+                          "global": true
+                        },
+                        "DL_quality_level": {
+                          "value": "$[CV_IMG_quality_level]",
+                          "global": true
+                        },
+                        "DL_quality_velocity": {
+                          "value": "$[CV_IMG_quality_velocity]",
+                          "global": true
+                        }
+                      },
+                      "groups": {
+                        "DL_source": {
+                          "macros": {
+                            "DL_type": {
+                              "value": "link",
+                              "global": true,
+                              "attr": {
+                                "name": true
+                              }
+                            },
+                            "DL_link": {
+                              "value": "$[dealer_logo_url]",
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "DL_anim": {
+                          "macros": {
+                            "DL_anim_skip": {
+                              "value": false,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "DL_quality": {
+                          "enabled": false,
+                          "macros": {
+                            "DL_format": {
+                              "value": "auto",
+                              "global": true
+                            },
+                            "DL_ratio_level": {
+                              "value": 4,
+                              "calc": "(1 + $[value]/4)",
+                              "global": true
+                            },
+                            "DL_ratio_velocity": {
+                              "value": 8,
+                              "global": true
+                            },
+                            "DL_quality_level": {
+                              "value": 8,
+                              "calc": "((10 + (100 * ($[value] - 1) / 10)))",
+                              "global": true
+                            },
+                            "DL_quality_velocity": {
+                              "value": 4,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "DL_appear": {
+                          "enabled": true,
+                          "macros": {
+                            "DL_size": {
+                              "value": 30,
+                              "calc": "(2 + $[value]/10)",
+                              "global": true
+                            },
+                            "DL_scale": {
+                              "value": "em",
+                              "global": true
+                            },
+                            "DL_resize_extend": {
+                              "value": 0,
+                              "calc": "(1 + $[value]*Math.abs($[value]*0.25))",
+                              "global": true
+                            },
+                            "DL_resize_method": {
+                              "value": "select",
+                              "global": true
+                            },
+                            "DL_blur": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "DL_sharpen": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          },
+                          "attrs": {
+                            "DL_size": {
+                              "css": {
+                                "height": "$[DL_size]$[DL_scale]"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "layers": [
+                        null,
+                        {
+                          "type": "ImageLayer",
+                          "enabled": false,
+                          "excepts": {
+                            "DL_type_link" : {
+                              "data": {
+                                "enabled": true
+                              }
+                            },
+                            "dealer_logo_empty" : {
+                              "data": {
+                                "enabled": false
+                              }
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_IMG",
+                            "scale": "fit",
+                            "polite": false,
+                            "align": [
+                              "left",
+                              "bottom"
+                            ]
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[DL_anim_skip]"
+                            }
+                          },
+                          "sources": [
+                            {
+                              "url": "$[DL_link]"
+                            }
+                          ]
+                        }
+                      ],
+                      "presets": [
+                        {
+                          "type": "ImageLayer",
+                          "enabled": false,
+                          "excepts": {
+                            "DL_type_image" : {
+                              "data": {
+                                "enabled": true
+                              }
+                            }
+                          },
+                          "params": {
+                            "wrapper": "VS_IMG",
+                            "scale": "fit",
+                            "polite": false,
+                            "align": [
+                              "left",
+                              "bottom"
+                            ],
+                            "format": "$[DL_format]",
+                            "resize": {
+                              "method": "$[DL_resize_method]",
+                              "extend": "$[DL_resize_extend]"
+                            },
+                            "quality": {
+                              "level": "$[DL_quality_level]",
+                              "velocity": "$[DL_quality_velocity]"
+                            },
+                            "ratio": {
+                              "level": "$[DL_ratio_level]",
+                              "velocity": "$[DL_ratio_velocity]"
+                            },
+                            "blur": "$[DL_blur]",
+                            "sharpen": "$[DL_sharpen]"
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[DL_anim_skip]"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "BG": {
+              "type": "JointLayer",
+              "enabled": true,
+              "macros": {
+                "BG_align_x": {
+                  "value": "inherit",
+                  "global": true
+                },
+                "BG_align_y": {
+                  "value": "inherit",
+                  "global": true
+                }
+              },
+              "groups": {
+                "BG_anim": {
+                  "enabled": false,
+                  "macros": {
+                    "BG_anim_delay": {
+                      "value": 0,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "BG_anim_in_speed_opacity": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "BG_anim_in_speed_transform": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "BG_anim_in_ease": {
+                      "value": "ease-out"
+                    },
+                    "BG_anim_in_x": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "BG_anim_in_y": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "BG_anim_in_z": {
+                      "value": 0,
+                      "calc": "1+($[value]/20)",
+                      "global": true
+                    },
+                    "BG_anim_in_r": {
+                      "value": 0,
+                      "global": true
+                    },
+                    "BG_anim_in_origin": {
+                      "value": "center"
+                    },
+                    "BG_anim_out_speed_opacity": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "BG_anim_out_speed_transform": {
+                      "value": 500,
+                      "calc": "$[value]/1000/$[speed]"
+                    },
+                    "BG_anim_out_ease": {
+                      "value": "ease-out"
+                    },
+                    "BG_anim_out_x": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "BG_anim_out_y": {
+                      "value": 0,
+                      "calc": "($[value]/1)",
+                      "global": true
+                    },
+                    "BG_anim_out_z": {
+                      "value": 0,
+                      "calc": "1+($[value]/20)",
+                      "global": true
+                    },
+                    "BG_anim_out_r": {
+                      "value": 0,
+                      "global": true
+                    },
+                    "BG_anim_out_origin": {
+                      "value": "center"
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  },
+                  "attrs": {
+                    "anim_custom": {
+                      "name": true,
+                      "global": true
+                    },
+                    "anim_init": {
+                      "selector": [
+                        ".anim"
+                      ],
+                      "css": {
+                        "transform": "scale($[BG_anim_in_z]) translateX($[BG_anim_in_x]rem) translateY($[BG_anim_in_y]rem) rotate($[BG_anim_in_r]deg)",
+                        "opacity": 0
+                      }
+                    },
+                    "anim_in": {
+                      "selector": [
+                        ".anim.anim_in"
+                      ],
+                      "css": {
+                        "transition": "opacity $[BG_anim_in_speed_opacity]s $[BG_anim_in_ease] $[BG_anim_delay]s, transform $[BG_anim_in_speed_transform]s $[BG_anim_in_ease] $[BG_anim_delay]s",
+                        "transform": "scale(1) translateX(0) translateY(0) rotate(0)",
+                        "transform-origin": "$[BG_anim_in_origin]",
+                        "opacity": 1
+                      }
+                    },
+                    "anim_out": {
+                      "selector": [
+                        ".anim.anim_out"
+                      ],
+                      "css": {
+                        "transition": "opacity $[BG_anim_out_speed_opacity]s $[BG_anim_out_ease], transform $[BG_anim_out_speed_transform]s $[BG_anim_out_ease]",
+                        "transform": "scale($[BG_anim_out_z]) translateX($[BG_anim_out_x]rem) translateY($[BG_anim_out_y]rem) rotate($[BG_anim_out_r]deg)",
+                        "transform-origin": "$[BG_anim_out_origin]",
+                        "opacity": 0
+                      }
+                    }
+                  }
+                },
+                "BG_layout": {
+                  "enabled": false,
+                  "macros": {
+                    "BG_align_x": {
+                      "value": "inherit",
+                      "global": true
+                    },
+                    "BG_align_y": {
+                      "value": "inherit",
+                      "global": true
+                    },
+                    "BG_margin": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "BG_size_top": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "BG_size_right": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "BG_size_bottom": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "BG_size_left": {
+                      "value": 0,
+                      "calc": "($[value]*-0.5)"
+                    },
+                    "BG_offset_left": {
+                      "value": 0,
+                      "calc": "($[value]*0.5)"
+                    },
+                    "BG_offset_top": {
+                      "value": 0,
+                      "calc": "($[value]*0.5)"
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  },
+                  "attrs": {
+                    "BG_margin": {
+                      "selector": [
+                        ".margin"
+                      ],
+                      "css": {
+                        "left": "calc($[BG_margin]rem)",
+                        "top": "calc($[BG_margin]rem)",
+                        "width": "calc(100% - ($[BG_margin]rem * 2))",
+                        "height": "calc(100% - ($[BG_margin]rem * 2))"
+                      }
+                    },
+                    "BG_size": {
+                      "selector": [
+                        ".size"
+                      ],
+                      "css": {
+                        "left": "calc($[BG_size_left]rem)",
+                        "top": "calc($[BG_size_top]rem)",
+                        "width": "calc(100% - ($[BG_size_left]rem + $[BG_size_right]rem))",
+                        "height": "calc(100% - ($[BG_size_top]rem + $[BG_size_bottom]rem))"
+                      }
+                    },
+                    "BG_offset": {
+                      "selector": [
+                        ".offset"
+                      ],
+                      "css": {
+                        "margin-left": "$[BG_offset_left]rem",
+                        "margin-top": "$[BG_offset_top]rem"
+                      }
+                    }
+                  }
+                },
+                "BG_appear": {
+                  "enabled": true,
+                  "macros": {
+                    "BG_place": {
+                      "value": "fit",
+                      "global": true,
+                      "attr": {
+                        "name": true
+                      }
+                    },
+                    "BG_opacity": {
+                      "value": 10,
+                      "calc": "$[value]/10"
+                    },
+                    "BG_overflow": {
+                      "value": "visible"
+                    },
+                    "BG_mask": {
+                      "value": "auto"
+                    },
+                    "BG_mask_mode": {
+                      "value": "natural"
+                    },
+                    "excepts": {
+                      "preset": {
+                        "enabled": false,
+                        "data": {}
+                      }
+                    }
+                  },
+                  "attrs": {
+                    "BG_style": {
+                      "selector": [
+                        "[data-key=BG_OBJ]"
+                      ],
+                      "css": {
+                        "opacity": {
+                          "value": "$[BG_opacity]"
+                        },
+                        "overflow": {
+                          "value": "$[BG_overflow]"
+                        }
+                      }
+                    },
+                    "BG_mask": {
+                      "name": "BG_mask_$[BG_mask]"
+                    },
+                    "BG_mask_mode": {
+                      "name": "BG_mask_mode_$[BG_mask_mode]"
+                    }
+                  }
+                }
+              },
+              "layers": {
+                "BG_ARE": {
+                  "type": "JointLayer",
+                  "groups": {
+                    "BG_area_place": {
+                      "enabled": false,
+                      "excepts": {
+                        "anim_custom": {
+                          "data": {
+                            "enabled": true
+                          }
+                        }
+                      },
+                      "macros": {
+                        "BG_area_x_offset_pos": {
+                          "value": "$[BG_anim_in_x]",
+                          "calc": "Math.abs($[value])"
+                        },
+                        "BG_area_x_offset": {
+                          "value": "$[BG_anim_in_x]",
+                          "calc": "$[value] > 0 ? $[value] : $[BG_area_x_offset_pos]"
+                        },
+                        "BG_area_y_offset_pos": {
+                          "value": "$[BG_anim_in_y]",
+                          "calc": "Math.abs($[value])"
+                        },
+                        "BG_area_y_offset": {
+                          "value": "$[BG_anim_in_y]",
+                          "calc": "$[value] > 0 ? $[value] : $[BG_area_y_offset_pos]"
+                        },
+                        "BG_area_z_offset": {
+                          "value": "$[BG_anim_in_z]",
+                          "calc": "$[value] > 1 ? 1 : (1 / $[value])"
+                        }
+                      },
+                      "attrs": {
+                        "BG_area_place": {
+                          "css": {
+                            "left": "calc(0% - ($[BG_area_x_offset]rem * 1))",
+                            "width": "calc(100% + ($[BG_area_x_offset_pos]rem * 1))",
+                            "top": "calc(0% - ($[BG_area_y_offset]rem  * 1))",
+                            "height": "calc(100% + ($[BG_area_y_offset_pos]rem * 1))",
+                            "transform": "scale($[BG_area_z_offset])",
+                            "transform-origin": "$[BG_anim_in_origin]"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "BG_OBJ": {
+                  "type": "JointLayer",
+                  "props": {
+                    "tension": {
+                      "name": "EL_orient",
+                      "options": [
+                        [
+                          0,
+                          "p"
+                        ],
+                        [
+                          0.8,
+                          "s"
+                        ],
+                        [
+                          1.6,
+                          "l"
+                        ]
+                      ]
+                    }
+                  },
+                  "layers": {
+                    "BG_IMG": {
+                      "type": "JointLayer",
+                      "enabled": true,
+                      "macros": {
+                        "BI_ratio_level": {
+                          "value": "$[CV_IMG_ratio_level]",
+                          "global": true
+                        },
+                        "BI_ratio_velocity": {
+                          "value": "$[CV_IMG_ratio_velocity]",
+                          "global": true
+                        },
+                        "BI_format": {
+                          "value": "$[CV_IMG_format]",
+                          "global": true
+                        },
+                        "BI_quality_level": {
+                          "value": "$[CV_IMG_quality_level]",
+                          "global": true
+                        },
+                        "BI_quality_velocity": {
+                          "value": "$[CV_IMG_quality_velocity]",
+                          "global": true
+                        }
+                      },
+                      "groups": {
+                        "BI_source": {
+                          "macros": {
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BI_anim": {
+                          "macros": {
+                            "BI_anim_skip": {
+                              "value": true,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BI_quality": {
+                          "enabled": false,
+                          "macros": {
+                            "BI_format": {
+                              "value": "auto",
+                              "global": true
+                            },
+                            "BI_ratio_level": {
+                              "value": 4,
+                              "calc": "(1 + $[value]/4)",
+                              "global": true
+                            },
+                            "BI_ratio_velocity": {
+                              "value": 8,
+                              "global": true
+                            },
+                            "BI_quality_level": {
+                              "value": 8,
+                              "calc": "((10 + (100 * ($[value] - 1) / 10)))",
+                              "global": true
+                            },
+                            "BI_quality_velocity": {
+                              "value": 4,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BI_appear": {
+                          "enabled": true,
+                          "macros": {
+                            "BI_resize_extend": {
+                              "value": 0,
+                              "calc": "(1 + $[value]*Math.abs($[value]*0.25))",
+                              "global": true
+                            },
+                            "BI_resize_method": {
+                              "value": "holder",
+                              "global": true
+                            },
+                            "BI_blur": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "BI_sharpen": {
+                              "value": 0,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "layers": [
+                        null
+                      ],
+                      "presets": [
+                        {
+                          "type": "ImageLayer",
+                          "params": {
+                            "wrapper": "BG",
+                            "holder": "BG_IMG",
+                            "area": "BG_ARE",
+                            "scale": "$[BG_place]",
+                            "polite": false,
+                            "align": [
+                              "$[BG_align_x]",
+                              "$[BG_align_y]"
+                            ],
+                            "format": "$[BI_format]",
+                            "resize": {
+                              "method": "$[BI_resize_method]",
+                              "extend": "$[BI_resize_extend]"
+                            },
+                            "quality": {
+                              "level": "$[BI_quality_level]",
+                              "velocity": "$[BI_quality_velocity]"
+                            },
+                            "ratio": {
+                              "level": "$[BI_ratio_level]",
+                              "velocity": "$[BI_ratio_velocity]"
+                            },
+                            "blur": "$[BI_blur]",
+                            "sharpen": "$[BI_sharpen]"
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[BI_anim_skip]"
+                            }
+                          },
+                          "excepts": {
+                            "preset": {
+                              "enabled": false,
+                              "data": {
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "BG_VID": {
+                      "type": "JointLayer",
+                      "enabled": true,
+                      "macros": {
+                        "BV_ratio_level": {
+                          "value": "$[CV_VID_ratio_level]",
+                          "global": true
+                        },
+                        "BV_ratio_velocity": {
+                          "value": "$[CV_VID_ratio_velocity]",
+                          "global": true
+                        },
+                        "BV_limit_min": {
+                          "value": "$[CV_VID_limit_min]",
+                          "global": true
+                        },
+                        "BV_limit_max": {
+                          "value": "$[CV_VID_limit_max]",
+                          "global": true
+                        }
+                      },
+                      "groups": {
+                        "BV_source": {
+                          "macros": {
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BV_anim": {
+                          "macros": {
+                            "BV_anim_skip": {
+                              "value": true,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BV_quality": {
+                          "enabled": false,
+                          "macros": {
+                            "BV_ratio_level": {
+                              "value": 2,
+                              "calc": "(1 + $[value]/4)",
+                              "global": true
+                            },
+                            "BV_ratio_velocity": {
+                              "value": 4,
+                              "global": true
+                            },
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        },
+                        "BV_appear": {
+                          "enabled": true,
+                          "macros": {
+                            "excepts": {
+                              "preset": {
+                                "enabled": false,
+                                "data": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "layers": [
+                        null
+                      ],
+                      "presets": [
+                        {
+                          "type": "VideoLayer",
+                          "params": {
+                            "wrapper": "BG",
+                            "holder": "BG_VID",
+                            "area": "BG_ARE",
+                            "scale": "$[BG_place]",
+                            "polite": true,
+                            "mute": true,
+                            "controls": false,
+                            "autoplay": true,
+                            "poster": true,
+                            "volume": 0.8,
+                            "ratio": {
+                              "level": "$[BV_ratio_level]",
+                              "velocity": "$[BV_ratio_velocity]"
+                            },
+                            "align": [
+                              "$[BG_align_x]",
+                              "$[BG_align_y]"
+                            ],
+                            "limit": {
+                              "min": "$[BV_limit_min]",
+                              "max": "$[BV_limit_max]"
+                            }
+                          },
+                          "anims": {
+                            "anim": {
+                              "name": "anim",
+                              "skip": "$[BV_anim_skip]"
+                            }
+                          },
+                          "excepts": {
+                            "preset": {
+                              "enabled": false,
+                              "data": {}
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

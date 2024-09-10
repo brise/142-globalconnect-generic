@@ -1,0 +1,167 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- VISIBILITY PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_visibility }}">
+        <toggle-button model="$wrapper.enabled" on="{{ :: $dict.label_visible }}" off="{{ :: $dict.label_hidden }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / VISIBILITY PICKER -->
+
+<div ng-if="$wrapper.enabled && $macros[$alias_key + '_place']">
+
+    <!-- PLACEMENT PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_placement }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_placement }}">
+            <dropdown-select model="$macros[$alias_key + '_place'].value">
+                <option value="fill">Fill Entire Element</option>
+                <option value="fit">Fit Into Focus Area</option>
+            </dropdown-select>
+            <block-info ng-class="{disabled: ($macros_excepts[$variation_scope[1]].data)}">
+                <p>
+                    <small><q>{{ $dict.hint_asset_place }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_placement }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_placement }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_place'].value">
+                <option value="fill">Fill Entire Element</option>
+                <option value="fit">Fit Into Focus Area</option>
+            </dropdown-select>
+            <block-info ng-class="{disabled: ($macros_excepts[$variation_scope[1]].data)}">
+                <p>
+                    <small><q>{{ $dict.hint_asset_place }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+    </block-group>
+    <!-- / PLACEMENT PICKER -->
+
+</div>
+
+<div ng-if="$wrapper.enabled && $macros[$alias_key + '_mask']">
+
+    <!-- MASK PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_mask }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_type }}">
+            <dropdown-select model="$macros[$alias_key + '_mask'].value">
+                <MASK_OPTIONS></MASK_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_stretch }}" ng-class="{disabled: ($macros[$alias_key + '_mask'].value == 'none')}">
+            <dropdown-select model="$macros[$alias_key + '_mask_mode'].value">
+                <option value="default">{{ :: $dict.label_mask_to_crop_area }}</option>
+                <option value="natural">{{ :: $dict.label_mask_to_asset_dimensions }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element }} {{ :: $dict.label_mask }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_type }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_mask'].value">
+                <MASK_OPTIONS></MASK_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_stretch }} *" ng-class="{disabled: ($macros_excepts[$variation_scope[1]].data[$alias_key + '_mask'].value == 'none')}">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_mask_mode'].value">
+                <option value="default">{{ :: $dict.label_mask_to_crop_area }}</option>
+                <option value="natural">{{ :: $dict.label_mask_to_asset_dimensions }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / MASK PICKER -->
+
+</div>
+
+<div ng-if="$wrapper.enabled && ($macros[$alias_key + '_theme'] || $macros[$alias_key + '_overflow'] || $macros[$alias_key + '_opacity'] || $macros[$alias_key + '_shadow'])">
+
+    <!-- STYLE PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }}" ng-if="$macros[$alias_key + '_theme']">
+            <dropdown-select model="$macros[$alias_key + '_theme'].value">
+                <option value="auto">{{ :: $dict.label_auto }}</option>
+                <option value="dark">{{ :: $dict.label_dark }}</option>
+                <option value="light">{{ :: $dict.label_light }}</option>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_overflow }}" ng-if="$macros[$alias_key + '_overflow']">
+            <dropdown-select model="$macros[$alias_key + '_overflow'].value">
+                <option value="hidden">{{ :: $dict.label_hidden }}</option>
+                <option value="visible">{{ :: $dict.label_visible }}</option>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_opacity }}" ng-if="$macros[$alias_key + '_opacity']">
+            <number-slider model="$macros[$alias_key + '_opacity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_color }} *" ng-if="$macros[$alias_key + '_theme']">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_theme'].value">
+                <option value="auto">{{ :: $dict.label_auto }}</option>
+                <option value="dark">{{ :: $dict.label_dark }}</option>
+                <option value="light">{{ :: $dict.label_light }}</option>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_overflow }} *" ng-if="$macros[$alias_key + '_overflow']">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_overflow'].value">
+                <option value="hidden">{{ :: $dict.label_hidden }}</option>
+                <option value="visible">{{ :: $dict.label_visible }}</option>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_opacity }} *" ng-if="$macros[$alias_key + '_opacity']">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_opacity'].value"
+                           min="0" max="10" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^([0-9]|10)$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / STYLE PICKER -->
+
+</div>

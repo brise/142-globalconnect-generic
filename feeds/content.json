@@ -1,0 +1,25 @@
+{
+  "data":{
+    "tick":1646202049,
+    "meta":{
+      "feedId":8,
+      "updatedAt":1646132097
+    },
+    "items":[
+      {
+        "assets":[
+          {
+            "name":"title",
+            "value":"Title",
+            "type":"text"
+          },
+          {
+            "name":"subtitle",
+            "value":"Subtitle",
+            "type":"text"
+          }
+        ]
+      }
+    ]
+  }
+}

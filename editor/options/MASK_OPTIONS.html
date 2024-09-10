@@ -1,0 +1,19 @@
+<option value="none">{{ :: $dict.label_disabled }}</option>
+<option value="auto">{{ :: $dict.label_auto }}</option>
+<optgroup label="Radial">
+    <option value="circle">{{ :: $dict.label_mask_radial_vague }}</option>
+    <option value="circle_sharp">{{ :: $dict.label_mask_radial_sharp }}</option>
+</optgroup>
+<optgroup label="Square">
+    <option value="_mask_linear_all_">{{ :: $dict.label_mask_square_vague }}</option>
+</optgroup>
+<optgroup label="{{ :: $dict.label_horizontal }}">
+    <option value="linear_l_">{{ :: $dict.label_left }}</option>
+    <option value="linear_rl_">{{ :: $dict.label_left }} {{ :: $dict.label_and }} {{ :: $dict.label_right }}</option>
+    <option value="linear_r_">{{ :: $dict.label_right }}</option>
+</optgroup>
+<optgroup label="{{ :: $dict.label_vertical }}">
+    <option value="linear_t_">{{ :: $dict.label_top }}</option>
+    <option value="linear_tb_">{{ :: $dict.label_top }} {{ :: $dict.label_and }} {{ :: $dict.label_bottom }}</option>
+    <option value="linear_b_">{{ :: $dict.label_bottom }}</option>
+</optgroup>

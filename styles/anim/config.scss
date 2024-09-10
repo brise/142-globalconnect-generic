@@ -1,0 +1,13 @@
+
+/*
+ * Animation config.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$speed_base: 0.5s;
+$speed_base_in: #{$speed_base};
+$speed_base_out: calc(#{$speed_base} / 2);
+
+$delay_base: 0.25s;
+$delay_base_in: #{$delay_base};
+$delay_base_out: .0s;

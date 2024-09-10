@@ -1,0 +1,26 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-group>
+
+    <block-field title="URL {{ :: $dict.label_declaration }}">
+        <toggle-button model="$data.banner.clicktag.override" on="Override Ad Server" off="{{ :: $dict.label_disabled }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>Override ad server settings in order to define landing page destination URL from content editor.</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+
+<block-group ng-if="$data.banner.clicktag.override">
+
+    <block-field title="{{ :: $dict.label_destination }} URL">
+        <text-field placeholder="URL" model="$data.banner.clicktag.url" pattern="https?\:\/\/.+|\$\[dest_url\]|\$\{dest_url\}"></text-field>
+    </block-field>
+
+    <block-field ng-repeat="($frame, $index) in $data.banner.layers.CV.layers.SQ.frames" title="{{ :: $dict.label_destination }} URL #{{ ($index + 1) }}" ng-class="{disabled: ($data.banner.macros['feed_0'].value && $data.banner.layers.CV.layers.SQ.frames[$index].groups['SQ_feed'].macros['SQ_feed_' + 'CL'].value)}">
+        <text-field placeholder="{{ $data.banner.clicktag.url }}" model="$data.banner.layers.CV.layers.SQ.frames[$index].clicktag.url" pattern="https?\:\/\/.+|\$\[dest_url\]|\$\{dest_url\}"></text-field>
+    </block-field>
+
+</block-group>

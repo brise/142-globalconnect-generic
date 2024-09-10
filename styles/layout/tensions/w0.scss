@@ -1,0 +1,151 @@
+@import "../config";
+
+/*
+ * w0
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$BG_width__CV_w0: 45%;
+$LG_height__CV_w0: calc($logo_height_l + $padding_normal + $padding_small);
+$LG_width__CV_w0:  calc($logo_width_l + $padding_normal + $padding_small);
+$PS_height__CV_w0: calc($button_height + 15%);
+
+[data-key=CV].CV_tens_w0 {
+
+	[data-key=LG] {
+		left: $BG_width__CV_w0;
+		height: $LG_height__CV_w0;
+		width: $LG_width__CV_w0;
+		max-width: calc(100% - $BG_width__CV_w0);
+	}
+
+	[data-key=LG] .place {
+		height: calc(100% - $padding_normal - $padding_small);
+		left: $padding_small;
+		width: calc(100% - $padding_small - $padding_normal);
+	}
+
+	[data-key=MS] {
+		top: $LG_height__CV_w0;
+		right: 0;
+		height: calc(100% - $PS_height__CV_w0 - $LG_height__CV_w0);
+		width: calc(100% - $BG_width__CV_w0);
+	}
+
+	[data-key=MS] .place {
+		height: calc(100% - $padding_small);
+		left: $padding_small;
+		width: calc(100% - $padding_small - $padding_normal);
+	}
+
+	[data-key=PS],
+	[data-key=CS] {
+		bottom: 0;
+		right: 0;
+		height: $PS_height__CV_w0;
+		width: calc(100% - $BG_width__CV_w0);
+	}
+
+	[data-key=PS] .place,
+	[data-key=CS] .place {
+		bottom: $padding_small;
+		height: calc(100% - $padding_small);
+		left: $padding_small;
+		width: calc(100% - $padding_small - $padding_normal);
+	}
+
+	//[data-key=BG].BG_place_fit .place,
+	//[data-key=FG].FG_place_fit .place {
+	//	left: $padding_small;
+	//	width: calc(100% - $padding_small_dbl);
+	//}
+
+	[data-key=OL] {
+
+		[data-key=OL_GR_0] .linear {
+			display: none;
+		}
+
+		[data-key=OL_GR_0] .corner {
+			display: block;
+		}
+
+		[data-key=OL_GR_0] {
+			height: $LG_height__CV_w0;
+			width: calc($LG_width__CV_w0 + 10%);
+		}
+
+		//[data-key=OL_GR_0] svg rect {
+		//	transform-origin: center;
+		//	transform: rotate(270deg);
+		//}
+
+		[data-key=OL_GR_1] svg rect {
+			transform-origin: center;
+			transform: rotate(270deg);
+		}
+
+		[data-key=OL_GR_0] {
+			width: $LG_width__CV_w0;
+		}
+
+		[data-key=OL_GR_1] {
+			right: 0;
+			width: calc(100% - $BG_width__CV_w0);
+		}
+
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_default
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_w0.CV_layout_default {
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $padding_normal;
+		left: $padding_normal;
+		height: calc(100% - $padding_normal_dbl);
+		width: calc($BG_width__CV_w0 - $padding_normal - $padding_small);
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_w0.CV_layout_boxed {
+
+	.isolated {
+		width: $BG_width__CV_w0;
+	}
+
+	.isolated > .margin {
+		width: calc(100% - $padding_small);
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_w0.CV_layout_isolated {
+
+	.isolated {
+		width: $BG_width__CV_w0;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */

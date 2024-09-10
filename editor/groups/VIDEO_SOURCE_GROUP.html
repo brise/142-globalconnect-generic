@@ -1,0 +1,115 @@
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$wrapper_group_appear = $wrapper.groups[$wrapper_key + '_' + 'appear']"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<HOLDER_MACROS_COMPONENT></HOLDER_MACROS_COMPONENT>
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$target_excepts = $target.excepts"></data>
+<data ng-if="$target_excepts_preset = $target.excepts.preset"></data>
+<data ng-if="$target_preset = $holder.presets[$target_key]"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'])"></data>
+<!-- /VARIATION SETUP -->
+
+<HOLDER_VARIATION_VALIDATION_COMPONENT></HOLDER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_VIDEO_SELECTOR></VARIATION_VIDEO_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- VIDEO SOURCE PICKER -->
+<block-group ng-if="$variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <video-picker model="$holder.layers[0]"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <block-info>
+            <p>
+                <small ng-if="$holder.layers[0] != null"><q><a ng-click="$holder.layers[0] = null;">{{ :: $dict.action_remove_source_1 }}</a> {{ :: $dict.action_remove_source_2 }}</q></small>
+                <small ng-if="$frames && $data.editor.frame >= 1"><q><a ng-click="$frames.model.frames[$data.editor.frame].layers[$wrapper_key] = _.cloneDeep($frames.model.frames[$data.editor.frame - 1].layers[$wrapper_key])">{{ :: $dict.action_clone_source_1 }}</a> {{ :: $dict.action_clone_source_3 }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_source }} *">
+        <video-picker model="$target_excepts['BG_orient_p'].data" ng-if="$variation_scope[1] == 'BG_orient_p'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['BG_orient_s'].data" ng-if="$variation_scope[1] == 'BG_orient_s'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['BG_orient_l'].data" ng-if="$variation_scope[1] == 'BG_orient_l'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_t2'].data" ng-if="$variation_scope[1] == 'CV_tens_t2'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_t1'].data" ng-if="$variation_scope[1] == 'CV_tens_t1'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_t0'].data" ng-if="$variation_scope[1] == 'CV_tens_t0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_e0'].data" ng-if="$variation_scope[1] == 'CV_tens_e0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_w0'].data" ng-if="$variation_scope[1] == 'CV_tens_w0'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_w1'].data" ng-if="$variation_scope[1] == 'CV_tens_w1'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <video-picker model="$target_excepts['CV_tens_w2'].data" ng-if="$variation_scope[1] == 'CV_tens_w2'"
+                      settings="{defaults: $target_preset, cropping: { ratios: ($ratios[$wrapper_key + '_' + $wrapper_group_appear.macros[$wrapper_key + '_place'].value]) } }"
+                      no-controls="true" no-mute="true" no-loop="false" no-autoplay="true" no-crop="false" no-align="true" no-cover="true" no-load="false" no-excepts="false" no-excepts-orientation="true"></video-picker>
+        <block-info ng-class="{disabled: ($target_excepts[$variation_scope[1]].data)}">
+            <p>
+                <small ng-if="$target_excepts[$variation_scope[1]].data.sources != null"><q><a ng-click="$target_excepts[$variation_scope[1]].data = null;">{{ :: $dict.action_remove_source_1 }}</a> {{ :: $dict.action_remove_source_2 }} </q></small>
+                <small><q><a ng-click="$target_excepts[$variation_scope[1]].data = _.omit(_.cloneDeep($target), ['excepts', 'preset'])">{{ :: $dict.action_clone_source_1 }}</a> {{ :: $dict.action_clone_source_2 }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / VIDEO SOURCE PICKER -->
+
+<!-- VIDEO CROP PICKER -->
+<block-group ng-if="$target && $variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_crop }}">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[0]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[1]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[2]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target.params.crop[3]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default' && $target_excepts[$variation_scope[1]].data.sources" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_crop }} *">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[0]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[1]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[2]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$target_excepts[$variation_scope[1]].data.params.crop[3]"
+                    pattern="^\d+([.]\d{0,10})?$" class="col-1-4"></text-field>
+    </block-field>
+
+</block-group>
+<!-- / VIDEO CROP PICKER -->

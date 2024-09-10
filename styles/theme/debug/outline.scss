@@ -1,0 +1,100 @@
+
+/*
+ * Debug mode styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$debug_stroke: 1px;
+$debug_color: rgba(255, 0, 255, 0.5);
+$debug_static_color: rgba(255, 0, 255, 0.75);
+$debug_static_color_fill: rgba(255, 0, 255, 0.25);
+$debug_framed_color: rgba(255, 0, 255, 0.75);
+$debug_framed_color_fill: rgba(255, 0, 255, 0.25);
+$debug_element_color: rgba(255, 0, 255, 0.25);
+$debug_gesture_color: rgba(255, 255, 0, 0.1);
+$debug_gesture_color_fill: rgba(255, 255, 0, 0.1);
+
+.mode_debug .active .margin:after  {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - (#{$debug_stroke} * 2));
+  height: calc(100% - (#{$debug_stroke} * 2));
+}
+
+//.mode_debug .active .gesture p:after  {
+//  content: "";
+//  position: absolute;
+//  left: 0;
+//  top: 0;
+//  width: calc(100% - (#{$debug_stroke} * 2));
+//  height: calc(100% - (#{$debug_stroke} * 2));
+//}
+//
+//.mode_debug *:not(li) .active .gesture p:after,
+//.mode_debug li.active .gesture p:after {
+//  border: #{$debug_stroke} solid #{$debug_gesture_color};
+//  background: repeating-linear-gradient(
+//                  -45deg,
+//                  transparent,
+//                  transparent 2px,
+//                  #{$debug_gesture_color_fill} 2px,
+//                  #{$debug_gesture_color_fill} 3px,
+//                  transparent 3px,
+//                  transparent 4px
+//  );
+//}
+
+.mode_debug *:not(li) .active .margin:after,
+.mode_debug li.active .margin:after {
+  border: #{$debug_stroke} dashed #{$debug_color};
+}
+
+.mode_debug .debug.active .margin:after {
+  border: #{$debug_stroke} dashed #{$debug_static_color};
+}
+
+.mode_debug .debug.active .margin:after {
+  border: #{$debug_stroke} solid #{$debug_static_color};
+  background: repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 10px,
+                  #{$debug_static_color_fill} 10px,
+                  #{$debug_static_color_fill} 11px,
+                  transparent 11px,
+                  transparent 20px
+  );
+}
+
+.mode_debug li.active .debug.active .margin:after,
+.mode_debug .debug.active li.active .margin:after {
+  border: #{$debug_stroke} dashed #{$debug_framed_color};
+}
+
+.mode_debug li.active .debug.active .margin:after,
+.mode_debug .debug.active li.active .margin:after {
+  border: #{$debug_stroke} solid #{$debug_framed_color};
+  background: repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 10px,
+                  #{$debug_framed_color_fill} 10px,
+                  #{$debug_framed_color_fill} 11px,
+                  transparent 11px,
+                  transparent 20px
+  );
+}
+
+.mode_debug .debug.active p span,
+.mode_debug .debug.active p svg,
+.mode_debug .debug.active button span,
+.mode_debug .debug.active img,
+.mode_debug .debug.active video {
+  box-shadow: inset 0 0 0 #{$debug_stroke} #{$debug_element_color};
+}
+
+[data-key=CV] [data-key*=SQ_]:not(.active) .margin:after {
+  border: none !important;
+}

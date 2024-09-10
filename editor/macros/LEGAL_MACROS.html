@@ -1,0 +1,34 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-field title="$[terms]">
+    <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros.terms.value"></text-area>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.terms.value = '${terms}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[condition]">
+    <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros.condition.value"></text-area>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.condition.value = '<q>* - ${condition}</q>'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>
+
+<block-field title="$[disclaimer]">
+    <text-area placeholder="{{ :: $dict.label_value }}" model="$frame.macros.disclaimer.value"></text-area>
+    <block-info>
+        <p>
+            <small><q>
+                <a ng-click="$frame.macros.disclaimer.value = '${disclaimer}'">{{ :: $dict.action_set_value_1 }}</a> {{ :: $dict.action_set_value_2 }}
+            </q></small>
+        </p>
+    </block-info>
+</block-field>

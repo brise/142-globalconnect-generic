@@ -1,0 +1,86 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<block-group>
+
+    <block-field title="UTM Builder">
+        <toggle-button model="$data.banner.clicktag.synchronise" on="Merge UTM Parameters" off="{{ :: $dict.label_disabled }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>
+                    Merge custom UTM parameters with destination URL.
+                </q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="UTM Encoder" ng-if="$data.banner.clicktag.synchronise">
+        <toggle-button model="$data.banner.clicktag.encode" on="Encode Special Characters" off="{{ :: $dict.label_disabled }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>Convert tagging parameter's special characters into format that can be transmitted overlay the Internet.</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+
+<block-group ng-if="$data.banner.clicktag.synchronise">
+
+    <block-field title="UTM Parameters" class="label"></block-field>
+
+    <block-field title="Campaign">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.utm_campaign"></text-field>
+        <block-info>
+            <p>
+                <small><q>Strategic campaign (e.g. summer_sale).</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="Content">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.utm_condition"></text-field>
+        <block-info>
+            <p>
+                <small><q>Content details for A/B testing (e.g. red_button).</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="Medium">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.utm_medium"></text-field>
+        <block-info>
+            <p>
+                <small><q>Marketing sharing medium (e.g. display, banner).</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.utm_source"></text-field>
+        <block-info>
+            <p>
+                <small><q>Source of traffic (e.g. google, referral).</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="Term">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.utm_term"></text-field>
+        <block-info>
+            <p>
+                <small><q>Terms suggested for paid search.</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+    <block-field title="Keyword">
+        <text-field placeholder="{{ :: $dict.label_value }}" model="$data.banner.definition.keyword"></text-field>
+        <block-info>
+            <p>
+                <small><q>Keyword added to click tag (e.g. frame index).</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+

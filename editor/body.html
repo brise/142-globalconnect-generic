@@ -1,0 +1,209 @@
+<div class="v3">
+
+    <block-menu class="tabs">
+        <a ng-click="$data.editor.scope[0] = 0;" ng-class="{selected: ($data.editor.scope[0] == 0), darker: ($data.editor.scope[0] == 0)}">{{ :: $dict.label_elements }}</a>
+        <a ng-click="$data.editor.scope[0] = 1;" ng-class="{selected: ($data.editor.scope[0] == 1)}">{{ :: $dict.label_settings }}</a>
+        <a ng-click="$data.editor.scope[0] = 2;" ng-class="{selected: ($data.editor.scope[0] == 2)}">{{ :: $dict.label_variables }}</a>
+    </block-menu>
+
+    <!-- ELEMENTS -->
+    <block ng-if="$data.editor.scope[0] == 0">
+
+        <CV></CV>
+
+    </block>
+    <!-- / ELEMENTS -->
+
+    <!-- SETTINGS -->
+    <block ng-if="$data.editor.scope[0] == 1">
+
+        <block-group>
+
+            <block-field title="{{ :: $dict.label_lading_page }}" class="label"></block-field>
+
+            <block-toggle title="{{ :: $dict.label_destination }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('destination') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'destination') ? '' : 'destination')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('destination') != -1)">
+
+                <DESTINATION_SETTINGS></DESTINATION_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_tagging}}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('tagging') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'tagging') ? '' : 'tagging')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('tagging') != -1)">
+
+                <TAGGING_SETTINGS></TAGGING_SETTINGS>
+
+            </div>
+
+        </block-group>
+
+        <block-group>
+
+            <block-toggle title="{{ :: $dict.label_setup }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('setup') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'setup') ? '' : 'setup')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('setup') != -1)">
+
+                <SETUP_SETTINGS></SETUP_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_timeline }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('timeline') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'timeline') ? '' : 'timeline')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('timeline') != -1)">
+
+                <TIMELINE_SETTINGS></TIMELINE_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_layout }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('appear') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'appear') ? '' : 'appear')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('appear') != -1)">
+
+                <APPEAR_SETTINGS></APPEAR_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_colors }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('colors') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'colors') ? '' : 'colors')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('colors') != -1)">
+
+                <COLOR_SETTINGS></COLOR_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_fonts }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('fonts') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'fonts') ? '' : 'fonts')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('fonts') != -1)">
+
+                <FONTS_SETTINGS></FONTS_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_texts }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('texts') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'texts') ? '' : 'texts')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('texts') != -1)">
+
+                <TEXTS_SETTINGS></TEXTS_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_images }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('images') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'images') ? '' : 'images')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('images') != -1)">
+
+                <IMAGE_SETTINGS></IMAGE_SETTINGS>
+
+            </div>
+
+            <block-toggle title="{{ :: $dict.label_videos }}" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('videos') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'videos') ? '' : 'videos')"></block-toggle>
+            <div ng-if="($data.editor.scope[2].indexOf('videos') != -1)">
+
+                <VIDEO_SETTINGS></VIDEO_SETTINGS>
+
+            </div>
+
+        </block-group>
+
+        <block-group>
+
+            <block-field title="Editing Tools" class="label"></block-field>
+
+            <block-toggle title="Preview" class="toggle" ng-class="{selected: ($data.editor.scope[2].indexOf('preview') != -1)}"
+                          ng-click="$data.editor.scope[2] = (($data.editor.scope[2] == 'preview') ? '' : 'preview')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[2].indexOf('preview') != -1)">
+
+                <PREVIEW_SETTINGS></PREVIEW_SETTINGS>
+
+            </block-group>
+
+        </block-group>
+
+    </block>
+    <!-- / SETTINGS -->
+
+    <!-- MACROS -->
+    <block ng-if="$data.editor.scope[0] == 2">
+
+        <block-group>
+
+            <block-field title="{{ :: $dict.label_global }} {{ :: $dict.label_variables }}" class="label"></block-field>
+
+            <block-toggle title="{{ :: $dict.label_message }}" class="toggle" ng-class="{selected: ($data.editor.scope[3].indexOf('message') != -1)}"
+                          ng-click="$data.editor.scope[3] = (($data.editor.scope[3] == 'message') ? '' : 'message')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[3].indexOf('message') != -1)">
+
+                <MESSAGE_MACROS></MESSAGE_MACROS>
+
+            </block-group>
+
+            <block-toggle title="{{ :: $dict.label_legal }}" class="toggle" ng-class="{selected: ($data.editor.scope[3].indexOf('legal') != -1)}"
+                          ng-click="$data.editor.scope[3] = (($data.editor.scope[3] == 'legal') ? '' : 'legal')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[3].indexOf('legal') != -1)">
+
+                <LEGAL_MACROS></LEGAL_MACROS>
+
+            </block-group>
+
+            <block-toggle title="{{ :: $dict.label_custom }}" class="toggle" ng-class="{selected: ($data.editor.scope[3].indexOf('custom') != -1)}"
+                          ng-click="$data.editor.scope[3] = (($data.editor.scope[3] == 'custom') ? '' : 'custom')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[3].indexOf('custom') != -1)">
+
+                <CUSTOM_MACROS></CUSTOM_MACROS>
+
+            </block-group>
+
+            <block-field title="{{ :: $dict.label_system }} {{ :: $dict.label_variables }}" class="label"></block-field>
+
+            <block-toggle title="{{ :: $dict.label_feed }}" class="toggle" ng-class="{selected: ($data.editor.scope[3].indexOf('feed') != -1)}"
+                          ng-click="$data.editor.scope[3] = (($data.editor.scope[3] == 'feed') ? '' : 'feed')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[3].indexOf('feed') != -1)">
+
+                <FEED_MACROS></FEED_MACROS>
+
+            </block-group>
+
+            <block-toggle title="{{ :: $dict.label_system }}" class="toggle" ng-class="{selected: ($data.editor.scope[3].indexOf('system') != -1)}"
+                          ng-click="$data.editor.scope[3] = (($data.editor.scope[3] == 'system') ? '' : 'system')"></block-toggle>
+            <block-group ng-if="($data.editor.scope[3].indexOf('system') != -1)">
+
+                <SYSTEM_MACROS></SYSTEM_MACROS>
+
+            </block-group>
+
+        </block-group>
+
+    </block>
+    <!-- / MACROS -->
+
+</div>
+
+<style>
+
+    .input-text-field-char-addon .addon {
+        color: #9fa7bb;
+        font-size: 10px !important;
+    }
+
+    textarea {
+        transition: min-height 0.25s ease, height 0.25s ease;
+    }
+
+    block-toggle.disabled span.label.toggle-label,
+    block-toggle.disabled .toggle:hover span.label.toggle-label {
+        color: #9fa7bb !important;
+    }
+
+    block-toggle.disabled span.toggle-icon svg,
+    block-toggle.disabled .toggle:hover span.toggle-icon svg {
+        fill: #9fa7bb !important;
+    }
+
+    block-toggle.disabled,
+    block-toggle.disabled * {
+        cursor: default !important;
+    }
+
+</style>

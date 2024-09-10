@@ -1,0 +1,32 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- FONT LOAD SETUP -->
+<block-group>
+
+    <block-field title="Font Preload" class="label"></block-field>
+
+    <block-field title="Primary">
+        <dropdown-select model="$frame.params.wait.fonts[0]">
+            <option value="">{{ :: $dict.label_none }}</option>
+            <option ng-repeat="$font in $fonts" value="{{ $font[0] }}">{{ $font[1] }}</option>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="Secondary">
+        <dropdown-select model="$frame.params.wait.fonts[1]">
+            <option value="">{{ :: $dict.label_none }}</option>
+            <option ng-repeat="$font in $fonts" value="{{ $font[0] }}">{{ $font[1] }}</option>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="Tertiary">
+        <dropdown-select model="$frame.params.wait.fonts[2]">
+            <option value="">{{ :: $dict.label_none }}</option>
+            <option ng-repeat="$font in $fonts" value="{{ $font[0] }}">{{ $font[1] }}</option>
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+<!-- / FONT LOAD SETUP -->

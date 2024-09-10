@@ -1,0 +1,94 @@
+
+<!-- Initialise navigation -->
+<data ng-init="
+$nav = [
+	['', {}],
+	['', {}],
+	['', {}]
+];"></data>
+
+<!-- Pick REGION value from brand data, if available -->
+<data ng-if="($data.banner.macros.region.value === 'auto' && $data.$templateSettings.region)" ng-init="$data.banner.macros.region.value = $data.$templateSettings.region"></data>
+
+<!-- Pick BRAND value from brand data, if available -->
+<data ng-if="($data.banner.macros.brand.value === 'auto' && $data.$templateSettings.brand)" ng-init="$data.banner.macros.brand.value = $data.$templateSettings.brand"></data>
+
+<!-- Update selected layer scope -->
+<data ng-if="($data.editor.scope[1] === '' || $data.editor.scope[0] !== 0)" ng-init="$data.editor.element = ''"></data>
+
+<!-- Font configuration -->
+<data ng-init="$fonts = [
+	['font_A_300', 'OpenSans 300'],
+	['font_A_400', 'OpenSans 400'],
+	['font_A_600', 'OpenSans 600'],
+	['font_B_300', 'Advent Pro 300'],
+	['font_B_400', 'Advent Pro 400'],
+	['font_B_500', 'Advent Pro 500'],
+	['font_B_600', 'Advent Pro 600']
+]"></data>
+
+<!-- Size list -->
+<data ng-init="$sizes = [{'name':'120x600'},{'name':'140x350'},{'name':'160x80'},{'name':'150x600'},{'name':'160x600'},{'name':'180x500'},{'name':'200x200'},{'name':'200x350'},{'name':'200x600'},{'name':'200x700'},{'name':'240x400'},{'name':'250x250'},{'name':'250x360'},{'name':'250x600'},{'name':'250x800'},{'name':'300x50'},{'name':'300x100'},{'name':'300x200'},{'name':'300x250'},{'name':'300x300'},{'name':'300x600'},{'name':'320x50'},{'name':'320x100'},{'name':'320x160'},{'name':'320x240'},{'name':'320x250'},{'name':'320x280'},{'name':'320x320'},{'name':'320x400'},{'name':'320x480'},{'name':'336x280'},{'name':'350x250'},{'name':'400x600'},{'name':'468x60'},{'name':'468x360'},{'name':'468x480'},{'name':'480x120'},{'name':'480x300'},{'name':'480x480'},{'name':'580x400'},{'name':'600x400'},{'name':'640x320'},{'name':'640x360'},{'name':'640x1000'},{'name':'660x100'},{'name':'712x250'},{'name':'728x90'},{'name':'750x100'},{'name':'750x200'},{'name':'750x300'},{'name':'768x240'},{'name':'800x250'},{'name':'825x110'},{'name':'852x640'},{'name':'910x250'},{'name':'930x180'},{'name':'960x1200'},{'name':'970x90'},{'name':'970x210'},{'name':'970x250'},{'name':'970x300'},{'name':'970x310'},{'name':'980x120'},{'name':'980x240'},{'name':'980x250'},{'name':'980x300'},{'name':'980x600'},{'name':'1000x100'},{'name':'1020x200'},{'name':'1024x81'},{'name':'1080x1080'},{'name':'1080x1920'},{'name':'1080x1920_meta_reel'},{'name':'1080x1920_meta_story'},{'name':'1168x250'},{'name':'1200x200'},{'name':'1200x250'},{'name':'1200x628'},{'name':'1200x1200'},{'name':'1250x360'},{'name':'1400x940'},{'name':'1920x900'},{'name':'1920x1080'}]"></data>
+<data ng-init="$sizes = _.pull(_.pull(_.map($data.$availableSizes ? $data.$availableSizes : $sizes, 'name'), 'RxR'), '0x0')"></data>
+
+<!-- Variation list -->
+<data ng-init="$variations = {
+	CV_size:$sizes,
+	CV_scale:['CV_scale_xs','CV_scale_s','CV_scale_m','CV_scale_l','CV_scale_xl'],
+	CV_tens:['CV_tens_t2','CV_tens_t1','CV_tens_t0','CV_tens_e0','CV_tens_w0','CV_tens_w1','CV_tens_w2'],
+	EL_orient:['EL_orient_p','EL_orient_s','EL_orient_l'],
+	CV_mode:['snapshot']
+}"></data>
+
+<!-- Size relation list -->
+<data ng-init="$relations = {
+	CV_tens_t3:[],
+	CV_tens_t2:['120x600','150x600','160x600','180x500','200x600','200x700','250x800'],
+	CV_tens_t1:['140x350','200x350','250x600','300x600','1080x1920'],
+	CV_tens_t0:['240x400','250x360','320x480','400x600','640x1000'],
+	CV_tens_e0:['200x200','250x250','300x300','320x280','320x320','320x400','468x480','480x480','960x1200','1080x1080','1200x1200'],
+	CV_tens_w0:['300x200','300x250','320x240','320x250','336x280','350x250','468x360','580x400','600x400','852x640','1400x940'],
+	CV_tens_w1:['160x80','300x100','320x160','480x300','640x320','640x360','712x250','750x300','970x310','980x600','1200x628','1920x900','1920x1080'],
+	CV_tens_w2:['300x50','320x50','320x100','468x60','480x120','660x100','728x90','750x100','750x200','768x240','800x250','825x110','910x250','930x180','970x90','970x210','970x250','970x300','980x120','980x240','980x250','980x300','1000x100','1020x200','1024x81','1168x250','1200x200','1200x250','1250x360'],
+	CV_scale_xs:['160x80','300x50','300x100','320x50','320x100','468x60'],
+	CV_scale_s:['120x600','140x350','200x200','200x350','250x250','300x200','300x250','320x160','320x240','480x120','660x100','728x90','750x100'],
+	CV_scale_m:['150x600','160x600','180x500','200x600','200x700','240x400','250x360','250x600','300x300','320x250','320x280','320x320','320x400','320x480','336x280','350x250','480x300','750x200','825x110','970x90','980x120','1000x100','1024x81'],
+	CV_scale_l:['250x800','300x600','400x600','468x360','468x480','480x480','580x400','600x400','640x320','640x360','712x250','750x300','768x240','800x250','910x250','930x180','970x210','970x250','970x300','970x310','980x240','980x250','980x300','1020x200','1168x250','1200x200','1200x250'],
+	CV_scale_xl:['640x1000','852x640','960x1200','980x600','1080x1080','1080x1920','1200x628','1200x1200','1250x360','1400x940','1920x900','1920x1080'],
+}"></data>
+
+<!-- Image placement ratios -->
+<data ng-init="$ratios = {
+	BG_fill: {
+        '120x600':{label:'120x600',value:'120x300'},'140x350':{label:'140x350',value:'140x175'},'160x80':{label:'160x80',value:'80x80'},'150x600':{label:'150x600',value:'150x300'},'160x600':{label:'160x600',value:'160x300'},'180x500':{label:'180x500',value:'180x250'},'200x200':{label:'200x200',value:'200x100'},'200x350':{label:'200x350',value:'200x175'},'200x600':{label:'200x600',value:'200x300'},'200x700':{label:'200x700',value:'200x350'},'240x400':{label:'240x400',value:'240x200'},'250x250':{label:'250x250',value:'250x125'},'250x360':{label:'250x360',value:'250x180'},'250x600':{label:'250x600',value:'250x300'},'250x800':{label:'250x800',value:'250x400'},'300x50':{label:'300x50',value:'120x50'},'300x100':{label:'300x100',value:'150x100'},'300x200':{label:'300x200',value:'150x200'},'300x250':{label:'300x250',value:'150x250'},'300x300':{label:'300x300',value:'300x150'},'300x600':{label:'300x600',value:'300x300'},'320x50':{label:'320x50',value:'128x50'},'320x100':{label:'320x100',value:'160x100'},'320x160':{label:'320x160',value:'160x160'},'320x240':{label:'320x240',value:'160x240'},'320x250':{label:'320x250',value:'160x250'},'320x280':{label:'320x280',value:'320x140'},'320x320':{label:'320x320',value:'320x160'},'320x400':{label:'320x400',value:'320x200'},'320x480':{label:'320x480',value:'320x240'},'336x280':{label:'336x280',value:'168x280'},'350x250':{label:'350x250',value:'175x250'},'400x600':{label:'400x600',value:'400x300'},'468x60':{label:'468x60',value:'187x60'},'468x360':{label:'468x360',value:'234x360'},'468x480':{label:'468x480',value:'468x240'},'480x120':{label:'480x120',value:'240x120'},'480x300':{label:'480x300',value:'240x300'},'480x480':{label:'480x480',value:'480x240'},'580x400':{label:'580x400',value:'290x400'},'600x400':{label:'600x400',value:'300x400'},'640x320':{label:'640x320',value:'320x320'},'640x360':{label:'640x360',value:'320x360'},'640x1000':{label:'640x1000',value:'640x500'},'660x100':{label:'660x100',value:'264x100'},'712x250':{label:'712x250',value:'356x250'},'728x90':{label:'728x90',value:'291x90'},'750x100':{label:'750x100',value:'300x100'},'750x200':{label:'750x200',value:'375x200'},'750x300':{label:'750x300',value:'375x300'},'768x240':{label:'768x240',value:'384x240'},'800x250':{label:'800x250',value:'400x250'},'825x110':{label:'825x110',value:'330x110'},'852x640':{label:'852x640',value:'426x640'},'910x250':{label:'910x250',value:'455x250'},'930x180':{label:'930x180',value:'465x180'},'960x1200':{label:'960x1200',value:'960x600'},'970x90':{label:'970x90',value:'388x90'},'970x210':{label:'970x210',value:'485x210'},'970x250':{label:'970x250',value:'485x250'},'970x300':{label:'970x300',value:'485x300'},'970x310':{label:'970x310',value:'485x310'},'980x120':{label:'980x120',value:'392x120'},'980x240':{label:'980x240',value:'490x240'},'980x250':{label:'980x250',value:'490x250'},'980x300':{label:'980x300',value:'490x300'},'980x600':{label:'980x600',value:'490x600'},'1000x100':{label:'1000x100',value:'400x100'},'1020x200':{label:'1020x200',value:'510x200'},'1024x81':{label:'1024x81',value:'410x81'},'1080x1080':{label:'1080x1080',value:'1080x540'},'1080x1920':{label:'1080x1920',value:'1080x960'},'1080x1920_meta_reel':{label:'1080x1920_meta_reel',value:'1080x960'},'1080x1920_meta_story':{label:'1080x1920_meta_story',value:'1080x960'},'1168x250':{label:'1168x250',value:'584x250'},'1200x200':{label:'1200x200',value:'480x200'},'1200x250':{label:'1200x250',value:'600x250'},'1200x628':{label:'1200x628',value:'600x628'},'1200x1200':{label:'1200x1200',value:'1200x600'},'1250x360':{label:'1250x360',value:'625x360'},'1400x940':{label:'1400x940',value:'700x940'},'1920x900':{label:'1920x900',value:'0x0'},'1920x1080':{label:'1920x1080',value:'0x0'},
+    },
+    BG_fit: {},
+	FG_fill: {
+        '120x600':{label:'120x600',value:'120x300'},'140x350':{label:'140x350',value:'140x175'},'160x80':{label:'160x80',value:'80x80'},'150x600':{label:'150x600',value:'150x300'},'160x600':{label:'160x600',value:'160x300'},'180x500':{label:'180x500',value:'180x250'},'200x200':{label:'200x200',value:'200x100'},'200x350':{label:'200x350',value:'200x175'},'200x600':{label:'200x600',value:'200x300'},'200x700':{label:'200x700',value:'200x350'},'240x400':{label:'240x400',value:'240x200'},'250x250':{label:'250x250',value:'250x125'},'250x360':{label:'250x360',value:'250x180'},'250x600':{label:'250x600',value:'250x300'},'250x800':{label:'250x800',value:'250x400'},'300x50':{label:'300x50',value:'120x50'},'300x100':{label:'300x100',value:'150x100'},'300x200':{label:'300x200',value:'150x200'},'300x250':{label:'300x250',value:'150x250'},'300x300':{label:'300x300',value:'300x150'},'300x600':{label:'300x600',value:'300x300'},'320x50':{label:'320x50',value:'128x50'},'320x100':{label:'320x100',value:'160x100'},'320x160':{label:'320x160',value:'160x160'},'320x240':{label:'320x240',value:'160x240'},'320x250':{label:'320x250',value:'160x250'},'320x280':{label:'320x280',value:'320x140'},'320x320':{label:'320x320',value:'320x160'},'320x400':{label:'320x400',value:'320x200'},'320x480':{label:'320x480',value:'320x240'},'336x280':{label:'336x280',value:'168x280'},'350x250':{label:'350x250',value:'175x250'},'400x600':{label:'400x600',value:'400x300'},'468x60':{label:'468x60',value:'187x60'},'468x360':{label:'468x360',value:'234x360'},'468x480':{label:'468x480',value:'468x240'},'480x120':{label:'480x120',value:'240x120'},'480x300':{label:'480x300',value:'240x300'},'480x480':{label:'480x480',value:'480x240'},'580x400':{label:'580x400',value:'290x400'},'600x400':{label:'600x400',value:'300x400'},'640x320':{label:'640x320',value:'320x320'},'640x360':{label:'640x360',value:'320x360'},'640x1000':{label:'640x1000',value:'640x500'},'660x100':{label:'660x100',value:'264x100'},'712x250':{label:'712x250',value:'356x250'},'728x90':{label:'728x90',value:'291x90'},'750x100':{label:'750x100',value:'300x100'},'750x200':{label:'750x200',value:'375x200'},'750x300':{label:'750x300',value:'375x300'},'768x240':{label:'768x240',value:'384x240'},'800x250':{label:'800x250',value:'400x250'},'825x110':{label:'825x110',value:'330x110'},'852x640':{label:'852x640',value:'426x640'},'910x250':{label:'910x250',value:'455x250'},'930x180':{label:'930x180',value:'465x180'},'960x1200':{label:'960x1200',value:'960x600'},'970x90':{label:'970x90',value:'388x90'},'970x210':{label:'970x210',value:'485x210'},'970x250':{label:'970x250',value:'485x250'},'970x300':{label:'970x300',value:'485x300'},'970x310':{label:'970x310',value:'485x310'},'980x120':{label:'980x120',value:'392x120'},'980x240':{label:'980x240',value:'490x240'},'980x250':{label:'980x250',value:'490x250'},'980x300':{label:'980x300',value:'490x300'},'980x600':{label:'980x600',value:'490x600'},'1000x100':{label:'1000x100',value:'400x100'},'1020x200':{label:'1020x200',value:'510x200'},'1024x81':{label:'1024x81',value:'410x81'},'1080x1080':{label:'1080x1080',value:'1080x540'},'1080x1920':{label:'1080x1920',value:'1080x960'},'1080x1920_meta_reel':{label:'1080x1920_meta_reel',value:'1080x960'},'1080x1920_meta_story':{label:'1080x1920_meta_story',value:'1080x960'},'1168x250':{label:'1168x250',value:'584x250'},'1200x200':{label:'1200x200',value:'480x200'},'1200x250':{label:'1200x250',value:'600x250'},'1200x628':{label:'1200x628',value:'600x628'},'1200x1200':{label:'1200x1200',value:'1200x600'},'1250x360':{label:'1250x360',value:'625x360'},'1400x940':{label:'1400x940',value:'700x940'},'1920x900':{label:'1920x900',value:'0x0'},'1920x1080':{label:'1920x1080',value:'0x0'},
+    },
+    FG_fit: {},
+	UG_fill: {
+        '120x600':{label:'120x600',value:'120x300'},'140x350':{label:'140x350',value:'140x175'},'160x80':{label:'160x80',value:'80x80'},'150x600':{label:'150x600',value:'150x300'},'160x600':{label:'160x600',value:'160x300'},'180x500':{label:'180x500',value:'180x250'},'200x200':{label:'200x200',value:'200x100'},'200x350':{label:'200x350',value:'200x175'},'200x600':{label:'200x600',value:'200x300'},'200x700':{label:'200x700',value:'200x350'},'240x400':{label:'240x400',value:'240x200'},'250x250':{label:'250x250',value:'250x125'},'250x360':{label:'250x360',value:'250x180'},'250x600':{label:'250x600',value:'250x300'},'250x800':{label:'250x800',value:'250x400'},'300x50':{label:'300x50',value:'120x50'},'300x100':{label:'300x100',value:'150x100'},'300x200':{label:'300x200',value:'150x200'},'300x250':{label:'300x250',value:'150x250'},'300x300':{label:'300x300',value:'300x150'},'300x600':{label:'300x600',value:'300x300'},'320x50':{label:'320x50',value:'128x50'},'320x100':{label:'320x100',value:'160x100'},'320x160':{label:'320x160',value:'160x160'},'320x240':{label:'320x240',value:'160x240'},'320x250':{label:'320x250',value:'160x250'},'320x280':{label:'320x280',value:'320x140'},'320x320':{label:'320x320',value:'320x160'},'320x400':{label:'320x400',value:'320x200'},'320x480':{label:'320x480',value:'320x240'},'336x280':{label:'336x280',value:'168x280'},'350x250':{label:'350x250',value:'175x250'},'400x600':{label:'400x600',value:'400x300'},'468x60':{label:'468x60',value:'187x60'},'468x360':{label:'468x360',value:'234x360'},'468x480':{label:'468x480',value:'468x240'},'480x120':{label:'480x120',value:'240x120'},'480x300':{label:'480x300',value:'240x300'},'480x480':{label:'480x480',value:'480x240'},'580x400':{label:'580x400',value:'290x400'},'600x400':{label:'600x400',value:'300x400'},'640x320':{label:'640x320',value:'320x320'},'640x360':{label:'640x360',value:'320x360'},'640x1000':{label:'640x1000',value:'640x500'},'660x100':{label:'660x100',value:'264x100'},'712x250':{label:'712x250',value:'356x250'},'728x90':{label:'728x90',value:'291x90'},'750x100':{label:'750x100',value:'300x100'},'750x200':{label:'750x200',value:'375x200'},'750x300':{label:'750x300',value:'375x300'},'768x240':{label:'768x240',value:'384x240'},'800x250':{label:'800x250',value:'400x250'},'825x110':{label:'825x110',value:'330x110'},'852x640':{label:'852x640',value:'426x640'},'910x250':{label:'910x250',value:'455x250'},'930x180':{label:'930x180',value:'465x180'},'960x1200':{label:'960x1200',value:'960x600'},'970x90':{label:'970x90',value:'388x90'},'970x210':{label:'970x210',value:'485x210'},'970x250':{label:'970x250',value:'485x250'},'970x300':{label:'970x300',value:'485x300'},'970x310':{label:'970x310',value:'485x310'},'980x120':{label:'980x120',value:'392x120'},'980x240':{label:'980x240',value:'490x240'},'980x250':{label:'980x250',value:'490x250'},'980x300':{label:'980x300',value:'490x300'},'980x600':{label:'980x600',value:'490x600'},'1000x100':{label:'1000x100',value:'400x100'},'1020x200':{label:'1020x200',value:'510x200'},'1024x81':{label:'1024x81',value:'410x81'},'1080x1080':{label:'1080x1080',value:'1080x540'},'1080x1920':{label:'1080x1920',value:'1080x960'},'1080x1920_meta_reel':{label:'1080x1920_meta_reel',value:'1080x960'},'1080x1920_meta_story':{label:'1080x1920_meta_story',value:'1080x960'},'1168x250':{label:'1168x250',value:'584x250'},'1200x200':{label:'1200x200',value:'480x200'},'1200x250':{label:'1200x250',value:'600x250'},'1200x628':{label:'1200x628',value:'600x628'},'1200x1200':{label:'1200x1200',value:'1200x600'},'1250x360':{label:'1250x360',value:'625x360'},'1400x940':{label:'1400x940',value:'700x940'},'1920x900':{label:'1920x900',value:'0x0'},'1920x1080':{label:'1920x1080',value:'0x0'},
+    },
+    UG_fit: {}
+};
+"></data>
+
+<style>
+
+    div.v3 block .toggle .toggle-label a {
+        padding-bottom: 15px;
+    }
+
+    div.v3 block-menu.tabs a {
+        padding-bottom: 15px;
+    }
+
+    div.v3 block .toggle.label.selected .toggle-label a,
+    div.v3 block .toggle.selected .label a,
+    div.v3 block-menu a.selected,
+    div.v3 block-menu.tabs a.selected {
+        font-weight: 600 !important;
+    }
+
+</style>

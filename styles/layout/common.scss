@@ -1,0 +1,652 @@
+@import "config";
+
+/*
+ * Global element styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+	overflow: hidden;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+[data-key=CV] {
+
+	[data-key*=_TXT_] p::before,
+	[data-key*=_TXT_] p::after {
+		content: "";
+		position: relative;
+		display: block;
+	}
+
+	.gr svg {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	//.spacer.spacer_start,
+	//.spacer.spacer_end {
+	//	display: none;
+	//}
+
+}
+
+/*
+ * Global scrollbar styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+::-webkit-scrollbar {
+	width: calc(#{$padding_small} / 2) !important;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: calc(#{$padding_small} / 2);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: calc(#{$padding_small} / 2);
+}
+
+/*
+ * Global text formatting styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	button {
+		display: inline-block;
+		padding: 0.8em 1.2em 0.8em 1.2em;
+		line-height: 1 !important;
+		border-radius: 2rem;
+		min-width: 10rem;
+		max-width: 100%;
+		max-height: 100%;
+		vertical-align: middle;
+		text-align: center;
+		overflow: hidden;
+		border: solid 0.15rem;
+		text-transform: inherit;
+	}
+
+	&.CV_tens_w3 button {
+		min-width: 12rem;
+	}
+
+	&.CV_tens_t3 button {
+		word-break: break-word;
+		min-width: 8rem;
+	}
+
+	&.CV_tens_w1.CV_scale_xs button {
+		word-break: break-word;
+		min-width: initial;
+	}
+
+	hr {
+		display: block;
+		width: 100%;
+		height: #{$text_stroke_weight_absolute};
+		margin: #{$text_spacer_normal}  0 #{$text_spacer_normal} 0;
+	}
+
+	hr:first-child {
+		margin-top: 0;
+	}
+
+	hr:last-child {
+		margin-bottom: 0;
+		display: none;
+	}
+
+	br.space {
+		content: "";
+		display: block;
+		font-size: 100%;
+		height: #{$text_spacer_small};
+	}
+
+	hr + br {
+		display: none;
+	}
+
+	var:empty + br {
+		display: none;
+	}
+
+}
+
+/*
+ * Global LG layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] [data-key=LG] {
+
+	text-align: left;
+
+	.place {
+		top: #{$padding_normal};
+		left: #{$padding_normal};
+		width: calc(100% - #{$padding_normal_dbl});
+		height: calc(100% - #{$padding_normal_dbl});
+	}
+
+	svg {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+/*
+ * Global OL layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+
+[data-key=CV] {
+
+	[data-key=OL] {
+
+		.corner,
+		.radial {
+			display: none;
+		}
+
+	}
+
+	&.CV_layout_isolated,
+	&.CV_layout_boxed {
+
+		[data-key=OL] {
+
+			[data-key=OL_GR_0] .corner,
+			[data-key=OL_GR_0] .radial {
+				display: none;
+			}
+
+			[data-key=OL_GR_1] {
+				display: none;
+			}
+
+		}
+
+	}
+
+}
+
+/*
+ * Global BG, FG layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=UG],
+	[data-key=BG],
+	[data-key=FG] {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $padding_normal;
+		left: $padding_normal;
+		height: calc(100% - $padding_normal_dbl);
+		width: calc(100% - $padding_normal_dbl);
+	}
+
+	&.CV_layout_boxed {
+
+		.isolated > .margin {
+			overflow: hidden;
+			border-radius: $padding_small;
+			top: $padding_small;
+			left: $padding_small;
+			height: calc(100% - $padding_small_dbl);
+			width: calc(100% - $padding_small_dbl);
+		}
+
+	}
+
+	&.CV_layout_isolated {
+
+		.isolated {
+			overflow: hidden;
+		}
+
+	}
+
+}
+
+/*
+ * Global MS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=MS] {
+		text-align: left;
+		vertical-align: middle;
+		justify-content: center;
+		line-height: 1.1;
+	}
+
+	[data-key=MS] {
+
+		.box {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		img.dealer_logo {
+			height: 2em;
+			width: auto;
+			max-width: 100%;
+		}
+
+	}
+
+	[data-key*=SQ_] {
+
+		&:not(.MB_disabled):not(.SQ_split_1) [data-key=MS] {
+
+			.MB p::before {
+				margin: calc(#{$text_spacer_small} / 2);
+			}
+
+		}
+
+		&:not(.MC_disabled):not(.SQ_split_1) [data-key=MS] {
+
+			.MC p::before {
+				margin: calc(#{$text_spacer_normal} / 2);
+			}
+
+		}
+
+		&.SQ_split_1 [data-key=MS] .MA,
+		&.SQ_split_0 [data-key=MS] .MB {
+			display: none !important;
+		}
+
+	}
+
+}
+
+/*
+ * Global PS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV]  {
+
+	[data-key=PS] {
+		text-align: left;
+		vertical-align: middle;
+		justify-content: center;
+	}
+
+	//&.CN_disabled {
+	//	vertical-align: middle;
+	//	justify-content: center;
+	//}
+
+	[data-key=PS] {
+
+		.box {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.spacer_between {
+			margin: calc(#{$text_spacer_normal} / 6);
+		}
+
+		[class*=_orient_l] {
+
+			.box {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			.spacer_between {
+				margin: calc(#{$text_spacer_normal} / 4);
+			}
+
+			.BT {
+				min-width: 40%;
+			}
+
+			.BT p,
+			.BT button {
+				min-width: 100%;
+			}
+
+		}
+
+	}
+
+	&.BT_disabled,
+	&.CN_disabled {
+
+		[data-key=PS] {
+
+			.spacer_between {
+				display: none;
+			}
+
+		}
+
+	}
+
+}
+
+/*
+ * Global LN layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=LN] {
+		width: #{$line_size};
+	}
+
+	[data-key=LN] {
+
+		[data-key=LN_BG] {
+			height: 0px;
+			max-height: 50%;
+		}
+
+	}
+
+}
+
+///*
+// * Global EN, LB layer styles.
+// * ------------------------------------------------------------------------------------------------------------------
+// */
+//
+//[data-key=CV] .EN {
+//
+//	$EN_emission_step: 12.9%;
+//
+//	p {
+//		font-family: 'Arial Narrow', Arial, 'sans-serif';
+//		font-weight: 700;
+//		line-height: 1 !important;
+//	}
+//
+//	[data-key*=_OBJ_] {
+//		vertical-align: middle;
+//		font-size: 1em;
+//	}
+//
+//	[data-key*=_OBJ_] [data-key*=_TXT_] {
+//		text-align: left;
+//	}
+//
+//	[data-key*=_IMG_] svg {
+//		position: absolute;
+//		left: 0;
+//		top: 0;
+//		width: 100%;
+//		height: 100%;
+//	}
+//
+//	[class*=_size_relative] {
+//
+//		[data-key*=_OBJ_] {
+//			padding-right: calc(#{$text_spacer_normal} / 2);
+//			padding-top: calc(#{$text_spacer_normal} / 4);
+//			padding-bottom: calc(#{$text_spacer_normal} / 4);
+//		}
+//
+//		[data-key*=_IMG_] {
+//			height: #{$badge_size_relative};
+//			width: #{$badge_size_relative};
+//		}
+//
+//	}
+//
+//	.badge {
+//
+//		.model {
+//			margin-top: calc(#{$text_spacer_small} / 4);
+//		}
+//
+//		.model p {
+//			font-size: 0.75em !important;
+//			//line-height: 1 !important;
+//			white-space: nowrap;
+//		}
+//
+//		.emission {
+//			top: 0;
+//			left: 20%;
+//			width: 70%;
+//			height: #{$EN_emission_step};
+//		}
+//
+//		.emission p {
+//			position: absolute;
+//			color: #fff !important;
+//			left: 0;
+//			font-size: 0.5em !important;
+//			//line-height: 1 !important;
+//			white-space: nowrap;
+//		}
+//
+//	}
+//
+//	// Badge fridge value positions according to the selected level.
+//
+//	.badge[class*=_emission_dk_a] .emission,
+//	.badge[class*=_emission_fr_a] .emission {
+//		top: calc(#{$EN_emission_step} * 0.5);
+//	}
+//
+//	.badge[class*=_emission_dk_b] .emission,
+//	.badge[class*=_emission_fr_b] .emission {
+//		top: calc(#{$EN_emission_step} * 1.5);
+//	}
+//
+//	.badge[class*=_emission_dk_c] .emission,
+//	.badge[class*=_emission_fr_c] .emission {
+//		top: calc(#{$EN_emission_step} * 2.5);
+//	}
+//
+//	.badge[class*=_emission_dk_d] .emission,
+//	.badge[class*=_emission_fr_d] .emission {
+//		top: calc(#{$EN_emission_step} * 3.5);
+//	}
+//
+//	.badge[class*=_emission_dk_e] .emission,
+//	.badge[class*=_emission_fr_e] .emission {
+//		top: calc(#{$EN_emission_step} * 4.5);
+//	}
+//
+//	.badge[class*=_emission_dk_f] .emission,
+//	.badge[class*=_emission_fr_f] .emission {
+//		top: calc(#{$EN_emission_step} * 5.5);
+//	}
+//
+//	.badge[class*=_emission_dk_g] .emission,
+//	.badge[class*=_emission_fr_g] .emission {
+//		top: calc(#{$EN_emission_step} * 6.5);
+//	}
+//
+//	.badge[class*=_emission_es_] .model {
+//		text-align: center;
+//	}
+//
+//	.badge[class*=lease_] .model,
+//	.badge:not([class*=emission_fr_]):not([class*=emission_dk_]) .emission,
+//	.badge[class*=_type_none] {
+//		display: none !important;
+//	}
+//
+//}
+
+/*
+ * Global DS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=DS] {
+		text-align: left;
+		vertical-align: middle;
+		justify-content: start;
+		//align-items: start;
+	}
+
+	[data-key=DS] .place {
+		top: #{$padding_normal};
+		left: #{$padding_normal};
+		width: calc(100% - #{$padding_normal_dbl});
+		height: calc(100% - #{$padding_normal_dbl});
+	}
+
+}
+
+//[data-key=CV] [data-key=DS] [data-key=DS_IMG].DL_type_link [data-key=DS_IMG_0],
+//[data-key=CV] [data-key=DS] [data-key=DS_IMG]:not(.DL_type_link) [data-key=DS_IMG_1],
+//[data-key=CV].DL_0_disabled.DL_1_disabled [data-key=DS] .DL {
+//	display: none !important;
+//}
+
+[data-key=CV]:not(.DS_IMG_0_disabled.DS_IMG_1_disabled) [data-key=DS] .DA_DB,
+[data-key=BN]:not(.dealer_logo_empty) [data-key=CV]:not(.DS_IMG_1_disabled).DS_IMG_0_disabled [data-key=DS] .DA_DB,
+[data-key=CV].DS_IMG_0_disabled.DS_IMG_1_disabled [data-key=DS] .DL {
+	display: none !important;
+}
+
+/*
+ * Global VS layer styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=VS] {
+		text-align: left;
+		vertical-align: top;
+		justify-content: start;
+	}
+
+	[data-key=VS] {
+
+		.place {
+			left: #{$padding_normal};
+			width: calc(100% - $padding_normal_dbl);
+			top: #{$padding_normal};
+			height: calc(100% - $padding_normal_dbl);
+			overflow-y: auto !important;
+			overflow-x: hidden !important;
+		}
+
+		.box {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		[class*=_orient_l] .box {
+			flex-direction: row;
+			flex: 2 1 auto;
+		}
+
+		[data-key=VS_TXT] {
+			padding-right: #{$padding_normal};
+		}
+
+		[data-key=VS_IMG] {
+			width: 100%;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		p {
+			line-height: 1.2;
+		}
+
+		.spacer_between {
+			margin: calc(#{$text_spacer_normal} / 2);
+		}
+
+		.DN p::after,
+		.VA p::after, {
+			margin: calc(#{$text_spacer_small} / 2);
+		}
+
+	}
+
+	//&:not(.VA_disabled.VB_disabled) [data-key=VS] [class*=_orient_l] .box .DL_DN_DD {
+	//	flex-grow: 0;
+	//	flex-shrink: 0;
+	//	flex-basis: calc(40% - #{$text_spacer_normal});
+	//}
+	//
+	//&.VA_disabled.VB_disabled [data-key=VS] [class*=_orient_l] .box .DL_DN_DD {
+	//	width: 100%;
+	//}
+	//
+	//&:not(.DL_disabled) [data-key=VS] .DL [data-key=VS_IMG] {
+	//	margin-bottom: #{$text_spacer_normal};
+	//}
+
+	&.DL_disabled.DN_disabled.DD_disabled [data-key=VS] .DL_DN_DD,
+	&.DN_disabled.DD_disabled [data-key=VS] .spacer_between, // !!!
+	&.DL_disabled.DN_disabled.DD_disabled [data-key=VS] .spacer_between,
+	&.VA_disabled.VB_disabled [data-key=VS] .VA_VB,
+	&.VA_disabled.VB_disabled [data-key=VS] .spacer_between {
+		display: none !important;
+	}
+
+}
+
+[data-key=BN].dealer_logo_empty [data-key=CV] [data-key=VS] .DL [data-key=VS_IMG].DL_type_link {
+	display: none !important;
+}
+
+///*
+// * Global CX (close button) layer styles.
+// * ------------------------------------------------------------------------------------------------------------------
+// */
+//
+//[data-key=CV] {
+//
+//	[data-key=CX] {
+//		left: 0;
+//		top: 0;
+//		width: #{$padding_normal};
+//		height: #{$padding_normal};
+//	}
+//
+//	[data-key=CX] {
+//
+//		svg {
+//			left: 12.5%;
+//			top: 12.5%;
+//			width: 75%;
+//			height: 75%;
+//		}
+//
+//	}
+//
+//}

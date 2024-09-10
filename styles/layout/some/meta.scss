@@ -1,0 +1,80 @@
+@import "../config";
+
+/*
+ * SoMe override config. IMPORTANT TO NOT USE %
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$meta_story_offset_top__1080x1920: calc($scale * 1);
+$meta_story_offset_bottom__1080x1920: calc($scale * 1.25);
+
+$meta_reel_offset_top__1080x1920: calc($scale * 1.5);
+$meta_reel_offset_bottom__1080x1920: calc($scale * 3);
+$meta_reel_offset_right__1080x1920: calc($scale * 1);
+
+/*
+ * Global SOME overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=BN][class*=_meta_] {
+
+  [data-key=CV] {
+
+    overflow: visible !important;
+
+    [data-key=FR] {
+      display: none !important;
+    }
+
+  }
+
+  &.name_1080x1920_meta_story {
+
+    [data-key=CV] {
+
+      top: $meta_story_offset_top__1080x1920 !important;
+      height: calc(100% - $meta_story_offset_top__1080x1920 - $meta_story_offset_bottom__1080x1920) !important;
+
+      [data-key=OL] [data-key=OL_GR_0] {
+        top: calc($meta_story_offset_top__1080x1920 * -1) !important;
+        height: calc(100% + $meta_story_offset_top__1080x1920) !important;
+      }
+
+      [data-key=UL] {
+        top: calc($meta_story_offset_top__1080x1920 * -1) !important;
+        height: calc(100% + $meta_story_offset_top__1080x1920 + $meta_story_offset_bottom__1080x1920) !important;
+      }
+
+    }
+
+  }
+  &.name_1080x1920_meta_reel {
+
+    [data-key=CV] {
+
+      top: $meta_reel_offset_top__1080x1920 !important;
+      height: calc(100% - $meta_reel_offset_top__1080x1920 - $meta_reel_offset_bottom__1080x1920) !important;
+
+      [data-key=OL] [data-key=OL_GR_0] {
+        top: calc($meta_reel_offset_top__1080x1920 * -1) !important;
+        height: calc(100% + $meta_reel_offset_top__1080x1920) !important;
+      }
+
+      [data-key=UL] {
+        top: calc($meta_reel_offset_top__1080x1920 * -1) !important;
+        height: calc(100% + $meta_reel_offset_top__1080x1920 + $meta_reel_offset_bottom__1080x1920) !important;
+      }
+
+      //[data-key=MS] .shift,
+      //[data-key=ES] .shift,
+      //[data-key=CS] .shift,
+      //[data-key=PS] .shift {
+      //  width: calc(100% - #{$meta_reel_offset_right__1080x1920});
+      //}
+
+    }
+
+  }
+
+}

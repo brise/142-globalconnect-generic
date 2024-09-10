@@ -1,0 +1,65 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- FRAME SETTINGS -->
+<block-group>
+
+    <frames-block-controls class="no-start-time no-stop-time no-stop-on no-frames"></frames-block-controls>
+
+    <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_type }}">
+        <dropdown-select model="$macros[$wrapper_key + '_type'].value">
+            <FRAME_TYPE_OPTIONS></FRAME_TYPE_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_filter }}">
+        <dropdown-select model="$macros[$wrapper_key + '_filter'].value">
+            <FRAME_FILTER_OPTIONS></FRAME_FILTER_OPTIONS>
+        </dropdown-select>
+    </block-field>
+
+    <block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_priority }}">
+        <dropdown-select model="$macros[$wrapper_key + '_priority'].value">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+<!-- / FRAME SETTINGS -->
+
+<!-- / FRAME DESTINATION -->
+<block-group ng-if="$data.banner.clicktag.override">
+
+    <block-field title="{{ :: $dict.label_destination }} URL" ng-class="{disabled: ($data.banner.macros['feed_0'].value && $wrapper.groups['SQ_feed'].macros['SQ_feed_' + 'CL'].value)}">
+        <text-field placeholder="{{ $data.banner.clicktag.url }}" model="$wrapper.clicktag.url"
+                    pattern="https?\:\/\/.+|\$\[dest_url\]|\$\{dest_url\}"></text-field>
+        <block-info ng-if="(_.size($variation_setup[0]) <= 1 && $data.editor.scope[1].indexOf('SQ') != -1)">
+            <p>
+                <small><q>
+                    You may change global click tag value at global settings <a ng-click="$data.editor.scope[0] = 2; $data.editor.scope[2] = 'destination';">destination</a> settings.
+                </q></small>
+            </p>
+        </block-info>
+        <block-info ng-if="$data.banner.macros['feed_0'].value && $wrapper.groups['SQ_feed'].macros['SQ_feed_' + 'CL'].value">
+            <p>
+                <small><q>{{ :: $dict.hint_feed_active }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / FRAME DESTINATION -->

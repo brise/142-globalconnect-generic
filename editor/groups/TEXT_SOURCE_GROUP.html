@@ -1,0 +1,53 @@
+
+<TARGET_MACROS_COMPONENT></TARGET_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<TARGET_VARIATION_VALIDATION_COMPONENT></TARGET_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- SOURCE PICKER -->
+<block-group ng-if="$variation_scope[1] == 'default'">
+
+    <block-field title="{{ :: $dict.label_source }}">
+        <text-area model="$macros[$alias_key + '_source'].value"></text-area>
+        <block-info>
+            <p ng-if="$frames && $data.editor.frame >= 1">
+                <small><q>
+                    <a ng-click="$frames.model.frames[$data.editor.frame].layers[$wrapper_key] = _.cloneDeep($frames.model.frames[$data.editor.frame - 1].layers[$wrapper_key])">{{ :: $dict.action_clone_element_1 }}</a> {{ :: $dict.action_clone_element_3 }}
+                </q></small>
+            </p>
+            <p>
+                <small><q>{{ :: $dict.hint_text_area }} {{ :: $dict.hint_text_macros }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+    <block-field title="{{ :: $dict.label_source }} *">
+        <text-area placeholder="{{ :: $dict.label_value }}" model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_source'].value"></text-area>
+        <block-info>
+            <p ng-if="$frames && $data.editor.frame >= 1">
+                <small><q>
+                    <a ng-click="$macros_excepts[$variation_scope[1]].data[$wrapper_key + '_source'].value = $macros[$wrapper_key + '_source'].value">{{ :: $dict.action_clone_element_1 }}</a> {{ :: $dict.action_clone_element_2 }}
+                </q></small>
+            </p>
+            <p>
+                <small><q>
+                    <small><q>{{ :: $dict.hint_text_area }} {{ :: $dict.hint_text_macros }}</q></small>
+                </q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / SOURCE PICKER -->

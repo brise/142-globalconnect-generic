@@ -1,0 +1,243 @@
+/*
+ * Global style setup and inheritance.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+* {
+  /**
+   * Reset default element styles.
+   */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  zoom: 1;
+  border: none;
+  outline: none;
+  background: none;
+  border-spacing: 0;
+  list-style: none;
+  font-style: normal;
+  /**
+   * Inherit most important styles for better controls.
+   */
+  border-collapse: inherit;
+  vertical-align: inherit;
+  text-align: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  border-color: inherit;
+  text-decoration: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  line-height: inherit;
+  visibility: inherit;
+  cursor: inherit;
+  /*z-index: inherit;*/
+  /**
+   * Ignore automatic font size adjustment.
+   */
+  -webkit-text-size-adjust: 100%;
+}
+
+/**
+ * Remove user select to prevent gesture issues.
+ */
+*:not(input):not(select):not(textarea) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*
+ * Global defaults.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: "Comic Sans MS";
+}
+
+body {
+  visibility: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+}
+
+*.relative {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+*.inline {
+  display: inline-block;
+}
+
+*.empty,
+*.disabled {
+  display: none !important;
+}
+
+*.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+*.hidden * {
+  pointer-events: none;
+}
+
+*.ready,
+*.visible {
+  visibility: visible;
+}
+
+div.table {
+  display: table;
+}
+
+div.cell {
+  position: relative;
+  display: table-cell;
+}
+
+div.row {
+  position: relative;
+  display: table-row;
+}
+
+div, ul, li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+img,
+svg,
+video {
+  position: absolute;
+}
+
+img[src=""],
+video[src=""] {
+  display: none !important;
+}
+
+q:before,
+q:after {
+  content: normal;
+}
+
+body, a, button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  font-style: italic;
+}
+
+a {
+  text-decoration: underline;
+}
+
+u {
+  white-space: nowrap;
+}
+
+var br {
+  display: none;
+}
+
+ins {
+  word-break: break-word;
+}
+
+p {
+  display: inline-block;
+  vertical-align: baseline;
+  /*width: 100%;*/
+}
+
+p span,
+button span {
+  display: inline;
+}
+
+p span span {
+  display: block;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+big {
+  font-size: 1.2em;
+}
+
+sup {
+  font-size: 0.5em;
+  vertical-align: super;
+  line-height: 1em;
+}
+
+sub {
+  font-size: 0.5em;
+  vertical-align: text-bottom;
+  line-height: 1em;
+}
+
+pre {
+  text-align: left !important;
+}
+
+pre:not(:empty) + br {
+  display: none;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  border: none;
+}
+
+hr:first-child {
+  margin-top: 0;
+}
+
+hr:last-child {
+  display: none;
+}
+
+hr + br {
+  display: none;
+}
+
+var:empty + br {
+  display: none;
+}
+
+/*
+ * Fallback replace.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+#fallback, *.fallback,
+#fallback img, *.fallback img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/*# sourceMappingURL=reset.css.map */

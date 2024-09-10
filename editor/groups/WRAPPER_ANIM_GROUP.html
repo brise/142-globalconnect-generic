@@ -1,0 +1,289 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- ANIMATION SETUP PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_preset }}" ng-if="$group">
+        <toggle-button model="$group.enabled" on="{{ :: $dict.label_custom }}" off="{{ :: $dict.label_default }}"></toggle-button>
+        <block-info>
+            <p>
+                <small><q>{{ $dict.hint_animation_setup }}</q></small>
+            </p>
+        </block-info>
+    </block-field>
+
+</block-group>
+<!-- / ANIMATION SETUP PICKER -->
+
+<div ng-if="$group.enabled">
+
+    <!-- ANIMATION SPEED IN -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_speed_in }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_fade }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_speed_opacity'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_transition }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_speed_transform'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_delay }}">
+            <number-slider model="$macros[$alias_key + '_anim_delay'].value"
+                           min="0" max="1000" length="4" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_speed_in }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_fade }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_speed_opacity'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_transition }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_speed_transform'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_delay }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_delay'].value"
+                           min="0" max="1000" length="4" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / ANIMATION SPEED IN -->
+
+    <!-- ANIMATIONS TRANSITION IN -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_transition_in }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_ease }}">
+            <dropdown-select model="$macros[$alias_key + '_anim_in_ease'].value">
+                <EASE_OPTIONS></EASE_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_x'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_y'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_z'].value"
+                           min="-10" max="10" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-10|-[0-9]|[0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_rotation }}">
+            <number-slider model="$macros[$alias_key + '_anim_in_r'].value"
+                           min="-45" max="45" length="3" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_origin }}">
+            <dropdown-select model="$macros[$alias_key + '_anim_in_origin'].value">
+                <ORIGIN_OPTIONS></ORIGIN_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_transition_in }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_ease }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_ease'].value">
+                <EASE_OPTIONS></EASE_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_x'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_y'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_z'].value"
+                           min="-10" max="10" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-10|-[0-9]|[0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_rotation }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_r'].value"
+                           min="-45" max="45" length="3" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_origin }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_in_origin'].value">
+                <ORIGIN_OPTIONS></ORIGIN_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / ANIMATIONS TRANSITION IN -->
+
+    <!-- ANIMATION SPEED OUT -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_speed_out }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_fade }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_speed_opacity'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_transition }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_speed_transform'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_speed_out }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_fade }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_speed_opacity'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_transition }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_speed_transform'].value"
+                           min="0" max="10000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^\d+"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / ANIMATION SPEED OUT -->
+
+    <!-- ANIMATIONS TRANSITION OUT -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_transition_out }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_ease }}">
+            <dropdown-select model="$macros[$alias_key + '_anim_out_ease'].value">
+                <EASE_OPTIONS></EASE_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_x'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_y'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_z'].value"
+                           min="-10" max="10" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-10|-[0-9]|[0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_rotation }}">
+            <number-slider model="$macros[$alias_key + '_anim_out_r'].value"
+                           min="-45" max="45" length="3" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_origin }}">
+            <dropdown-select model="$macros[$alias_key + '_anim_out_origin'].value">
+                <ORIGIN_OPTIONS></ORIGIN_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_anim }} {{ :: $dict.label_transition_out }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_ease }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_ease'].value">
+                <EASE_OPTIONS></EASE_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_horizontal }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_x'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_left }}" center="|" right="{{ :: $dict.label_right }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_vertical }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_y'].value"
+                           min="-50" max="50" length="3" index="" left="{{ :: $dict.label_top }}" center="|" right="{{ :: $dict.label_bottom }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_z'].value"
+                           min="-10" max="10" length="3" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-10|-[0-9]|[0-9]|10)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_rotation }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_r'].value"
+                           min="-45" max="45" length="3" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-50|-[1-4][0-9]|-[0-9]|[0-9]|[1-4][0-9]|50)$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_origin }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_anim_out_origin'].value">
+                <ORIGIN_OPTIONS></ORIGIN_OPTIONS>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / ANIMATIONS TRANSITION OUT -->
+
+</div>

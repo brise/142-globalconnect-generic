@@ -1,0 +1,32 @@
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- FRAME SETTINGS -->
+<!--<block-group>-->
+
+<frames-block-controls class="no-start-time no-stop-time no-stop-on no-frames"></frames-block-controls>
+
+<block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_type }}">
+    <dropdown-select model="$macros[$wrapper_key + '_type'].value">
+        <FRAME_TYPE_OPTIONS></FRAME_TYPE_OPTIONS>
+    </dropdown-select>
+</block-field>
+
+<!--<block-field title="{{ :: $dict.label_frame }} {{ :: $dict.label_filter }}">
+    <dropdown-select model="$macros[$wrapper_key + '_filter'].value">
+        <FRAME_FILTER_OPTIONS></FRAME_FILTER_OPTIONS>
+    </dropdown-select>
+</block-field>-->
+
+<!--</block-group>-->
+<!-- / FRAME SETTINGS -->

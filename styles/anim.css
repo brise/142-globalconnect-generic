@@ -1,0 +1,183 @@
+/*
+ * Animation config.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * Default color animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=BN].ready [class*=st_] p, [data-key=BN].ready [class*=st_] em, [data-key=BN].ready [class*=st_] q {
+  transition: color 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=st_] p hr {
+  transition: background 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=st_] svg {
+  transition: fill 0.5s ease 0s, filter 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=_sh_] p {
+  transition: color 0.5s ease 0s, text-shadow calc(0.5s / 2) ease 0s;
+}
+[data-key=BN].ready [class*=bt_] p button {
+  transition: color 0.5s ease 0s, border 0.5s ease 0s, background 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=fl_] svg {
+  transition: fill 0.5s ease 0s, filter 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=sh_] svg {
+  transition: fill 0.5s ease 0s, filter 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=sh_] button, [data-key=BN].ready [class*=sh_] img {
+  transition: filter 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=bg_] .bg {
+  transition: background 0.5s ease 0s;
+}
+[data-key=BN].ready [class*=gr_] .gr {
+  transition: gradient-image 0.5s ease 0s;
+}
+
+/*
+ * Default animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] .anim,
+[data-key=CV] .anim_rel {
+  opacity: 0;
+}
+[data-key=CV] .anim.anim_in, [data-key=CV] .anim.anim_in .anim_rel {
+  transition: opacity 0.5s ease 0.25s;
+  opacity: 1;
+}
+[data-key=CV] .anim.anim_out, [data-key=CV] .anim.anim_out .anim_rel {
+  transition: opacity calc(0.5s / 2) ease 0s;
+  opacity: 0;
+}
+[data-key=CV] .anim.anim_out, [data-key=CV] .anim.anim_out * {
+  pointer-events: none;
+}
+[data-key=CV] .anim.anim_skip, [data-key=CV] .anim.anim_skip .anim_rel {
+  transition: all 0s 0s !important;
+}
+[data-key=CV] .anim:not(.loaded),
+[data-key=CV] .anim:not(.loaded) .anim_rel {
+  transition: opacity 0s 0s !important;
+}
+[data-key=CV] .anim_no,
+[data-key=CV] .anim_no * {
+  transition: all 0s 0s !important;
+}
+
+/*
+ * Animation config.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * UG, BG and FG animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] {
+  /*
+      * In case animation has to be skipped.
+      */
+  /*
+      * In case background is hidden, all animations have to go opacity 0.
+      */
+  /*
+      * Video has not to be scaled or slided, as it appear after poster image is loaded (usually 2 seconds).
+      */
+}
+[data-key=CV] [data-key=UG] .anim {
+  transform: scale(1);
+}
+[data-key=CV] [data-key=BG] .anim,
+[data-key=CV] [data-key=FG] .anim {
+  transform: scale(1.25);
+}
+[data-key=CV] [data-key=UG] .anim.anim_in,
+[data-key=CV] [data-key=BG] .anim.anim_in,
+[data-key=CV] [data-key=FG] .anim.anim_in {
+  transition: opacity 0.5s ease 0s, transform calc(0.5s * 2) ease 0s;
+  transform: scale(1);
+}
+[data-key=CV] [data-key=UG] .anim.anim_out,
+[data-key=CV] [data-key=BG] .anim.anim_out,
+[data-key=CV] [data-key=FG] .anim.anim_out {
+  transition: opacity calc(0.5s / 2) ease 0s, transform calc(0.5s / 2) ease 0s;
+  transform: scale(1);
+}
+[data-key=CV] [data-key=UG] .anim.anim_skip,
+[data-key=CV] [data-key=BG] .anim.anim_skip,
+[data-key=CV] [data-key=FG] .anim.anim_skip {
+  transform: scale(1) !important;
+}
+[data-key=CV].BG_hide [data-key=BG] .anim.anim_in {
+  opacity: 0 !important;
+}
+[data-key=CV] [data-key=BG] [data-key=BG_VID] .anim {
+  transform: scale(1) !important;
+}
+[data-key=CV] [data-key=BG]:not(.BG_VID_0_loaded) [data-key=BG_VID] .anim,
+[data-key=CV] [data-key=BG].BG_VID_0_loaded [data-key=BG_IMG] .anim.anim_in {
+  opacity: 0 !important;
+}
+[data-key=CV] [data-key=BG].BG_VID_0_loaded [data-key=BG_IMG] .anim.anim_in,
+[data-key=CV] [data-key=BG].BG_VID_0_loaded [data-key=BG_VID] .anim.anim_out {
+  transition: opacity 0.5s ease 0s;
+}
+
+/*
+ * LN animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV] [data-key=LN] .anim.anim_in {
+  transition: height 0.5s ease 0s;
+}
+
+/*
+ * DS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * MS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * PS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+/*
+ * VS, CX animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+[data-key=CV].VS_active [data-key=VS].anim.anim_in {
+  transition: opacity 0.5s ease 0s;
+}
+[data-key=CV]:not(.VS_active) [data-key=VS].anim {
+  opacity: 0 !important;
+}
+
+/*
+ * Global animation overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+.disabled.anim,
+.disabled .anim {
+  opacity: 0 !important;
+}
+
+*.anim_no,
+*.anim_no * {
+  animation: none !important;
+  transition: none !important;
+}
+
+*.anim_no,
+*.anim_no *,
+*.anim_no_dur,
+*.anim_no_dur * {
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+}
+
+/*# sourceMappingURL=anim.css.map */

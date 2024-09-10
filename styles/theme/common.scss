@@ -1,0 +1,372 @@
+@use "sass:map";
+
+[data-key=BN] {
+	display: none;
+}
+
+[data-key=BN].actuated {
+	display: block;
+}
+
+/*
+ * Common color resets.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] svg {
+	fill: transparent;
+}
+
+[data-key=CV] .bg {
+	background: transparent;
+}
+
+[data-key=CV] .gr svg .fill {
+	stop-color: transparent;
+}
+
+/*
+ * Frame colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+//[data-key=CV] [data-key=FR] {
+//	box-shadow: inset 0 0 0 1px #{$black_10};
+//}
+
+/*
+ * Text element colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto p {
+		color: map.get($style_p, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto p q {
+		color: map.get($style_q, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto p em {
+		color: map.get($style_em, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto p hr {
+		background: map.get($style_hr, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto svg {
+		fill: map.get($style_svg, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto.inverted p {
+		color: map.get($style_p_inverted, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto.inverted p q {
+		color: map.get($style_q_inverted, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto.inverted p em {
+		color: map.get($style_em_inverted, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .st_auto.inverted p hr {
+		background: map.get($style_hr_inverted, $theme);
+	}
+
+}
+
+@each $color in $style {
+
+	[data-key=CV] .st_#{$color} p {
+		color: map.get($style_p, $color);
+	}
+
+	[data-key=CV] .st_#{$color} p q {
+		color: map.get($style_q, $color);
+	}
+
+	[data-key=CV] .st_#{$color} p em {
+		color: map.get($style_em, $color);
+	}
+
+	[data-key=CV] .st_#{$color} p hr {
+		background: map.get($style_hr, $color);
+	}
+
+	//[data-key=CV] .st_#{$color} p svg {
+	//	fill: map.get($style_svg, $color);
+	//}
+
+	[data-key=CV] .st_#{$color} svg {
+		fill: map.get($style_svg, $color);
+	}
+
+}
+
+/*
+ * Button element colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	[data-key=CV].CV_theme_#{$theme} .bt_auto p button {
+		color: map.get($button_p, $theme);
+		border-color: map.get($button_stroke, $theme);
+		background: map.get($button_fill, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme}:hover .bt_auto p button {
+		color: map.get($button_p_hover, $theme);
+		border-color: map.get($button_stroke_hover, $theme);
+		background: map.get($button_fill_hover, $theme);
+	}
+
+}
+
+@each $color in $button {
+
+	[data-key=CV] .bt_#{$color} p button {
+		color: map.get($button_p, $color);
+		border-color: map.get($button_stroke, $color);
+		background: map.get($button_fill, $color);
+	}
+
+	[data-key=CV]:hover .bt_#{$color} p button {
+		color: map.get($button_p_hover, $color);
+		border-color: map.get($button_stroke_hover, $color);
+		background: map.get($button_fill_hover, $color);
+	}
+
+}
+
+/*
+ * Logo colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	[data-key=CV].CV_theme_#{$theme} .lg_auto svg .fill_1 {
+		fill: map.get($logo_color_1, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .lg_auto svg .fill_2 {
+		fill: map.get($logo_color_2, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .lg_auto.inverted svg .fill_1 {
+		fill: map.get($logo_color_inverted_1, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .lg_auto.inverted svg .fill_2 {
+		fill: map.get($logo_color_inverted_2, $theme);
+	}
+
+}
+
+@each $color in $logo {
+
+	[data-key=CV] .lg_#{$color} svg .fill_1 {
+		fill: map.get($logo_color_1, $color);
+	}
+
+	[data-key=CV] .lg_#{$color} svg .fill_2 {
+		fill: map.get($logo_color_2, $color);
+	}
+
+}
+
+/*
+ * Background colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	[data-key=CV].CV_theme_#{$theme} .bg_auto .bg {
+		background: map.get($background_color, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .bg_auto.inverted .bg {
+		background: map.get($background_color_inverted, $theme);
+	}
+
+}
+
+@each $color in $bg {
+
+	[data-key=CV] .bg_#{$color} .bg {
+		background: map.get($background_color, $color);
+	}
+
+	[data-key=CV] .bg_#{$color}.inverted .bg {
+		background: map.get($background_color_inverted, $color);
+	}
+
+}
+
+/*
+ * Fill colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	[data-key=CV].CV_theme_#{$theme} .fl_auto svg {
+		fill: map.get($fill_color, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} .fl_auto.inverted svg {
+		fill: map.get($fill_color_inverted, $theme);
+	}
+
+}
+
+@each $color in $fill {
+
+	[data-key=CV] .fl_#{$color} svg {
+		fill: map.get($fill_color, $color);
+	}
+
+}
+
+/*
+ * Gradient colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	@each $level, $value in map.get($tint_color, $theme) {
+
+		[data-key=CV].CV_theme_#{$theme} .gr_auto_#{$level} .gr svg .fill {
+			stop-color: $value;
+		}
+
+	}
+
+	@each $level, $value in map.get($tint_color_inverted, $theme) {
+
+		[data-key=CV].CV_theme_#{$theme} .gr_auto_#{$level}.inverted .gr svg .fill {
+			stop-color: $value;
+		}
+
+	}
+
+}
+
+@each $color in $tint {
+
+	@each $level, $value in map.get($tint_color, $color) {
+
+		[data-key=CV] .gr_#{$color}_#{$level} .gr svg .fill {
+			stop-color: $value;
+		}
+
+	}
+
+}
+
+/*
+ * Tinting colors.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	@each $level, $value in map.get($tint_color, $theme) {
+
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level} p {
+			text-shadow: $value 0 0 #{$tint_size};
+		}
+
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level} p button,
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level} img,
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level} svg  {
+			filter: drop-shadow(0 0 #{$tint_size} $value);
+		}
+
+	}
+
+	@each $level, $value in map.get($tint_color_inverted, $theme) {
+
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level}.inverted p {
+			text-shadow: $value 0 0 #{$tint_size};
+		}
+
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level}.inverted p button,
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level}.inverted img,
+		[data-key=CV].CV_theme_#{$theme} .sh_auto_#{$level}.inverted svg  {
+			filter: drop-shadow(0 0 #{$tint_size} $value);
+		}
+
+	}
+
+}
+
+@each $color in $tint {
+
+	@each $level, $value in map.get($tint_color, $color) {
+
+		[data-key=CV] .sh_#{$color}_#{$level} p {
+			text-shadow: $value 0 0 #{$tint_size};
+		}
+
+		[data-key=CV] .sh_#{$color}_#{$level} p button,
+		[data-key=CV] .sh_#{$color}_#{$level} img,
+		[data-key=CV] .sh_#{$color}_#{$level} svg  {
+			filter: drop-shadow(0 0 #{$tint_size} $value);
+		}
+
+	}
+
+}
+
+/*
+ * Scrollbar styles.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@each $theme in $themes {
+
+	//[data-key=CV].CV_theme_#{$theme} ::-webkit-scrollbar {
+	//	scrollbar-color: map.get($scroll_track, $theme), map.get($scroll_thumb, $theme);
+	//}
+
+	[data-key=CV].CV_theme_#{$theme} ::-webkit-scrollbar-thumb {
+		background: map.get($scroll_thumb, $theme);
+	}
+
+	[data-key=CV].CV_theme_#{$theme} ::-webkit-scrollbar-track {
+		background: map.get($scroll_track, $theme);
+	}
+
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: transparent;
+}
+
+/*
+ * Overrides.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+@media print {
+
+	[data-key=CV] [class*=_sh_] p {
+		text-shadow: none !important;
+	}
+
+	[data-key=CV] [class*=_sh_] button,
+	[data-key=CV] [class*=_sh_] img,
+	[data-key=CV] [class*=_sh_] svg {
+		filter: none !important;
+	}
+
+}

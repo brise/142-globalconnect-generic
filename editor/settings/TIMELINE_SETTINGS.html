@@ -1,0 +1,46 @@
+<block-group>
+
+    <block-field title="Stop Banner" class="label"></block-field>
+
+    <block-field title="After Time">
+        <number-slider model="$data.banner.params.stop.after"
+                       min="0" max="30000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                       pattern="^\d+"></number-slider>
+    </block-field>
+
+    <block-field title="On Frame">
+        <dropdown-select model="$data.banner.layers.CV.layers.SQ.params.stop.on">
+            <option value="timer">Timer Frame</option>
+            <option value="first">First Frame</option>
+            <option value="last">Last Frame</option>
+            <!--<optgroup label="Selected Frame">
+                <option ng-repeat="($frame, $index) in $data.banner.layers.CV.layers.SQ.frames" value="{{$index}} ">Frame #{{($index + 1)}}</option>
+            </optgroup>-->
+        </dropdown-select>
+    </block-field>
+
+</block-group>
+
+<block-group>
+
+    <block-field title="Pause Sequence" class="label"></block-field>
+
+    <block-field title="After Frame">
+        <number-slider model="$data.banner.layers.CV.layers.SQ.params.pause.after.frame"
+                       min="0" max="30" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                       pattern="^([0-9]|[1-2][0-9]|30)$"></number-slider>
+    </block-field>
+
+    <block-field title="After Time">
+        <number-slider model="$data.banner.layers.CV.layers.SQ.params.pause.after.time"
+                       min="0" max="30000" length="5" index="ms" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                       pattern="^\d+"></number-slider>
+    </block-field>
+
+    <block-field title="After Loop">
+        <number-slider model="$data.banner.layers.CV.layers.SQ.params.pause.after.loop"
+                       min="0" max="30" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                       pattern="^([0-9]|[1-2][0-9]|30)$"></number-slider>
+    </block-field>
+
+</block-group>

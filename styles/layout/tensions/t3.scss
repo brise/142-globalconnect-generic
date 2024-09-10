@@ -1,0 +1,132 @@
+@import "../config";
+
+/*
+ * t3
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+$BG_height__CV_t3: 32.5%;
+$LG_height__CV_t3: calc($logo_height_l + $padding_normal_dbl);
+$LG_width__CV_t3:  calc($logo_width_l + $padding_normal_dbl);
+$PS_height__CV_t3: calc($button_height + 12.5% + $padding_small);
+
+[data-key=CV].CV_tens_t3 {
+
+	[data-key=LG] {
+		height: $LG_height__CV_t3;
+		width: $LG_width__CV_t3;
+		max-width: 100%;
+	}
+
+	[data-key=MS] {
+		bottom: $PS_height__CV_t3;
+		height: calc(100% - $LG_height__CV_t3 - $BG_height__CV_t3 - $PS_height__CV_t3);
+	}
+
+	[data-key=MS] .place {
+		top: $padding_normal;
+		left: $padding_small;
+		width: calc(100% - $padding_small_dbl);
+		height: calc(100% - $padding_normal_dbl);
+	}
+
+	[data-key=PS],
+	[data-key=CS] {
+		bottom: 0;
+		height: $PS_height__CV_t3;
+	}
+
+	[data-key=PS] .place,
+	[data-key=CS] .place {
+		bottom: $padding_normal;
+		left: $padding_small;
+		width: calc(100% - $padding_small_dbl);
+		height: calc(100% - $padding_normal);
+	}
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $padding_big;
+		height: calc(100% - $padding_big_dbl);
+		left: $padding_small;
+		width: calc(100% - $padding_small_dbl);
+	}
+
+	[data-key=OL] {
+
+		[data-key=OL_GR_0] .linear {
+			display: none;
+		}
+
+		[data-key=OL_GR_0] .corner {
+			display: block;
+		}
+
+		[data-key=OL_GR_0] {
+			width: $LG_width__CV_t3;
+			height: $LG_height__CV_t3;
+		}
+
+		[data-key=OL_GR_1] {
+			bottom: 0;
+			height: calc(100% - $BG_height__CV_t3);
+		}
+
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t3.CV_layout_default {
+
+	[data-key=BG].BG_place_fit .place,
+	[data-key=FG].FG_place_fit .place {
+		top: $LG_height__CV_t3;
+		left: $padding_small;
+		width: calc(100% - $padding_small_dbl);
+		height: $BG_height__CV_t3;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_boxed
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t3.CV_layout_boxed {
+
+	.isolated {
+		top: $LG_height__CV_t3;
+		height: calc($BG_height__CV_t3);
+	}
+
+	.isolated > .margin {
+		top: 0;
+		height: 100%;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_layout_isolated
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV].CV_tens_t3.CV_layout_isolated {
+
+	.isolated {
+		top: $LG_height__CV_t3;
+		height: $BG_height__CV_t3;
+	}
+
+}
+
+/*
+ * CONDITIONAL EXCEPTIONS - CV_scale_xs
+ * ------------------------------------------------------------------------------------------------------------------
+ */

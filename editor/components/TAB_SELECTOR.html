@@ -1,0 +1,3 @@
+<block-menu class="tabs">
+    <a ng-repeat="$tab in $tab_setup[0]" ng-click="$scope[1] = $tab" ng-class="{selected: ($scope[1] == $tab), disabled: (_.indexOf($scope[0], $tab) == -1)}">{{ ::  $dict['label_' + $tab] }}</a>
+</block-menu>

@@ -1,0 +1,125 @@
+<!-- VARIATION PICKER -->
+<block-group ng-class="{disabled: _.size($variation_scope[0]) <= 1}">
+
+    <block-field title="{{ :: $dict.label_variation }} @">
+
+        <!-- CLONE SELECTED VARIATION PRESET -->
+        <data ng-if="$variation_scope[1] != 'default' && $macros_excepts && $macros_excepts_preset && $macros_excepts[$variation_scope[1]] == undefined" ng-init="$macros_excepts[$variation_scope[1]] = _.cloneDeep($macros_excepts_preset)"></data>
+        <!-- / CLONE SELECTED VARIATION PRESET -->
+
+        <!-- VARIATION OPTIONS SELECTOR -->
+        <dropdown-select model="$variation_scope[1]" ng-class="{'col-2-3' : ($macros_excepts && $variation_scope[1] != 'default')}">
+            <optgroup label="{{ :: $dict.label_default }}">
+                <option value="default">{{ :: $dict.label_default }}</option>
+            </optgroup>
+            <!--<optgroup label="{{ :: $dict.label_target_orientation }}" ng-if="$variations[$target_key + '_orient'] && $target_key + '_orient' !== $wrapper_key + '_orient'">
+                <option ng-repeat="$key in $variations[$target_key + '_orient']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>
+            <optgroup label="{{ :: $dict.label_wrapper_orientation }}" ng-if="$variations[$wrapper_key + '_orient']">
+                <option ng-repeat="$key in $variations[$wrapper_key + '_orient']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>-->
+            <optgroup label="{{ :: $dict.label_target_orientation }}" ng-if="$variations['EL_orient']">
+                <option ng-repeat="$key in $variations['EL_orient']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>
+            <optgroup label="{{ :: $dict.label_creative_tension }}" ng-if="$variations['CV_tens']">
+                <option ng-repeat="$key in $variations['CV_tens']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>
+            <optgroup label="{{ :: $dict.label_creative_scale }}" ng-if="$variations['CV_scale']">
+                <option ng-repeat="$key in $variations['CV_scale']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>
+            <optgroup label="{{ :: $dict.label_creative_state }}" ng-if="$variations['CV_mode']">
+                <option ng-repeat="$key in $variations['CV_mode']" value="{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : $dict['label_' + $key.split('_').slice(1).join('_')] }} {{ ($macros_excepts[$key].enabled ? '*' : '') }}</option>
+            </optgroup>
+            <optgroup label="{{ :: $dict.label_creative_size }}" ng-if="$variations['CV_size']">
+                <option ng-repeat="$key in $variations['CV_size']" value="name_{{ $key }}" ng-disabled="_.indexOf($variation_scope[0], $key) == -1">{{ :: $dict['label_' + $key] ? $dict['label_' + $key] : _.replace(_.replace($key, 'CV_size_', ''), 'name_', '') }} {{ ($macros_excepts['CV_size_' + $key].enabled ? '*' : '') }}</option>
+            </optgroup>
+        </dropdown-select>
+        <div ng-if="$macros_excepts && $variation_scope[1] != 'default'" class="col-1-3">
+            <toggle-button model="$macros_excepts[$variation_scope[1]].enabled" on="On" off="Off"></toggle-button>
+        </div>
+        <!-- / VARIATION OPTIONS SELECTOR -->
+
+        <!-- NO VARIATIONS ARE AVAILABLE -->
+        <block-info ng-if="(_.size($variation_setup) <= 1)">
+            <p>
+                <small><q>
+                    {{ :: $dict.hint_variation_not_available }}
+                </q></small>
+            </p>
+        </block-info>
+
+        <!--VARIATIONS ARE AVAILABLE, DEFAULT IS SELECTED -->
+        <block-info ng-if="(_.size($variation_setup) > 1 && _.size($variation_scope[0]) <= 1) && $variation_scope[1] == 'default'">
+            <p>
+                <small><q>
+                    {{ :: $dict.hint_variation_default_required }}
+                </q></small>
+            </p>
+        </block-info>
+
+        <block-info ng-if="(_.size($variation_setup) > 1 && _.size($variation_scope[0]) <= 1) && $variation_scope[1] == 'default'">
+            <p>
+                <small><q>
+                    {{ :: $dict.hint_variation_default_is }}
+                </q></small>
+            </p>
+        </block-info>
+
+        <block-info ng-if="($macros_excepts && _.size($variation_scope[0]) > 1)">
+            <p>
+                <small>
+                    <q>{{ :: $dict.hint_variations_active }}</q>
+                    <span ng-repeat="($key, $macros_excepts) in $macros_excepts">
+													<q ng-if="$macros_excepts.enabled && $macros_excepts.data"><a ng-click="$variation_scope[1] = $key">{{ $dict['label_' + $key] ? $dict['label_' + $key] : ($dict['label_' + $key.split('_').slice(1).join('_')] ? $dict['label_' + $key.split('_').slice(1).join('_')] : _.replace(_.replace($key, 'CV_size_', ''), 'name_', '') ) }}</a>, </q>
+												</span>
+                    <q><a ng-click="$variation_scope[1] = 'default'">{{ :: $dict.label_default }}</a></q>
+                </small>
+            </p>
+            <p>
+                <small>
+                    <q>
+                        <a ng-click="$macros.excepts = { preset: $macros_excepts_preset }; $variation_scope[1] = 'default';">{{ :: $dict.action_remove_variations_1}}</a> {{ :: $dict.action_remove_variations_2}}
+                    </q>
+                </small>
+            </p>
+        </block-info>
+
+        <block-info ng-if="($macros_excepts && _.size($variation_scope[0]) > 1)">
+            <p ng-if="!$relations[$variation_scope[1]] && $variation_scope[1] == 'default'">
+                <small>
+                    <q>
+                        {{ :: $dict.hint_variation_default_is }}
+                    </q>
+                </small>
+            </p>
+            <p ng-if="$relations[$variation_scope[1]]">
+                <small>
+                    <q>
+                        {{ :: $dict.hint_variation_override }} {{ :: $dict.hint_variation_apply_asterisks }}
+                    </q>
+                </small>
+                <small>
+                    <q ng-repeat="$relation in $relations[$variation_scope[1]]"><span ng-if="_.includes($sizes, $relation)"><a ng-click="$editor.changePreviewSize($relation)">{{ :: $relation }}</a>, </span></q>
+                    <q><a ng-click="$editor.changePreviewSize('RxR')">RxR</a></q>
+                </small>
+            </p>
+            <p ng-if="!$relations[$variation_scope[1]] && $variation_scope[1] != 'default' && $variation_scope[1].indexOf('_size_') !== -1">
+                <small>
+                    <q>
+                        {{ :: $dict.hint_variation_override }} {{ :: $dict.hint_variation_apply_selected_asterisks }}
+                    </q>
+                </small>
+            </p>
+            <p ng-if="!$relations[$variation_scope[1]] && $variation_scope[1] != 'default' && $variation_scope[1].indexOf('_size_') == -1">
+                <small>
+                    <q>
+                        {{ :: $dict.hint_variation_override }} {{ :: $dict.hint_variation_dynamic }} {{ :: $dict.hint_variation_apply_selected_asterisks }}
+                    </q>
+                </small>
+            </p>
+        </block-info>
+
+    </block-field>
+
+</block-group>
+<!-- / VARIATION PICKER -->

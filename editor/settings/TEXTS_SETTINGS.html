@@ -1,0 +1,187 @@
+<data ng-if="$frame = $data.banner"></data>
+
+<!-- KEY DEFINITION -->
+<data ng-if="$wrapper_key = 'CV'"></data>
+<data ng-if="$data.editor.element = ''"></data>
+<data ng-if="$alias_key = $wrapper_key"></data>
+<!-- / KEY DEFINITION -->
+
+<!-- TAB SETUP -->
+<data ng-init="$tab_setup = [['texts'], 'texts', ['texts'], 'texts']"></data>
+<!-- / TAB SETUP -->
+
+<WRAPPER_STATE_VALIDATION_COMPONENT></WRAPPER_STATE_VALIDATION_COMPONENT>
+
+<!-- SHORTCUT DEFINITION -->
+<data ng-if="$wrapper = $frame.layers[$wrapper_key]"></data>
+<data ng-if="$scope = $nav[$data.editor.scope[0]][1][$wrapper_key]"></data>
+<data ng-if="$scope[1] = $tab_setup[3]"></data>
+<!-- / SHORTCUT DEFINITION -->
+
+<WRAPPER_TAB_VALIDATION_COMPONENT></WRAPPER_TAB_VALIDATION_COMPONENT>
+
+<WRAPPER_MACROS_COMPONENT></WRAPPER_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<WRAPPER_VARIATION_VALIDATION_COMPONENT></WRAPPER_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<div ng-if="$group.enabled">
+
+    <data ng-if="$alias_key = $wrapper_key + '_TXT'"></data>
+
+    <!-- TEXT SIZE SETUP -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_text }} {{ :: $dict.label_sizes }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_huge }}">
+            <number-slider model="$macros[$alias_key + '_size_h1'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_large }}">
+            <number-slider model="$macros[$alias_key + '_size_h2'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_medium }}">
+            <number-slider model="$macros[$alias_key + '_size_h3'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_normal}}">
+            <number-slider model="$macros[$alias_key + '_size_p'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_small }}">
+            <number-slider model="$macros[$alias_key + '_size_h4'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_tiny }}">
+            <number-slider model="$macros[$alias_key + '_size_h5'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_text }} {{ :: $dict.label_sizes }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_huge }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_h1'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_large }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_h2'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_medium }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_h3'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_normal}} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_p'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_small }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_h4'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_tiny }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size_h5'].value"
+                           min="8" max="48" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^([8-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8])$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / TEXT SIZE SETUP -->
+
+    <!-- TEXT SPACING SETUP -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_text }} {{ :: $dict.label_spacing }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_global }}">
+            <number-slider model="$macros[$alias_key + '_spacing'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_title }}">
+            <number-slider model="$macros[$alias_key + '_spacing_MA'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_subtitle }}">
+            <number-slider model="$macros[$alias_key + '_spacing_MB'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_button }}">
+            <number-slider model="$macros[$alias_key + '_spacing_BT'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_text }} {{ :: $dict.label_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_global }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_spacing'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_title }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_spacing_MA'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_subtitle }}">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_spacing_MB'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_button }}">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_spacing_BT'].value"
+                           min="-2" max="4" length="2" index="" left="{{ :: $dict.label_min }}" center="|" right="{{ :: $dict.label_max }}"
+                           pattern="^(-[0-1]|[0-4])$"></number-slider>
+        </block-field>
+
+    </block-group>
+    <!-- / TEXT SPACING SETUP -->
+
+</div>

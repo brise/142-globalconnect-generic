@@ -1,0 +1,135 @@
+
+<TARGET_MACROS_COMPONENT></TARGET_MACROS_COMPONENT>
+
+<MACRO_PRESET_COMPONENT></MACRO_PRESET_COMPONENT>
+
+<!-- VARIATION SETUP -->
+<data ng-init="$variation_setup = _.concat(['default'], $variations['EL_orient'], $variations[$alias_key + '_orient'], $variations['CV_tens'], $variations['CV_scale'], $variations['CV_mode'], $variations['CV_size'])"></data>
+<!-- /VARIATION SETUP -->
+
+<TARGET_VARIATION_VALIDATION_COMPONENT></TARGET_VARIATION_VALIDATION_COMPONENT>
+
+<VARIATION_SELECTOR></VARIATION_SELECTOR>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
+<!-- VISIBILITY PICKER -->
+<block-group ng-class="{disabled: ($variation_scope[1] != 'default')}">
+
+    <block-field title="{{ :: $dict.label_visibility }}">
+        <toggle-button model="$target.enabled" on="{{ :: $dict.label_visible }}" off="{{ :: $dict.label_hidden }}"></toggle-button>
+    </block-field>
+
+</block-group>
+<!-- / VISIBILITY PICKER -->
+
+<div ng-if="$target.enabled">
+
+    <!-- STYLE PICKER -->
+    <block-group ng-if="$variation_scope[1] == 'default'">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_font }}">
+            <dropdown-select model="$macros[$alias_key + '_font'].value">
+                <option ng-repeat="$font in $fonts" value="{{ $font[0] }}">{{ $font[1] }}</option>
+            </dropdown-select>
+        </block-field>
+
+<!--        <block-field title="{{ :: $dict.label_size }}">-->
+<!--            <number-slider model="$macros[$alias_key + '_size'].value"-->
+<!--                           min="-2" max="6" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"-->
+<!--                           pattern="^(-[0-2]|[0-6])$"></number-slider>-->
+<!--            <block-info>-->
+<!--                <p>-->
+<!--                    <small><q>{{ $dict.hint_text_size }}</q></small>-->
+<!--                </p>-->
+<!--            </block-info>-->
+<!--        </block-field>-->
+
+        <block-field title="{{ :: $dict.label_size }}">
+            <dropdown-select model="$macros[$alias_key + '_size'].value">
+                <TEXT_SIZE_OPTIONS></TEXT_SIZE_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ :: $dict.hint_text_size }} {{ :: $dict.hint_text_size_adjust_1}} <a ng-click="$data.editor.scope[0] = 1; $data.editor.scope[2] = 'texts'">{{ :: $dict.label_texts }}</a> {{ :: $dict.hint_text_size_adjust_2}}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }}">
+            <dropdown-select model="$macros[$alias_key + '_scale'].value">
+                <option value="rem">{{ :: $dict.label_absolute }}</option>
+                <option value="em">{{ :: $dict.label_relative }}</option>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_text_size_auto }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_font_transform }}">
+            <dropdown-select model="$macros[$alias_key + '_trans'].value">
+                <option value="none">{{ :: $dict.label_none }}</option>
+                <option value="uppercase">{{ :: $dict.label_uppercase }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <block-group ng-if="$variation_scope[1] != 'default'" ng-class="{disabled: (!$macros_excepts[$variation_scope[1]].enabled)}">
+
+        <block-field title="{{ :: $dict.label_element_style }}" class="label"></block-field>
+
+        <block-field title="{{ :: $dict.label_font }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_font'].value">
+                <option ng-repeat="$font in $fonts" value="{{ $font[0] }}">{{ $font[1] }}</option>
+            </dropdown-select>
+        </block-field>
+
+        <!--<block-field title="{{ :: $dict.label_size }} *">
+            <number-slider model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size'].value"
+                           min="-2" max="6" length="2" index="" left="{{ :: $dict.label_small }}" center="|" right="{{ :: $dict.label_large }}"
+                           pattern="^(-[0-2]|[0-6])$"></number-slider>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_text_size }}</q></small>
+                </p>
+            </block-info>
+        </block-field>-->
+
+        <block-field title="{{ :: $dict.label_size }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_size'].value">
+                <TEXT_SIZE_OPTIONS></TEXT_SIZE_OPTIONS>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_text_size }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_scale }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_scale'].value">
+                <option value="rem">{{ :: $dict.label_absolute }}</option>
+                <option value="em">{{ :: $dict.label_relative }}</option>
+            </dropdown-select>
+            <block-info>
+                <p>
+                    <small><q>{{ $dict.hint_text_size_auto }}</q></small>
+                </p>
+            </block-info>
+        </block-field>
+
+        <block-field title="{{ :: $dict.label_font_transform }} *">
+            <dropdown-select model="$macros_excepts[$variation_scope[1]].data[$alias_key + '_trans'].value">
+                <option value="none">{{ :: $dict.label_none }}</option>
+                <option value="uppercase">{{ :: $dict.label_uppercase }}</option>
+            </dropdown-select>
+        </block-field>
+
+    </block-group>
+    <!-- / STYLE PICKER -->
+
+</div>

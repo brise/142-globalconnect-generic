@@ -1,0 +1,157 @@
+@import "config";
+
+/*
+ * UG, BG and FG animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=UG] .anim {
+		transform: scale(1);
+	}
+
+	[data-key=BG] .anim,
+	[data-key=FG] .anim {
+		transform: scale(1.25);
+	}
+
+	[data-key=UG] .anim.anim_in,
+	[data-key=BG] .anim.anim_in,
+	[data-key=FG] .anim.anim_in {
+		transition: opacity #{$speed_base_in} ease .0s, transform calc(#{$speed_base_in} * 2) ease .0s;
+		transform: scale(1);
+	}
+
+	[data-key=UG] .anim.anim_out,
+	[data-key=BG] .anim.anim_out,
+	[data-key=FG] .anim.anim_out {
+		transition: opacity #{$speed_base_out} ease .0s, transform #{$speed_base_out} ease .0s;
+		transform: scale(1);
+	}
+
+	/*
+     * In case animation has to be skipped.
+     */
+
+	[data-key=UG] .anim.anim_skip,
+	[data-key=BG] .anim.anim_skip,
+	[data-key=FG] .anim.anim_skip {
+		transform: scale(1) !important;
+	}
+
+	/*
+     * In case background is hidden, all animations have to go opacity 0.
+     */
+
+	&.BG_hide [data-key=BG] .anim.anim_in {
+		opacity: 0 !important;
+	}
+
+	/*
+     * Video has not to be scaled or slided, as it appear after poster image is loaded (usually 2 seconds).
+     */
+
+	[data-key=BG] [data-key=BG_VID] .anim {
+		transform: scale(1) !important;
+	}
+
+	[data-key=BG]:not(.BG_VID_0_loaded) [data-key=BG_VID] .anim,
+	[data-key=BG].BG_VID_0_loaded [data-key=BG_IMG] .anim.anim_in {
+		opacity: 0 !important;
+	}
+
+	[data-key=BG].BG_VID_0_loaded [data-key=BG_IMG] .anim.anim_in,
+	[data-key=BG].BG_VID_0_loaded [data-key=BG_VID] .anim.anim_out {
+		transition: opacity #{$speed_base} ease .0s;
+	}
+
+	//&.CV_scale_xs.SQ_type_legal:not(.CV_tens_w1):not(.CV_tens_w2) [data-key=BG] .anim,
+	//&.CV_scale_xs.SQ_type_legal:not(.CV_tens_w1):not(.CV_tens_w2) [data-key=FG] .anim {
+	//	opacity: 0 !important;
+	//}
+
+}
+
+/*
+ * LN animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	[data-key=LN] .anim.anim_in {
+		transition: height #{$speed_base_in} ease .0s;
+	}
+
+}
+
+/*
+ * DS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+//[data-key=CV] {
+//
+//	[data-key=DS] .anim.anim_in {
+//		transition: opacity #{$speed_base_in} ease calc(#{$delay_base} * 2);
+//	}
+//
+//	[data-key=DS] .anim.anim_in .hr,
+//	[data-key=DS] .anim.anim_in .bg {
+//		transition: background #{$speed_base_in} ease .0s;
+//	}
+//
+//}
+
+/*
+ * MS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+//[data-key=CV] {
+//
+//	[data-key=MS] .anim.anim_in {
+//		transition: opacity #{$speed_base_in} ease calc(#{$delay_base} * 1);
+//	}
+//
+//}
+
+/*
+ * PS animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+//[data-key=CV] {
+//
+//	[data-key=PS] .anim.anim_in {
+//		transition: opacity #{$speed_base_in} ease calc(#{$delay_base} * 1);
+//	}
+//
+//	&.CV_scale_xs [data-key=PS] {
+//		transition: opacity #{$speed_base_in} ease calc(#{$delay_base} * 1);
+//	}
+//
+//}
+
+/*
+ * VS, CX animations.
+ * ------------------------------------------------------------------------------------------------------------------
+ */
+
+[data-key=CV] {
+
+	&.VS_active [data-key=VS].anim.anim_in {
+		transition: opacity #{$speed_base_in} ease .0s;
+	}
+
+	&:not(.VS_active) [data-key=VS].anim {
+		opacity: 0 !important;
+	}
+
+	//&:not(.DS_gesture):not(.VS_gesture) [data-key=CX] .anim,
+	//&:not(.DS_active):not(.VS_active) [data-key=CX] .anim {
+	//	opacity: 0 !important;
+	//}
+
+}
